@@ -31,7 +31,8 @@ Axiom P114d. -(-x) = x.# Drastische beschleunigung.
 Axiom P115c. If (not x=0) and x*y = 1 then y = inv(x).  
 Axiom P115d. If not x=0 then inv(inv(x)) = x.
 Axiom P116c. (-x)*y = -(x*y) = x*(-y).
-Axiom Marcin. -(x+y) = -x + -y.
+
+Axiom. -(x+y) = -x + -y. #Nicht Bewiesen
 
 
 ###Axiome fur ordSet
@@ -42,9 +43,16 @@ Let x <= y stand for x<y or x=y.
 Let x >= y stand for y <= x.
 
 Axiom. Then x<y or y<x or x = y.
-Axiom. Then not ((x<y and y<x) and (x<y and y=x) and (x=y and y<x)).
+Axiom. Then not ((x<y and y<x) or (x<y and y=x) or (x=y and y<x)).
 Axiom. If x<y and y<z then x<z.
 
+###Axiome für ordField
+Axiom A1. If y<z then x+y<x+z.
+Axiom A2. If x>0 and y>0 then x*y>0.
+
+#Bewiesene Aussagen
+Axiom P118d. If not x = 0 then x*x > 0.
+Axiom P118e1. If 0<y then 0 < inv(y).
 
 Signature. A complex number is a notion.
 Let u,v,w denote complex numbers.
@@ -54,7 +62,6 @@ Signature. u ** v is a complex number.
 Axiom. If u is a complex number then there exist real numbers x,y such that u = x +| y.
 Axiom CAdd. (x +| y) ++ (a +| b) = (x + a) +| (y + b) .
 Axiom CMult. (x +| y) ** (a +| b) = ((x*a) - (y*b)) +| ((x*b) + (y*a)) .
-#Axiom CMMult. (a +| b) ** (r +| s) = ((a*r) - (b*s)) +| ((a*s) + (b*r)).
 
 Proposition CmpFld2.  u ++ v = v ++ u.
 Proof. Let x,y,a,b be real numbers such that (u = x +| y and v = a +| b).
