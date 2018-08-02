@@ -117,7 +117,8 @@ u**(v**w) = u ** ((a,b) ** (r,s))
 Then (u**v)**w = u**(v**w). qed.
 
 Proposition CmpFld8. u**(1,0) = u.
-Proof. Let x,y be real numbers such that u = (x,y). Then u ** (1,0) = ((x,y)) ** (1,0) = ((x*1)-(y*0) , (x*0)+(y*1)) = (x-0 , 0+y) = (x,y) = u . 
+Proof. Let x,y be real numbers such that u = (x,y). Then u ** (1,0) = ((x,y)) ** (1,0) = ((x*1)-(y*0) , (x*0)+(y*1)) = (x-0 , 0+y) = (x,y) = u .
+Then u**(1,0) = u.
 qed.
 
 Proposition CmpFld9. If not u = (0,0) then there exists a complex number v such that u**v = (1,0).
