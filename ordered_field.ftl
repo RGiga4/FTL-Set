@@ -66,7 +66,12 @@ Proposition P118b. If x>0 and y<z then x*y<x*z.
 Proof.
 	Assume x>0 and y<z. Then z-y > y-y = 0.
 	Then x*(z-y)>0.
-	Then x*z = (x*(z-y))+(x*y) > 0 + (x*y) = x*y.#Hard
+	Then x*z = (x*(z-y))+(x*y).# war Hard
+
+	Assume a = x*(z-y) and b = x*y.
+	Then a>0.
+	Then x*z = a + b > 0+b = (x*y).
+	
 	Then x*z > x*y.
 qed.
 Proposition P118c. If x<0 and y<z then x*y>x*z.
@@ -111,7 +116,7 @@ Proposition P118e2. If 0<x<y then 0 < inv(y)<inv(x).
 Proof. 
 	Assume 0<x<y.Then 0<inv(y) and 0<inv(x).# Ab hier Auto
 	Then inv(x)*inv(y)>0.
-	Assume a = inv(y)<inv(x).	
+	Assume a = inv(y)*inv(x).	
 	Then x<y. Then x*a<y*a.
 	Then x*(inv(x)*inv(y))< y*(inv(x)*inv(y)).
 	Then (x*inv(x))*inv(y)< (y*inv(y))*inv(x).#leicht Extra
