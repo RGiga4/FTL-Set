@@ -52,7 +52,6 @@ Axiom. If x>0 and y>0 then x*y>0.
 
 #Bewiesene Aussagen
 Axiom P118d. If not x = 0 then x*x > 0.
-Axiom P118e1. If 0<y then 0 < inv(y).
 
 Signature. A complex number is a notion.
 Let u,v,w denote complex numbers.
@@ -66,7 +65,7 @@ Axiom CMult. (x, y) ** (a, b) = ((x*a) - (y*b), (x*b) + (y*a)).
 Proposition CmpFld2.  u ++ v = v ++ u.
 Proof. Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
 Then u ++ v = (x,y) ++ (a,b) 
-	    = ((x + a), (y + b)) 	
+	    = (x + a, y + b) 	
 	    = (a + x, b + y) 
 	    = (a,b) ++ (x,y)
 	    = v ++ u. 
@@ -116,11 +115,16 @@ u**(v**w) = u ** ((a,b) ** (r,s))
 		  = ( (c + e) + (f + d) , (g + j) + (k + h) ) = (u**v)**w.
 Then (u**v)**w = u**(v**w). qed.
 
-Proposition CmpFld8. u**(1,0) = u.
-Proof. Let x,y be real numbers such that u = (x,y). Then u ** (1,0) = ((x,y)) ** (1,0) = ((x*1)-(y*0) , (a*0)+(y*1)) = (x-0 , 0+y) = (x,y) = u . qed.
+#Proposition CmpFld8. u**(1,0) = u.
+#Proof. Let x,y be real numbers such that u = (x,y). Then u ** (1,0) = ((x,y)) ** (1,0) = ((x*1)-(y*0) , (a*0)+(y*1)) = (x-0 , 0+y) = (x,y) = u . qed.
 
 Proposition CmpFld9. If not u = (0,0) then there exists a complex number v such that u**v = (1,0).
 Proof. Let x,y be real numbers such that u = (x,y).
 	   Then not (x = 0) or not (y = 0).
-	   Hence (x*x)> 0 or (y*y)>0. 
-	   Then (x*x) + (y*y) > 0.qed.
+	   Then (x*x)> 0 or (y*y)>0. 
+	   Then (x*x) + (y*y) > 0.
+	   Then not (x*x) + (y*y) = 0.
+	   Let v = (x*inv((x*x) + (y*y)) , -y*inv((x*x) + (y*y))). 
+	   Then u*v = (x*(x*inv((x*x) + (y*y))) - y*(-y*inv((x*x) + (y*y))) , x*(-y*inv((x*x) + (y*y))) + y*(x*inv((x*x) + (y*y))))
+	   			= 
+	   qed.
