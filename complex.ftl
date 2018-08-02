@@ -128,5 +128,5 @@ Proof. Let x,y be real numbers such that u = (x,y).
 	   Then (x*x) + (y*y) > 0.
 	   Then not (x*x) + (y*y) = 0.
 	   Let v = (x*inv((x*x) + (y*y)) , -y*inv((x*x) + (y*y))). 
-	   Then u*v = (x*(x*inv((x*x) + (y*y))) - y*(-y*inv((x*x) + (y*y))) , x*(-y*inv((x*x) + (y*y))) + y*(x*inv((x*x) + (y*y))))
+	   Then u*v = ( (x*(x*inv((x*x) + (y*y)))) - (y*(-y*inv((x*x) + (y*y)))) , (x*(-y*inv((x*x) + (y*y)))) + (y*(x*inv((x*x) + (y*y))))).
 	   qed.
