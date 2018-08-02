@@ -40,7 +40,7 @@ Let x <= y stand for x<y or x=y.
 Let x >= y stand for y <= x.
 
 Axiom. Then x<y or y<x or x = y.
-Axiom. Then not ((x<y and y<x) and (x<y and y=x) and (x=y and y<x)).
+Axiom. Then not ((x<y and y<x) or (x<y and y=x) or (x=y and y<x)).
 Axiom. If x<y and y<z then x<z.
 
 ###weitere 
