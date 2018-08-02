@@ -33,8 +33,13 @@ Axiom P115d. If not x=0 then inv(inv(x)) = x.
 Axiom P116c. (-x)*y = -(x*y) = x*(-y).
 
 Axiom. -(x+y) = -x + -y. #Nicht Bewiesen
-
-
+Proposition. (c + d) + (e  + f) = (c + e) + (f   + d).
+Proof. (c + d) + (e  + f)	= ((c +  d) +  e)  + f 
+       	 	   				= ( c + (d  +  e)) + f 
+       	    				= ( c + (e  +  d)) + f 
+      						= ((c +  e) +  d)  + f 
+      						=  (c +  e) + (f   + d).
+qed.
 ###Axiome fur ordSet
 
 Signature. x < y is an atom.
@@ -62,6 +67,7 @@ Axiom. If u is a complex number then there exist real numbers x,y such that u = 
 Axiom CAdd. (x, y) ++ (a, b) = (x + a, y + b) .
 Axiom CMult. (x, y) ** (a, b) = ((x*a) - (y*b), (x*b) + (y*a)).
 
+[prove off]
 Proposition CmpFld2.  u ++ v = v ++ u.
 Proof. Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
 Then u ++ v = (x,y) ++ (a,b) 
@@ -79,6 +85,8 @@ Then (u++v)++w=u++(v++w). qed.
 
 Proposition CmpFld4. u ++ (0,0) = u.
 Proof. Let x,y be real numbers such that u = (x,y). Then u ++ (0,0) = (x+0,y+0) = (x,y) = u. qed.
+
+
 
 #Proposition CmpFld5. For every complex number u there exists a complex number v such that u ++ v = (0,0).
 #Proof. Let x,y be real numbers such that u = (x,y). Let v = (-x, -y). Then v is a complex number and u ++ v = (x-x, y-y) = (0,0). qed.
@@ -98,10 +106,6 @@ Proof. Let x,y,a,b,r,s be real numbers such that (u = (x,y) and v = (a,b) and w 
 		  = (  ( ((x*a)*r) + -((y*b)*r) ) + ( -((x*b)*s) + -((y*a)*s) )  ,  ( ((x*a)*s) + -((y*b)*s) ) + ( ((x*b)*r) + ((y*a)*r) )  ).
 Let c = (x*a)*r and d = -((y*b)*r) and e = -((x*b)*s) and f = -((y*a)*s) and g = ((x*a)*s) and  h = -((y*b)*s) and  j = ((x*b)*r) and k = ((y*a)*r).
 Then (u**v)**w =  ( (c + d) + (e  + f) , (g + h) +  (j + k)  )
-     		   =  (  ( (c + d) + e ) + f ,  ( ( g + h ) +  j )+ k  )
-       	 	   =  (  ( c + (d + e) ) + f ,  ( g + ( h + j ) ) + k  )
-       	       =  (  ( c + (e + d) ) + f ,  ( g + ( j + h ) ) + k  )
-      		   =  (  ( (c + e) + d ) + f , ( (g +  j) + h  ) + k  )
       		   =  ( (c + e) + (d + f) , (g +  j) + (h  + k) )
       		   = ( (c + e) + (f + d) , (g + j) + (k + h) ).
 Then v ** w = ((a*r) - (b*s),(a*s) + (b*r)) (by CMult).
@@ -121,12 +125,48 @@ Proof. Let x,y be real numbers such that u = (x,y). Then u ** (1,0) = ((x,y)) **
 Then u**(1,0) = u.
 qed.
 
-Proposition CmpFld9. If not u = (0,0) then there exists a complex number v such that u**v = (1,0).
-Proof. Let x,y be real numbers such that u = (x,y).
-	   Then not (x = 0) or not (y = 0).
-	   Then (x*x)> 0 or (y*y)>0. 
-	   Then (x*x) + (y*y) > 0.
-	   Then not (x*x) + (y*y) = 0.
-	   Let v = (x*inv((x*x) + (y*y)) , -y*inv((x*x) + (y*y))). 
-	   Then u*v = ( (x*(x*inv((x*x) + (y*y)))) - (y*(-y*inv((x*x) + (y*y)))) , (x*(-y*inv((x*x) + (y*y)))) + (y*(x*inv((x*x) + (y*y))))).
-	   qed.
+#Proposition CmpFld9. If not u = (0,0) then there exists a complex number v such that u**v = (1,0).
+#Proof. Let not u = (0,0).
+#	   Let x,y be real numbers such that u = (x,y).
+#	   Assume x = 0 and y=0. Then u = (0,0). Contradiction. Hence not x=0 or not y=0.
+#	   Then (x*x)> 0 or (y*y)>0. 
+#	   Then (x*x) + (y*y) > 0.
+#	   Then not (x*x) + (y*y) = 0.
+#
+#	   Let d = inv((x*x) + (y*y)) and 
+#	   	   v = (x*d , -y*d). 
+#	   Then u**v = ( (x*(x*d)) - (y*(-y*d)) , (x*(-y*d)) + (y*(x*d)))
+#	   			= ( (x*(x*d)) + -(-y*(y*d)) , -(x*(y*d)) + (y*(x*d)))
+#	   			= ( (x*(x*d)) + (y*(y*d)) , -(x*(y*d)) + (y*(x*d)))
+#	   			= ( ((x*x)*d) + ((y*y)*d) , -((x*y)*d) + ((y*x)*d))
+#	   			= ( ((x*x) + (y*y))*d , -((x*y)*d) + ((x*y)*d))
+#	   			= ( ((x*x) + (y*y))*inv((x*x) + (y*y)) , 0)
+#	   			= (1,0).
+#	   qed.
+
+
+[prove on]
+
+
+Proposition CmpFld10. u**(v++w) = (u**v) ++ (u**w).
+Proof.	Let x,y,a,b,r,s be real numbers such that (u = (x,y) and v = (a,b) and w = (r,s)).
+		Let c = x*a and d = x*r and e = -(y*b) and f = -(y*s) and g = x*b and  h = x*s and  j = y*a and k = y*r.
+		v++w = (a+r,b+s) (by CAdd).
+		u**v = (x,y) ** (a,b) = ((x*a) - (y*b), (x*b) + (y*a)) (by CMult).  #1
+		u**w = (x,y) ** (r,s) = ((x*r) - (y*s) , (x*s) + (y*r)) (by CMult). #2
+		Then u**(v++w) 	= (x,y) ** (a+r,b+s) = ( (x*(a+r)) - (y*(b+s)) , (x*(b+s)) + (y*(a+r)) )
+						= ( ((x*a) + (x*r)) - (y*(b+s)) , (x*(b+s)) + (y*(a+r)) )
+						= ( ((x*a) + (x*r)) - ((y*b) + (y*s)) , (x*(b+s)) + (y*(a+r)) )
+						= ( ((x*a) + (x*r)) - ((y*b) + (y*s)) , ((x*b) + (x*s)) + (y*(a+r)) )
+						= ( ((x*a) + (x*r)) - ((y*b) + (y*s)) , ((x*b) + (x*s)) + ((y*a) + (y*r)) ) 
+						= (((x*a) + (x*r)) + -((y*b) + (y*s)) , ((x*b) + (x*s)) + ((y*a) + (y*r)) )
+						= (((x*a) + (x*r)) + (-(y*b) + -(y*s)) , ((x*b) + (x*s)) + ((y*a) + (y*r)) )
+						= ((c + d) + (e + f) , (g + h) + (j + k))
+						= ((c + e) + (d + f) , (g + j) + (h + k))
+						= (c+e,g+j) ++ (d+f,h+k)
+						= ((x*a) + -(y*b), (x*b) + (y*a)) ++ ((x*r) + -(y*s) , (x*s) + (y*r))
+						= ((x*a) - (y*b), (x*b) + (y*a)) ++ ((x*r) - (y*s) , (x*s) + (y*r))
+						= ((x,y) ** (a,b)) ++ ((x,y) ** (r,s)) ##wegen #1 und #2
+						= (u**v) ++ (u**w).
+		Then u**(v++w) = (u**v) ++ (u**w).
+qed.
