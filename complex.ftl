@@ -34,7 +34,7 @@ Axiom P116c. (-x)*y = -(x*y) = x*(-y).
 
 Axiom. -(x+y) = -x + -y. #Nicht Bewiesen
 Axiom. x*0 = 0. #name finden
-[prove off]
+
 
 Proposition. (c + d) + (e  + f) = (c + e) + (f   + d).
 Proof. (c + d) + (e  + f)	= ((c +  d) +  e)  + f 
@@ -129,7 +129,7 @@ u**(v**w) = u ** ((a,b) ** (r,s))
 		  = ( (c + e) + (f + d) , (g + j) + (k + h) ) = (u**v)**w.
 Then (u**v)**w = u**(v**w). qed.
 
-[prove on]
+
 Proposition CmpFld8. u**(1,0) = u.
 Proof. Let x,y be real numbers such that u = (x,y). Then u ** (1,0) = ((x,y)) ** (1,0) = ((x*1)-(y*0) , (x*0)+(y*1)). 
 	Let a = x*1 and b = y*0 and c = x*0 and d = y*1.
@@ -163,6 +163,8 @@ Axiom. If x>0 and y>0 then x*y>0.
 Axiom P118d. If not x = 0 then x*x > 0.
 Axiom P118e1. If 0<y then 0 < inv(y).
 
+[prove off]
+
 Proposition SqrtMon. If x*x > y*y and x > 0  and y >= 0 then x>y.
 Proof.	Assume x*x > y*y and x>0 and y >= 0.
 		Thus  -(y*y) + (x*x) > -(y*y) + (y*y) (by InEqAdd). 
@@ -188,7 +190,7 @@ qed.
 
 
 
-
+[prove on]
 Proposition CmpFld9. If not u = (0,0) then there exists a complex number v such that u**v = (1,0).
 Proof. Assume not u = (0,0).
 	   Let x,y be real numbers such that u = (x,y).
@@ -197,7 +199,10 @@ Proof. Assume not u = (0,0).
 		Assume a = x*x and b = y*y.
 	   Then a> 0 or b>0.
 		Then a>= 0 and b>=0.
-	   Then a + b > 0.
+	   Let us show that a + b > 0.
+			Case a>0. Then a+b>=a+0>=a>0. end.
+			Case b>0. Then a+b>=0+b>=b>0. end.
+		end.
 	   Then not (x*x) + (y*y) = 0.
 
 	   Let d = inv((x*x) + (y*y)) and 
