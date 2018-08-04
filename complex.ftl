@@ -34,7 +34,7 @@ Axiom P116c. (-x)*y = -(x*y) = x*(-y).
 
 Axiom. -(x+y) = -x + -y. #Nicht Bewiesen
 Axiom. x*0 = 0. #name finden
-[prove off]
+#[prove off]
 
 Proposition. (c + d) + (e  + f) = (c + e) + (f   + d).
 Proof. (c + d) + (e  + f)	= ((c +  d) +  e)  + f 
@@ -98,7 +98,7 @@ Proof.
 	Let x,y be real numbers such that u = (x,y). Then u ++ (0,0) = (x+0,y+0) (by CAdd). (x+0,y+0) = (x,y) = u. 
 qed.
 
-[prove on]
+#[prove on]
 [prove off]
 Proposition CmpFld5. For every complex number u there exists a complex number v such that u ++ v = (0,0).
 Proof. 
@@ -107,7 +107,7 @@ Proof.
 	v is a complex number.
 	For every complex number u2 there exists a complex number w such that u2 ++ w = (0,0).
 qed.
-
+[prove on]
 Proposition CmpFld6. u**v = v**u.
 Proof. Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
 Then u**v =  ((x*a) - (y*b), (x*b) + (y*a)) =  ((a*x) - (b*y), (a*y) + (b*x)) = v**u. Then u**v = v**u. qed.
@@ -169,7 +169,7 @@ Axiom. If x>0 and y>0 then x*y>0.
 #Bewiesene Aussagen
 Axiom P118d. If not x = 0 then x*x > 0.
 Axiom P118e1. If 0<y then 0 < inv(y).
-[prove on]
+#[prove on]
 [prove off]
 
 Proposition SqrtMon. If x*x > y*y and x > 0  and y >= 0 then x>y.
@@ -198,7 +198,7 @@ qed.
 
 
 [prove on]
-[prove off]
+#[prove off]
 Lemma 21O. If (not x = 0) or (not y = 0) then (x*x) + (y*y)>0.
 Proof. 
 	Assume (not x=0) or (not y=0).
@@ -242,9 +242,10 @@ Proof.	Let x,y,a,b,r,s be real numbers such that (u = (x,y) and v = (a,b) and w 
 		v++w = (a+r,b+s) (by CAdd).
 		u**v = (x,y) ** (a,b) = ((x*a) - (y*b), (x*b) + (y*a)) (by CMult).  #1
 		u**w = (x,y) ** (r,s) = ((x*r) - (y*s) , (x*s) + (y*r)) (by CMult). #2
-		Then u**(v++w) 	= (x,y) ** (a+r,b+s) = ( (x*(a+r)) - (y*(b+s)) , (x*(b+s)) + (y*(a+r)) )
-						= ( ((x*a) + (x*r)) - (y*(b+s)) , (x*(b+s)) + (y*(a+r)) )
-						= ( ((x*a) + (x*r)) - ((y*b) + (y*s)) , (x*(b+s)) + (y*(a+r)) ).
+		Then u**(v++w) 	= (x,y) ** (a+r,b+s) = ( (x*(a+r)) - (y*(b+s)) , (x*(b+s)) + (y*(a+r)) ).
+						( (x*(a+r)) - (y*(b+s)) , (x*(b+s)) + (y*(a+r)) )
+						.= ( ((x*a) + (x*r)) - (y*(b+s)) , (x*(b+s)) + (y*(a+r)) )
+						.= ( ((x*a) + (x*r)) - ((y*b) + (y*s)) , (x*(b+s)) + (y*(a+r)) ).
 
 						( ((x*a) + (x*r)) - ((y*b) + (y*s)) , (x*(b+s)) + (y*(a+r)) )
 						= ( ((x*a) + (x*r)) - ((y*b) + (y*s)) , ((x*b) + (x*s)) + (y*(a+r)) ) (by Dis1).
@@ -374,7 +375,7 @@ Proof.  Let z be a real number such that (z > 0 and u**Conj(u) = (z,0)). Then (|
 		Assume |u| = 0. Then z = 0*0 = 0. Contradiction. 
 		Then |u| > 0.
 qed.
-[prove on]
+
 Proposition Abs2. |(0,0)| = 0.
 Proof. 	(0,0) ** Conj((0,0)) = Conj((0,0)) ** (0,0) = (0,0). 
 		Let us show that |(0,0)|*|(0,0)| = 0.
@@ -421,7 +422,7 @@ Proof. 	Let x,y be real numbers such that u = (x,y).
 		end.
 qed.
 
-
+[prove off]
 Proposition Abs6. |u ++ v| <= |u| + |v|.
 Proof. (|u ++ v|*|u ++ v|,0)	= (u ++ v) ** Conj(u ++ v) = (u ++ v) ** (Conj(u) ++ Conj(v))
 								=  ((u ++ v) ** Conj(u)) ++ ((u ++ v) ** Conj(v)) 
@@ -442,8 +443,8 @@ Proof. (|u ++ v|*|u ++ v|,0)	= (u ++ v) ** Conj(u ++ v) = (u ++ v) ** (Conj(u) +
 								=(((|u|*|u|) + (|v|*|v|)) + (Re(v ** Conj(u))+Re(v ** Conj(u))), 0 ).
 								Thus |u ++ v|*|u ++ v| = ((|u|*|u|) + (|v|*|v|)) + (Re(v ** Conj(u))+Re(v ** Conj(u))).
 								Re(v ** Conj(u)) <= |(Re(v ** Conj(u)),0)|.
-								proof. 	Let x,y be real numbers such that v**Conj(u) = (x,y).
+								Proof. 	Let x,y be real numbers such that v**Conj(u) = (x,y).
 
 								end.
 qed.
-
+[prove on]
