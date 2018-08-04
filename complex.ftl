@@ -33,7 +33,7 @@ Axiom P115d. If not x=0 then inv(inv(x)) = x.
 Axiom P116c. (-x)*y = -(x*y) = x*(-y).
 
 Axiom. -(x+y) = -x + -y. #Nicht Bewiesen
-
+Axiom. x*0 = 0. #name finden
 [prove off]
 
 Proposition. (c + d) + (e  + f) = (c + e) + (f   + d).
@@ -83,7 +83,7 @@ Then (x,y) ++ (a,b) = (x + a, y + b) (by CAdd).	#Hier ein Problem was?
 Then u ++ v = v ++ u.
 qed. 
 
-[prove on]
+
 
 Proposition CmpFld3. (u ++ v) ++ w = u ++ (v ++ w).
 Proof. Let x,y,a,b,r,s be real numbers such that (u = (x,y) and v = (a,b) and w = (r,s)).
@@ -129,11 +129,18 @@ u**(v**w) = u ** ((a,b) ** (r,s))
 		  = ( (c + e) + (f + d) , (g + j) + (k + h) ) = (u**v)**w.
 Then (u**v)**w = u**(v**w). qed.
 
-
+[prove on]
 Proposition CmpFld8. u**(1,0) = u.
-Proof. Let x,y be real numbers such that u = (x,y). Then u ** (1,0) = ((x,y)) ** (1,0) = ((x*1)-(y*0) , (x*0)+(y*1)) = (x-0 , 0+y) = (x,y) = u .
+Proof. Let x,y be real numbers such that u = (x,y). Then u ** (1,0) = ((x,y)) ** (1,0) = ((x*1)-(y*0) , (x*0)+(y*1)). 
+	Let a = x*1 and b = y*0 and c = x*0 and d = y*1.
+		
+	((x*1)-(y*0) , (x*0)+(y*1)) = (a-b, c+d).
+	Then a = x and b = 0 and c = 0 and d = y.
+ 	(a-b, c+d) = (x-0 , 0+y) = (x,y) = u .
 Then u**(1,0) = u.
 qed.
+
+
 
 
 ###Axiome fur ordSet
