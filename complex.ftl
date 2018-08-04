@@ -22,8 +22,8 @@ Signature One. 1 is a real number such that for every real number x x*1 = x.
 Signature. Assume not x = 0. inv(x) is a real number such that inv(x)*x = 1 .
 Axiom. 1 is not equal to 0.
 
-Axiom. x*(y+z)=(x*y)+(x*z).
-Axiom. (y+z)*x=(y*x)+(z*x).
+Axiom Dis1. x*(y+z)=(x*y)+(x*z).
+Axiom Dis2. (y+z)*x=(y*x)+(z*x).
 
 ###weitere bewissene Aussagen
 Axiom P114c. If x+y = 0 then y = -x.
@@ -107,7 +107,7 @@ Proof.
 	v is a complex number.
 	For every complex number u2 there exists a complex number w such that u2 ++ w = (0,0).
 qed.
-[prove on]
+
 Proposition CmpFld6. u**v = v**u.
 Proof. Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
 Then u**v =  ((x*a) - (y*b), (x*b) + (y*a)) =  ((a*x) - (b*y), (a*y) + (b*x)) = v**u. Then u**v = v**u. qed.
@@ -169,7 +169,7 @@ Axiom. If x>0 and y>0 then x*y>0.
 #Bewiesene Aussagen
 Axiom P118d. If not x = 0 then x*x > 0.
 Axiom P118e1. If 0<y then 0 < inv(y).
-
+[prove on]
 [prove off]
 
 Proposition SqrtMon. If x*x > y*y and x > 0  and y >= 0 then x>y.
@@ -198,6 +198,7 @@ qed.
 
 
 [prove on]
+[prove off]
 Proposition CmpFld9. If not u = (0,0) then there exists a complex number v such that u**v = (1,0).
 Proof. Assume not u = (0,0).
 	   Let x,y be real numbers such that u = (x,y).
@@ -237,9 +238,15 @@ Proof.	Let x,y,a,b,r,s be real numbers such that (u = (x,y) and v = (a,b) and w 
 		u**w = (x,y) ** (r,s) = ((x*r) - (y*s) , (x*s) + (y*r)) (by CMult). #2
 		Then u**(v++w) 	= (x,y) ** (a+r,b+s) = ( (x*(a+r)) - (y*(b+s)) , (x*(b+s)) + (y*(a+r)) )
 						= ( ((x*a) + (x*r)) - (y*(b+s)) , (x*(b+s)) + (y*(a+r)) )
-						= ( ((x*a) + (x*r)) - ((y*b) + (y*s)) , (x*(b+s)) + (y*(a+r)) )
-						= ( ((x*a) + (x*r)) - ((y*b) + (y*s)) , ((x*b) + (x*s)) + (y*(a+r)) )
-						= ( ((x*a) + (x*r)) - ((y*b) + (y*s)) , ((x*b) + (x*s)) + ((y*a) + (y*r)) ) 
+						= ( ((x*a) + (x*r)) - ((y*b) + (y*s)) , (x*(b+s)) + (y*(a+r)) ).
+
+						( ((x*a) + (x*r)) - ((y*b) + (y*s)) , (x*(b+s)) + (y*(a+r)) )
+						= ( ((x*a) + (x*r)) - ((y*b) + (y*s)) , ((x*b) + (x*s)) + (y*(a+r)) ) (by Dis1).
+						
+						( ((x*a) + (x*r)) - ((y*b) + (y*s)) , ((x*b) + (x*s)) + (y*(a+r)) )
+						= ( ((x*a) + (x*r)) - ((y*b) + (y*s)) , ((x*b) + (x*s)) + ((y*a) + (y*r)) ) (by Dis1).
+
+						( ((x*a) + (x*r)) - ((y*b) + (y*s)) , ((x*b) + (x*s)) + ((y*a) + (y*r)) )
 						= (((x*a) + (x*r)) + -((y*b) + (y*s)) , ((x*b) + (x*s)) + ((y*a) + (y*r)) )
 						= (((x*a) + (x*r)) + (-(y*b) + -(y*s)) , ((x*b) + (x*s)) + ((y*a) + (y*r)) )
 						= ((c + d) + (e + f) , (g + h) + (j + k))
@@ -253,18 +260,28 @@ Proof.	Let x,y,a,b,r,s be real numbers such that (u = (x,y) and v = (a,b) and w 
 qed.
 
 Proposition ZeroMult. u**(0,0) = (0,0).
-Proof. Let x,y be real numbers such that u = (x,y). Then u**(0,0) = ((x*0) - (y*0), (x*0) + (y*0)) = (0 - 0, 0 + 0) = (0,0). Then u**(0,0) = (0,0). qed.
+Proof. Let x,y be real numbers such that u = (x,y). Then u**(0,0) = ((x*0) - (y*0), (x*0) + (y*0)) (by CMult). 
+Let a=x*0 and b=y*0.
+((x*0) - (y*0), (x*0) + (y*0)) = (a-b,a+b) = (0 - 0, 0 + 0) = (0,0). 
+Then u**(0,0) = (0,0). 
+qed.
 
 Proposition. (a,0) ++ (b,0) = (a+b,0) and (a,0)**(b,0) = (a*b,0).
 Proof. 	(a,0) ++ (b,0) = (a+b,0+0) = (a+b,0) (by CAdd).
 		(a,0) ** (b,0) = ((a*b) - (0*0), (a*0) + (0*b)) (by CMult).
-		Then (a,0) ** (b,0) = ((a*b)  + -0, 0 + 0) = ((a*b )+ -0,0) = (a*b,0). qed.
+		Let c = a*0 and d = b*0 and e = 0*0.
+		Then c = 0 and d = 0 and e = 0.
+		Then ((a*b) - e, c + d) = ((a*b) -0, 0 + 0) = ((a*b )+ -0,0) = (a*b,0) . qed.
 
 Signature. ! is a complex number such that ! = (0,1).
-
+[prove on]
 Proposition. !**! = (-1,0).
-Proof. 	!**! = (0,1) ** (0,1) = ((0*0) - (1*1),( 0*1) + (1*0)) (by CMult).
-		Hence !**! = (0 - 1, 0+0) = (-1,0). 
+Proof. 	!**! .= (0,1) ** (0,1) 
+		.= ((0*0) - (1*1),( 0*1) + (1*0)) (by CMult)
+		.=((0*0) - (1*1),( 0*1) + (1*0)) 
+		.= (0 - 1, 0+0) 
+		.= (0+(-1),0).
+		Then (0+(-1),0) = ((-1),0). 
 qed.
 
 Let x+y! stand for (x,0) ++ ((y,0)**!).
@@ -272,7 +289,18 @@ Let x+y! stand for (x,0) ++ ((y,0)**!).
 
 Proposition. a+b! = (a,b).
 Proof. 	(b,0)**(0,1) = ((b*0)-(0*1) , (b*1)+(0*0)) (by CMult).
-		Then a+b! = (a,0) ++ ((b,0)**(0,1)) = (a,0) ++ ((b*0)-(0*1) , (b*1)+(0*0)) = (a,0) ++ (0-0,b+0) = (a,0) ++ (0,b) = (a+0,0+b) = (a,b).
+		a+b! = (a,0) ++ ((b,0)**(0,1)). 
+		
+		(a,0) ++ ((b,0)**(0,1))
+		= (a,0) ++ ((b*0)-(0*1) , (b*1)+(0*0)) (by CMult).
+
+		(a,0) ++ ((b*0)-(0*1) , (b*1)+(0*0))
+		= (a,0) ++ (0-0,b+0) 
+		= (a,0) ++ (0,b).
+		
+		(a,0) ++ (0,b)
+		= (a+0,0+b) 
+		= (a,b).
 qed.
 
 
