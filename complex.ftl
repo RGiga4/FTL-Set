@@ -34,7 +34,7 @@ Axiom P116c. (-x)*y = -(x*y) = x*(-y).
 
 Axiom. -(x+y) = -x + -y. #Nicht Bewiesen
 Axiom. x*0 = 0. #name finden
-
+[prove off]
 
 Proposition. (c + d) + (e  + f) = (c + e) + (f   + d).
 Proof. (c + d) + (e  + f)	= ((c +  d) +  e)  + f 
@@ -62,7 +62,7 @@ qed.
 
 
 Signature. A complex number is a notion.
-Let u,v,w denote complex numbers.
+Let u,v,w, u2 denote complex numbers.
 Signature. Let x,y be real numbers. (x,y) is a complex number.
 Signature. u ++ v is a complex number.
 Signature. u ** v is a complex number.
@@ -94,12 +94,19 @@ Then (u++v)++w=u++(v++w).
 qed.
 
 Proposition CmpFld4. u ++ (0,0) = u.
-Proof. Let x,y be real numbers such that u = (x,y). Then u ++ (0,0) = (x+0,y+0) (by CAdd). (x+0,y+0) = (x,y) = u. qed.
+Proof. 
+	Let x,y be real numbers such that u = (x,y). Then u ++ (0,0) = (x+0,y+0) (by CAdd). (x+0,y+0) = (x,y) = u. 
+qed.
 
-
+[prove on]
 
 #Proposition CmpFld5. For every complex number u there exists a complex number v such that u ++ v = (0,0).
-#Proof. Let x,y be real numbers such that u = (x,y). Let v = (-x, -y). Then v is a complex number and u ++ v = (x-x, y-y) = (0,0). qed.
+#Proof. 
+#	Assume x,y be real numbers such that u = (x,y). Let v = (-x, -y). Then  u ++ v = (x-x, y-y)(by CAdd) . (x-x, y-y) = (0,0). 
+#	Then v is a complex number such that u++v = (0,0).
+#	v is a complex number.
+#	For every complex number u2 there exists a complex number w such that u2 ++ w = (0,0).
+#qed.
 
 Proposition CmpFld6. u**v = v**u.
 Proof. Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
