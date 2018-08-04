@@ -55,47 +55,9 @@ Proof. (x+y)*(x-y) 	= (x+y)*(x+ -y) = (((x+y)*x)+ ((x+y)*(-y))) = ( ((x*x) + (y*
 					= (x*x) - (y*y).
 qed.
 
-###Axiome fur ordSet
-
-Signature. x < y is an atom.
-Let x > y stand for y < x.
-Let x <= y stand for x<y or x=y.
-Let x >= y stand for y <= x.
-
-Axiom. Then x<y or y<x or x = y.
-#Axiom. If x<y then not x=y. #and if x<y then not y<x.
-Axiom. Then not ((x<y and y<x) or (x<y and y=x) or (x=y and y<x)).
-Axiom Trans. If x<y and y<z then x<z.
-
-###Axiome für ordField
-Axiom InEqAdd. If y<z then x+y<x+z.
-Axiom. If x>0 and y>0 then x*y>0.
-
-#Bewiesene Aussagen
-Axiom P118d. If not x = 0 then x*x > 0.
-Axiom P118e1. If 0<y then 0 < inv(y).
-
-Proposition SqrtMon. If x*x > y*y and x > 0  and y >= 0 then x>y.
-Proof.	Assume x*x > y*y and x>0 and y >= 0.
-		Thus  -(y*y) + (x*x) > -(y*y) + (y*y) (by InEqAdd). 
-		Hence (x*x) - (y*y) > 0.
-		Then  (x + y) * (x - y) > 0.
-		x + y > 0.
-		proof. 	x > 0. Then x + y > y.
-				case y > 0. Then x + y > 0 (by Trans). end.
-				case y = 0. Then x + y > 0 . end.
-		end.
-		Thus inv(x + y) > 0. Hence inv(x + y) * ((x + y) * (x - y)) > 0.
-		We have inv(x + y) * ((x + y) * (x - y)) 
-			 = (inv(x + y) * (x + y)) * (x - y)
-			 = 1 * (x - y) = x - y.
-		Then x - y > 0.
-		Thus (x + -y) + y > 0 + y.
-		Hence x + (-y + y) > 0 + y.
-qed.
 
 ### mehr axiome
-Axiom. If not x=0 then x*x>0.# name finden
+
 
 
 
@@ -172,7 +134,54 @@ Proposition CmpFld8. u**(1,0) = u.
 Proof. Let x,y be real numbers such that u = (x,y). Then u ** (1,0) = ((x,y)) ** (1,0) = ((x*1)-(y*0) , (x*0)+(y*1)) = (x-0 , 0+y) = (x,y) = u .
 Then u**(1,0) = u.
 qed.
-#[prove on]
+
+
+###Axiome fur ordSet
+
+Signature. x < y is an atom.
+Let x > y stand for y < x.
+Let x <= y stand for x<y or x=y.
+Let x >= y stand for y <= x.
+
+Axiom. Then x<y or y<x or x = y.
+#Axiom. If x<y then not x=y. #and if x<y then not y<x.
+Axiom. Then not ((x<y and y<x) or (x<y and y=x) or (x=y and y<x)).
+Axiom Trans. If x<y and y<z then x<z.
+
+###Axiome für ordField
+Axiom InEqAdd. If y<z then x+y<x+z.
+Axiom. If x>0 and y>0 then x*y>0.
+
+#Bewiesene Aussagen
+Axiom P118d. If not x = 0 then x*x > 0.
+Axiom P118e1. If 0<y then 0 < inv(y).
+
+Proposition SqrtMon. If x*x > y*y and x > 0  and y >= 0 then x>y.
+Proof.	Assume x*x > y*y and x>0 and y >= 0.
+		Thus  -(y*y) + (x*x) > -(y*y) + (y*y) (by InEqAdd). 
+		Hence (x*x) - (y*y) > 0.
+		Then  (x + y) * (x - y) > 0.
+		x + y > 0.
+		proof. 	x > 0. Then x + y > y.
+				case y > 0. Then x + y > 0 (by Trans). end.
+				case y = 0. Then x + y > 0 . end.
+		end.
+		Thus inv(x + y) > 0. Hence inv(x + y) * ((x + y) * (x - y)) > 0.
+		We have inv(x + y) * ((x + y) * (x - y)) 
+			 = (inv(x + y) * (x + y)) * (x - y)
+			 = 1 * (x - y) = x - y.
+		Then x - y > 0.
+		Thus (x + -y) + y > 0 + y.
+		Hence x + (-y + y) > 0 + y.
+qed.
+
+
+
+
+
+
+
+
 Proposition CmpFld9. If not u = (0,0) then there exists a complex number v such that u**v = (1,0).
 Proof. Assume not u = (0,0).
 	   Let x,y be real numbers such that u = (x,y).
@@ -383,3 +392,4 @@ Proof. (|u ++ v|*|u ++ v|,0)	= (u ++ v) ** Conj(u ++ v) = (u ++ v) ** (Conj(u) +
 
 								end.
 qed.
+
