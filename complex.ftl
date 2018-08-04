@@ -33,6 +33,7 @@ Axiom P115d. If not x=0 then inv(inv(x)) = x.
 Axiom P116c. (-x)*y = -(x*y) = x*(-y).
 
 Axiom. -(x+y) = -x + -y. #Nicht Bewiesen
+
 [prove off]
 
 Proposition. (c + d) + (e  + f) = (c + e) + (f   + d).
@@ -62,7 +63,8 @@ Let x <= y stand for x<y or x=y.
 Let x >= y stand for y <= x.
 
 Axiom. Then x<y or y<x or x = y.
-Axiom. If x<y then not x=y. #and if x<y then not y<x.
+#Axiom. If x<y then not x=y. #and if x<y then not y<x.
+Axiom. Then not ((x<y and y<x) or (x<y and y=x) or (x=y and y<x)).
 Axiom Trans. If x<y and y<z then x<z.
 
 ###Axiome für ordField
@@ -92,6 +94,9 @@ Proof.	Assume x*x > y*y and x>0 and y >= 0.
 		Hence x + (-y + y) > 0 + y.
 qed.
 
+### mehr axiome
+Axiom. If not x=0 then x*x>0.# name finden
+Axiom. If not x=0 then x*x>0.# name finden
 Signature. A complex number is a notion.
 Let u,v,w denote complex numbers.
 Signature. Let x,y be real numbers. (x,y) is a complex number.
@@ -160,25 +165,31 @@ Proposition CmpFld8. u**(1,0) = u.
 Proof. Let x,y be real numbers such that u = (x,y). Then u ** (1,0) = ((x,y)) ** (1,0) = ((x*1)-(y*0) , (x*0)+(y*1)) = (x-0 , 0+y) = (x,y) = u .
 Then u**(1,0) = u.
 qed.
+[prove on]
+Proposition CmpFld9. If not u = (0,0) then there exists a complex number v such that u**v = (1,0).
+Proof. Assume not u = (0,0).
+	   Let x,y be real numbers such that u = (x,y).
+	   #Assume x = 0 and y=0. Then u = (0,0). Contradiction. 
+		Then (not x=0) or (not y=0).
+		Assume a = x*x and b = y*y.
+	   Then a> 0 or b>0.
+		Then a>= 0 and b>=0.
+	   Then a + b > 0.
+	   Then not (x*x) + (y*y) = 0.
 
-#Proposition CmpFld9. If not u = (0,0) then there exists a complex number v such that u**v = (1,0).
-#Proof. Let not u = (0,0).
-#	   Let x,y be real numbers such that u = (x,y).
-#	   Assume x = 0 and y=0. Then u = (0,0). Contradiction. Hence not x=0 or not y=0.
-#	   Then (x*x)> 0 or (y*y)>0. 
-#	   Then (x*x) + (y*y) > 0.
-#	   Then not (x*x) + (y*y) = 0.
-#
-#	   Let d = inv((x*x) + (y*y)) and 
-#	   	   v = (x*d , -y*d). 
-#	   Then u**v = ( (x*(x*d)) - (y*(-y*d)) , (x*(-y*d)) + (y*(x*d)))
-#	   			= ( (x*(x*d)) + -(-y*(y*d)) , -(x*(y*d)) + (y*(x*d)))
-#	   			= ( (x*(x*d)) + (y*(y*d)) , -(x*(y*d)) + (y*(x*d)))
-#	   			= ( ((x*x)*d) + ((y*y)*d) , -((x*y)*d) + ((y*x)*d))
-#	   			= ( ((x*x) + (y*y))*d , -((x*y)*d) + ((x*y)*d))
-#	   			= ( ((x*x) + (y*y))*inv((x*x) + (y*y)) , 0)
-#	   			= (1,0).
-#	   qed.
+	   Let d = inv((x*x) + (y*y)) and 
+	   	   v = (x*d , -y*d). 
+	   Then u**v = ( (x*(x*d)) - (y*(-y*d)) , (x*(-y*d)) + (y*(x*d)))
+	   			= ( (x*(x*d)) + -(-y*(y*d)) , -(x*(y*d)) + (y*(x*d)))
+	   			= ( (x*(x*d)) + (y*(y*d)) , -(x*(y*d)) + (y*(x*d)))
+	   			= ( ((x*x)*d) + ((y*y)*d) , -((x*y)*d) + ((y*x)*d))
+	   			= ( ((x*x) + (y*y))*d , -((x*y)*d) + ((x*y)*d))
+	   			= ( ((x*x) + (y*y))*inv((x*x) + (y*y)) , 0)
+	   			= (1,0).
+		Then u**v = (1,0).
+		Then v is a complex number such that u**v = (1,0).
+		If not u = (0,0) then there exists a complex number w such that u**w = (1,0).
+	   qed.
 
 
 
@@ -340,7 +351,7 @@ Proof. 	Let x,y be real numbers such that u = (x,y).
 		end.
 qed.
 
-[prove on]
+
 Proposition Abs6. |u ++ v| <= |u| + |v|.
 Proof. (|u ++ v|*|u ++ v|,0)	= (u ++ v) ** Conj(u ++ v) = (u ++ v) ** (Conj(u) ++ Conj(v))
 								=  ((u ++ v) ** Conj(u)) ++ ((u ++ v) ** Conj(v)) 
