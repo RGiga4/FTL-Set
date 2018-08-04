@@ -99,15 +99,15 @@ Proof.
 qed.
 
 [prove on]
-
-#Proposition CmpFld5. For every complex number u there exists a complex number v such that u ++ v = (0,0).
-#Proof. 
-#	Assume x,y be real numbers such that u = (x,y). Let v = (-x, -y). Then  u ++ v = (x-x, y-y)(by CAdd) . (x-x, y-y) = (0,0). 
-#	Then v is a complex number such that u++v = (0,0).
-#	v is a complex number.
-#	For every complex number u2 there exists a complex number w such that u2 ++ w = (0,0).
-#qed.
-
+[prove off]
+Proposition CmpFld5. For every complex number u there exists a complex number v such that u ++ v = (0,0).
+Proof. 
+	Assume x,y be real numbers such that u = (x,y). Let v = (-x, -y). Then  u ++ v = (x-x, y-y)(by CAdd) . (x-x, y-y) = (0,0). 
+	Then v is a complex number such that u++v = (0,0).
+	v is a complex number.
+	For every complex number u2 there exists a complex number w such that u2 ++ w = (0,0).
+qed.
+[prove on]
 Proposition CmpFld6. u**v = v**u.
 Proof. Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
 Then u**v =  ((x*a) - (y*b), (x*b) + (y*a)) =  ((a*x) - (b*y), (a*y) + (b*x)) = v**u. Then u**v = v**u. qed.

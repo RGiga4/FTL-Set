@@ -122,8 +122,9 @@ Definition BoundedAbove.
 		there exists an element b of REL such that b is an upper bound of A .
 
 Definition least_upper_bound_property.
-	R is lub iff for every subset A of REL
-		if (A is bounded above ) then (there exists an element s of REL such that s is supremum of A ).
+	Assume R is a subset of REL.
+	R is lub iff for every subset A of R
+		if (A is bounded above ) then (there exists an element s of R such that s is supremum of A ).
 
 Axiom. REL is lub.
 AXiom. If x-y = z then x =z+y. 
@@ -131,7 +132,7 @@ AXiom. If x-y = z then x =z+y.
 Proposition P120a. If x>0 and y is element of REL then exists n  n*x>y.
 Proof.
 	#Assume x>0 and y is element of REL and not (exists n n*x>y).
-	Assume the contrary.	
+(1)	Assume the contrary.	
 	Let A be a subset of REL such that A = {n*x | n is natural number}.
 	Then A is bounded above.
 	Let al be an element of REL such that al is supremum of A.
@@ -144,8 +145,8 @@ Proof.
 	Then m+1 is natural number.
 	Then (m+1)*x is element of A.
 	A Contradiction.
-	
 qed.
+Axiom P120a. If x>0 and y is element of REL then exists n  n*x>y.
 #Proposition. Contradiction.
 
 
