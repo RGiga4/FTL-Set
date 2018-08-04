@@ -96,7 +96,9 @@ qed.
 
 ### mehr axiome
 Axiom. If not x=0 then x*x>0.# name finden
-Axiom. If not x=0 then x*x>0.# name finden
+
+
+
 Signature. A complex number is a notion.
 Let u,v,w denote complex numbers.
 Signature. Let x,y be real numbers. (x,y) is a complex number.
@@ -111,18 +113,23 @@ Axiom CMult. (x, y) ** (a, b) = ((x*a) - (y*b), (x*b) + (y*a)).
 
 Proposition CmpFld2.  u ++ v = v ++ u.
 Proof. Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
-Then u ++ v = (x,y) ++ (a,b) 
-	    = (x + a, y + b) 	
-	    = (a + x, b + y) 
-	    = (a,b) ++ (x,y)
-	    = v ++ u. 
+Then u ++ v = (x,y) ++ (a,b).
+Then (x,y) ++ (a,b) = (x + a, y + b) (by CAdd).	#Hier ein Problem was?
+	    (x + a, y + b) = (a + x, b + y). 
+	    (a + x, b + y) = (a,b) ++ (x,y) (by CAdd).
+	    (a,b) ++ (x,y) = v ++ u. 
 Then u ++ v = v ++ u.
 qed. 
 
+[prove on]
+
 Proposition CmpFld3. (u ++ v) ++ w = u ++ (v ++ w).
 Proof. Let x,y,a,b,r,s be real numbers such that (u = (x,y) and v = (a,b) and w = (r,s)).
-Then (u ++ v) ++ w = ((x+a)+r, (y+b)+s) = (x+(a+r), y+(b+s)) = u ++ (v ++ w) .
-Then (u++v)++w=u++(v++w). qed.
+Then (u ++ v) ++ w = ((x+a)+r, (y+b)+s) (by CAdd). 
+((x+a)+r, (y+b)+s)= (x+(a+r), y+(b+s)).
+(x+(a+r), y+(b+s)) = u ++ (v ++ w) (by CAdd).
+Then (u++v)++w=u++(v++w). 
+qed.
 
 Proposition CmpFld4. u ++ (0,0) = u.
 Proof. Let x,y be real numbers such that u = (x,y). Then u ++ (0,0) = (x+0,y+0) = (x,y) = u. qed.
@@ -165,7 +172,7 @@ Proposition CmpFld8. u**(1,0) = u.
 Proof. Let x,y be real numbers such that u = (x,y). Then u ** (1,0) = ((x,y)) ** (1,0) = ((x*1)-(y*0) , (x*0)+(y*1)) = (x-0 , 0+y) = (x,y) = u .
 Then u**(1,0) = u.
 qed.
-[prove on]
+#[prove on]
 Proposition CmpFld9. If not u = (0,0) then there exists a complex number v such that u**v = (1,0).
 Proof. Assume not u = (0,0).
 	   Let x,y be real numbers such that u = (x,y).
