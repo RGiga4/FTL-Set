@@ -132,7 +132,7 @@ Then (u++v)++w=u++(v++w).
 qed.
 
 Proposition CmpFld4. u ++ (0,0) = u.
-Proof. Let x,y be real numbers such that u = (x,y). Then u ++ (0,0) = (x+0,y+0) = (x,y) = u. qed.
+Proof. Let x,y be real numbers such that u = (x,y). Then u ++ (0,0) = (x+0,y+0) (by CAdd). (x+0,y+0) = (x,y) = u. qed.
 
 
 
