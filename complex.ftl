@@ -199,19 +199,25 @@ qed.
 
 [prove on]
 [prove off]
+Lemma 21O. If (not x = 0) or (not y = 0) then (x*x) + (y*y)>0.
+Proof. 
+	Assume (not x=0) or (not y=0).
+	Let a = x*x and b = y*y.
+	Then a> 0 or b>0.
+	Then a>= 0 and b>=0.
+	Let us show that a + b > 0.
+		Case a>0. Then a+b>=a+0>=a>0. end.
+		Case b>0. Then a+b>=0+b>=b>0. end.
+	end.
+qed.
+
 Proposition CmpFld9. If not u = (0,0) then there exists a complex number v such that u**v = (1,0).
 Proof. Assume not u = (0,0).
 	   Let x,y be real numbers such that u = (x,y).
 	   #Assume x = 0 and y=0. Then u = (0,0). Contradiction. 
 		Then (not x=0) or (not y=0).
-		Assume a = x*x and b = y*y.
-	   Then a> 0 or b>0.
-		Then a>= 0 and b>=0.
-	   Let us show that a + b > 0.
-			Case a>0. Then a+b>=a+0>=a>0. end.
-			Case b>0. Then a+b>=0+b>=b>0. end.
-		end.
-	   Then not (x*x) + (y*y) = 0.
+		Then (x*x) + (y*y)>0 (by 21O).
+	   Then not (x*x) + (y*y) = 0 .
 
 	   Let d = inv((x*x) + (y*y)) and 
 	   	   v = (x*d , -y*d). 
@@ -274,7 +280,7 @@ Proof. 	(a,0) ++ (b,0) = (a+b,0+0) = (a+b,0) (by CAdd).
 		Then ((a*b) - e, c + d) = ((a*b) -0, 0 + 0) = ((a*b )+ -0,0) = (a*b,0) . qed.
 
 Signature. ! is a complex number such that ! = (0,1).
-[prove on]
+
 Proposition. !**! = (-1,0).
 Proof. 	!**! .= (0,1) ** (0,1) 
 		.= ((0*0) - (1*1),( 0*1) + (1*0)) (by CMult)
@@ -345,9 +351,9 @@ qed.
 Proposition Conj4. If not u = (0,0) then there exists a real number z such that (z>0 and u ** Conj(u) = (z,0)).
 Proof.	Let not u = (0,0).
 	   	Take real numbers x,y such that u = (x,y).
-	   	Assume x = 0 and y=0. Then u = (0,0). Contradiction. Hence not x=0 or not y=0.
+	   	#Assume x = 0 and y=0. Then u = (0,0). Contradiction. Hence not x=0 or not y=0.
 		Then (x*x)> 0 or (y*y)>0. Take z = (x*x) + (y*y). 
-		Then z > 0.
+		Then z > 0 (by 21O).
 		u**Conj(u) = (x,y)**Conj((x,y)) = (x,y)**(x,-y) = ((x*x) - (y*(-y)) , (x*(-y)) + (y*x)) = ((x*x) + -(-(y*y)) , -(x*y) + (x*y)) = ((x*x) + (y*y), 0) = (z,0).
 		z is a real number.
 		Then z is a real number and (z>0 and u**Conj(u) = (z,0)).
@@ -368,10 +374,11 @@ Proof.  Let z be a real number such that (z > 0 and u**Conj(u) = (z,0)). Then (|
 		Assume |u| = 0. Then z = 0*0 = 0. Contradiction. 
 		Then |u| > 0.
 qed.
-
+[prove on]
 Proposition Abs2. |(0,0)| = 0.
-Proof. 	(0,0) ** Conj((0,0)) = Conj((0,0)) ** (0,0) = (0,0). Hence |(0,0)|*|(0,0)| = 0.
-		Assume |(0,0)| > 0. Then not |(0,0)| = 0 .Then |(0,0)|*|(0,0)| > 0. Then not |(0,0)|*|(0,0)| = 0. Contradiction. 
+Proof. 	(0,0) ** Conj((0,0)) = Conj((0,0)) ** (0,0) = (0,0). 
+		Let us show that |(0,0)|*|(0,0)| = 0.
+		Assume |(0,0)| > 0. Then not |(0,0)| = 0 .Then |(0,0)|*|(0,0)| > 0. Then not |(0,0)|*|(0,0)| = 0. Contradiction.end. 
 		Hence |(0,0)| = 0.
 qed.
 
