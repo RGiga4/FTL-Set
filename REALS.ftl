@@ -79,7 +79,21 @@ Axiom. 0 is natural number.
 Let n denote a natural number.
 Axiom. n+1 is a natural number.
 
-#Proposition. 1+1 is a natural number.
+#### Axiome ganze Zahlen
+Signature. A integer is a real number.
+
+Definition ZSet.
+ZS is the set of integer.
+
+#### Axiome ratio Zahlen
+Signature. A rational number is a real number.
+
+Definition QSet.
+QS is the set of rational numbers.
+
+Axiom. Let m be an element of ZS and n be an element of NAT and (not n = 0). then m*inv(n) is a rational number.
+
+Signature. A natural number is an integer.
 
 ### Axiome OrdSet
 
@@ -129,6 +143,7 @@ Definition least_upper_bound_property.
 Axiom. REL is lub.
 AXiom. If x-y = z then x =z+y. 
 
+[prove off]
 Proposition P120a. If x>0 and y is element of REL then exists n  n*x>y.
 Proof.
 	#Assume x>0 and y is element of REL and not (exists n n*x>y).
@@ -146,8 +161,37 @@ Proof.
 	Then (m+1)*x is element of A.
 	A Contradiction.
 qed.
-Axiom P120a. If x>0 and y is element of REL then exists n  n*x>y.
-#Proposition. Contradiction.
+[prove on]
+Let q denote an element of QS.
+Let m, m1, m2 denote integer.
+Axiom VK1. for every x exists m (m-1<=x<m and if m1 >x then m1 >=m and if m1<=x then m1<=m-1).
+Axiom VK2. if m-1<=x<m and m1<=x<m2 then m1<=m<=m2.
+Proposition P120b. if x < y then exists q   x<q<y.
+Proof.
+	Assume x < y.
+	Let z = y-x.Then z >0.
+	Then exists n n*z>1 (by P120a).
+	Let v = n*x.Then 1 is a real number. then 1>0.
+	Take m1 such that m1*1>v (by P120a).
+	Take m2 such that m2*1>-v (by P120a).
+	Then v+m2>0.
+	Then 0 > -(v+m2) (by P118a).
+	Then 0 > -v -m2.
+	Then v > -m2.
+	Then -m2<n*x<m1.
+	Take m such that m-1<=v<m.
+	Then -m2<=v.
+	Then v<m1.
+	Then -m2<=v<m1.
+	Then -m2<=m<=m1 (by VK2).
+#	Then n*x<m<=1+n*x.
+	
+	
+	
+qed.
+
+
+
 
 
 
