@@ -163,8 +163,8 @@ Proof.
 qed.
 [prove on]
 Let q denote an element of QS.
-Let m, m1, m2 denote integer.
-Axiom VK1. for every x exists m (m-1<=x<m and if m1 >x then m1 >=m and if m1<=x then m1<=m-1).
+Let m, m1, m2, mt denote integer.
+Axiom VK1. for every x exists m m-1<=x<m.
 Axiom VK2. if m-1<=x<m and m1<=x<m2 then m1<=m<=m2.
 Proposition P120b. if x < y then exists q   x<q<y.
 Proof.
@@ -183,7 +183,9 @@ Proof.
 	Then -m2<=v.
 	Then v<m1.
 	Then -m2<=v<m1.
-	Then -m2<=m<=m1 (by VK2).
+	Let mt = -m2.
+	Then m-1<=v<m and mt<=v<m1.
+	Then mt<=m<=m1 (by VK2). # Warum funct das nicht?
 #	Then n*x<m<=1+n*x.
 	
 	
