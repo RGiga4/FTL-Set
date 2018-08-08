@@ -1,5 +1,4 @@
 [set/-s] [element/-s] [number/-s]
-
 Signature. A real number is a notion.
 
 #Let F denote an ordered field.
@@ -34,7 +33,6 @@ Axiom P116c. (-x)*y = -(x*y) = x*(-y).
 
 Axiom. -(x+y) = -x + -y. #Nicht Bewiesen
 Axiom. x*0 = 0. #name finden
-#[prove off]
 
 Proposition. (c + d) + (e  + f) = (c + e) + (f   + d).
 Proof. (c + d) + (e  + f)	= ((c +  d) +  e)  + f 
@@ -98,7 +96,7 @@ Proof.
 	Let x,y be real numbers such that u = (x,y). Then u ++ (0,0) = (x+0,y+0) (by CAdd). (x+0,y+0) = (x,y) = u. 
 qed.
 
-#[prove on]
+
 [prove off]
 Proposition CmpFld5. For every complex number u there exists a complex number v such that u ++ v = (0,0).
 Proof. 
@@ -157,20 +155,21 @@ Let x > y stand for y < x.
 Let x <= y stand for x<y or x=y.
 Let x >= y stand for y <= x.
 
-Axiom. Then x<y or y<x or x = y.
-#Axiom. If x<y then not x=y. #and if x<y then not y<x.
-Axiom. Then not ((x<y and y<x) or (x<y and y=x) or (x=y and y<x)).
+Axiom InEqCompl. Then x<y or y<x or x = y.
+Axiom. If x<y then not x=y. #and if x<y then not y<x.
+#Axiom. Then not ((x<y and y<x) or (x<y and y=x) or (x=y and y<x)).
 Axiom Trans. If x<y and y<z then x<z.
 
+#################################################
 ###Axiome für ordField
 Axiom InEqAdd. If y<z then x+y<x+z.
-Axiom. If x>0 and y>0 then x*y>0.
+Axiom InEqMult. If x>0 and y>0 then x*y>0.
 
 #Bewiesene Aussagen
 Axiom P118d. If not x = 0 then x*x > 0.
 Axiom P118e1. If 0<y then 0 < inv(y).
-#[prove on]
-[prove off]
+
+Axiom SqrtEind. If x*x = y*y and x>=0 and y >= 0 then x=y.
 
 Proposition SqrtMon. If x*x > y*y and x > 0  and y >= 0 then x>y.
 Proof.	Assume x*x > y*y and x>0 and y >= 0.
@@ -180,7 +179,7 @@ Proof.	Assume x*x > y*y and x>0 and y >= 0.
 		x + y > 0.
 		proof. 	x > 0. Then x + y > y.
 				case y > 0. Then x + y > 0 (by Trans). end.
-				case y = 0. Then x + y > 0 . end.
+				case y = 0. Then x + y  > 0 . end.
 		end.
 		Thus inv(x + y) > 0. Hence inv(x + y) * ((x + y) * (x - y)) > 0.
 		We have inv(x + y) * ((x + y) * (x - y)) 
@@ -191,14 +190,23 @@ Proof.	Assume x*x > y*y and x>0 and y >= 0.
 		Hence x + (-y + y) > 0 + y.
 qed.
 
+Lemma LeqTrans. If x<=y and y<=z then x<=z.
+Proof. 	Obvious.
 
 
+Lemma LeqAdd. 	If y <= z then x + y <= x+z.
+Proof.			Case y < z. Then x + y <= x + z (by InEqAdd). end.
+				Case y = z. Then x+y = x+z. end.
+qed.
 
+Lemma LeqAdd2.  If a <= b and c <= d then a+c <= b+d.
+Proof.			Assume a <= b and c <= d. 
+				Case a=b. Then a+c = b+c. b+c <= b+d (by LeqAdd). Thus a+c <= b+d. end.
+				Case a < b. Then c+a < c+b. Thus c+a <= c+b. Hence a+c <= b+c. b+c <= b+d (by LeqAdd).
+							Then a+c <= b+d (by LeqTrans). end.
+qed.
+############################################
 
-
-
-[prove on]
-#[prove off]
 Lemma 21O. If (not x = 0) or (not y = 0) then (x*x) + (y*y)>0.
 Proof. 
 	Assume (not x=0) or (not y=0).
@@ -366,7 +374,7 @@ Proof. 	Let x,y be real numbers such that u = (x,y).
 
 
 Signature. |u| is a real number such that (|u|*|u|,0) = u**Conj(u) and |u| >= 0. 
-Axiom. If (x*x,0) = u**Conj(u) and x >= 0 then x = |u|.
+Axiom  EindAbs. If (x*x,0) = u**Conj(u) and x >= 0 then x = |u|.
 
 
 
@@ -422,7 +430,24 @@ Proof. 	Let x,y be real numbers such that u = (x,y).
 		end.
 qed.
 
-[prove off]
+Lemma AbsMon. Re(u) <= |(Re(u),0)|.
+Proof.
+	Let x,y be real numbers such that u = (x,y).
+	Let v = (x, 0).
+	Then Re(u) = x = Re(v).
+	Case x>0.
+		
+		Then (x*x,0) = v**Conj(v).
+		Then x = |v| (by EindAbs).
+		Then Re(u)=Re(v)=|v|=|(Re(v),0)| = |(Re(u),0)|.
+		Then Re(u) <= |(Re(u),0)|.
+	end.
+	Case x <= 0.
+		Then |(Re(u),0)| >=0.
+		x <= 0 <= |(Re(u),0)|.
+	end.
+qed.
+
 Proposition Abs6. |u ++ v| <= |u| + |v|.
 Proof. (|u ++ v|*|u ++ v|,0)	= (u ++ v) ** Conj(u ++ v) = (u ++ v) ** (Conj(u) ++ Conj(v))
 								=  ((u ++ v) ** Conj(u)) ++ ((u ++ v) ** Conj(v)) 
@@ -441,10 +466,37 @@ Proof. (|u ++ v|*|u ++ v|,0)	= (u ++ v) ** Conj(u ++ v) = (u ++ v) ** (Conj(u) +
 								= ((|u|*|u|) + (|v|*|v|),0+0) ++ (Re(v ** Conj(u))+Re(v ** Conj(u)),0)
 								=(((|u|*|u|) + (|v|*|v|)) + (Re(v ** Conj(u))+Re(v ** Conj(u))), 0 + 0)
 								=(((|u|*|u|) + (|v|*|v|)) + (Re(v ** Conj(u))+Re(v ** Conj(u))), 0 ).
-								Thus |u ++ v|*|u ++ v| = ((|u|*|u|) + (|v|*|v|)) + (Re(v ** Conj(u))+Re(v ** Conj(u))).
-								Re(v ** Conj(u)) <= |(Re(v ** Conj(u)),0)|.
-								Proof. 	Let x,y be real numbers such that v**Conj(u) = (x,y).
+								Thus |u ++ v|*|u ++ v| = (((|u|*|u|) + (|v|*|v|)) + Re(v ** Conj(u))) + Re(v ** Conj(u)).
+								
 
+								Then Re(v ** Conj(u)) <= |(Re(v ** Conj(u)),0)| (by AbsMon). |(Re(v ** Conj(u)),0)| <= |v**Conj(u)| (by Abs5).
+								Hence Re(v ** Conj(u)) <= |v**Conj(u)| (by LeqTrans).
+								Thus ((|u|*|u|) + (|v|*|v|)) + Re(v ** Conj(u)) <= ((|u|*|u|) + (|v|*|v|)) + |v**Conj(u)| (by LeqAdd).
+								Thus (((|u|*|u|) + (|v|*|v|)) + Re(v ** Conj(u))) + Re(v ** Conj(u)) <= (((|u|*|u|) + (|v|*|v|)) + |v**Conj(u)|)+|v**Conj(u)| (by LeqAdd2).
+								(((|u|*|u|) + (|v|*|v|)) + |v**Conj(u)|)+|v**Conj(u)|
+								= ((|u|*|u|) + (|v|*|v|)) + (|v**Conj(u)|+|v**Conj(u)|) 
+								= ((|u|*|u|) + (|v|*|v|)) + ((|v|*|Conj(u)|) + (|v|*|Conj(u)|))
+								= ((|u|*|u|) + (|v|*|v|)) + ((|v|*|u|) + (|v|*|u|))
+								= ((|u|*|u|) + (|v|*|u|)) + ((|v|*|v|) + (|v|*|u|))
+								= ((|u| + |v|) * |u|) + (|v|*(|v|+|u|))
+								= (|u| * (|u| + |v|)) + (|v| * (|u| + |v|))
+								= (|u| + |v|)*(|u| + |v|).
+
+								Hence |u ++ v|*|u ++ v| <= (|u| + |v|)*(|u| + |v|).
+								0 <= |u| and 0 <= |v|. Thus 0 + 0 <= |u| + |v| (by LeqAdd2).
+								Case |u| + |v| > 0. 
+									Case |u ++ v|*|u ++ v| < (|u| + |v|)*(|u| + |v|). 
+										Then (|u| + |v|)*(|u| + |v|) > |u ++ v|*|u ++ v| and |u ++ v| >= 0 and |u| + |v| > 0 .
+										Thus |u ++ v| < |u| + |v| (by SqrtMon). end.
+									Case |u ++ v|*|u ++ v| = (|u| + |v|)*(|u| + |v|). Then |u ++ v| = |u| + |v| (by SqrtEind).end.
+								end.
+								Case |u| + |v| = 0. Thus (|u| + |v|)*(|u| + |v|) = 0. Hence |u ++ v|*|u ++ v| <= 0. 
+													Let us show that |u ++ v| <= 0. 
+													proof. 	Assume |u ++ v| > 0. Then |u ++ v|*|u ++ v| > 0 (by InEqMult). Contradiction.
+															Thus not (|u ++ v| > 0). Hence |u ++ v| < 0 or |u ++ v| = 0 (by InEqCompl).
+													end.
+													Thus |u ++ v| <= |u| + |v|.
 								end.
 qed.
-[prove on]
+
+
