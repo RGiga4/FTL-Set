@@ -1,8 +1,8 @@
 [set/-s] [element/-s] [number/-s]
 Signature. A real number is a notion.
-
 #Let F denote an ordered field.
 Let x,y,z,a,b,c,d,e,f,g,h,j,k,r,s denote real numbers.
+[prove off]
 
 ###Axiome fur field
 
@@ -64,9 +64,11 @@ Let u,v,w, u2 denote complex numbers.
 Signature. Let x,y be real numbers. (x,y) is a complex number.
 Signature. u ++ v is a complex number.
 Signature. u ** v is a complex number.
+Signature. ~u is a complex number.
 Axiom. If u is a complex number then there exist real numbers x,y such that u = (x,y).
 Axiom CAdd. (x, y) ++ (a, b) = (x + a, y + b) .
 Axiom CMult. (x, y) ** (a, b) = ((x*a) - (y*b), (x*b) + (y*a)).
+Axiom CNeg. ~(x,y) = (-x,-y).
 
 
 
@@ -97,15 +99,12 @@ Proof.
 qed.
 
 
-[prove off]
-Proposition CmpFld5. For every complex number u there exists a complex number v such that u ++ v = (0,0).
-Proof. 
-	Assume x,y be real numbers such that u = (x,y). Let v = (-x, -y). Then  u ++ v = (x-x, y-y)(by CAdd) . (x-x, y-y) = (0,0). 
-	Then v is a complex number such that u++v = (0,0).
-	v is a complex number.
-	For every complex number u2 there exists a complex number w such that u2 ++ w = (0,0).
+Proposition CmpFld5. u ++ ~u = (0,0).
+Proof. Let u be a complex number.
+	Assume x,y be real numbers such that u = (x,y). Then ~u = (-x, -y). Then  u ++ ~u = (x-x, y-y)(by CAdd). Thus u ++ ~u = (x-x, y-y) = (0,0).
+	Hence the thesis. 
 qed.
-[prove on]
+
 Proposition CmpFld6. u**v = v**u.
 Proof. Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
 Then u**v =  ((x*a) - (y*b), (x*b) + (y*a)) =  ((a*x) - (b*y), (a*y) + (b*x)) = v**u. Then u**v = v**u. qed.
@@ -332,6 +331,13 @@ Proof. 	Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
 		Then Conj(u ++ v) = Conj((x+a,y+b)) = (x+a,-(y+b)) = (x+a, -y + -b) = (x,-y) ++ (a,-b) = Conj(u) ++ Conj(v).
 		Then Conj(u++v) = Conj(u) ++ Conj(v).
 qed.		
+
+Proposition Conj11. Conj(~u) = ~Conj(u).
+Proof. 	Let x,y be real numbers such that u = (x,y). Then Conj(~u) = Conj((-x,-y)) = (-x,--y) = (-x,y) = ~(x,-y) = ~Conj((x,y)) = ~Conj(u).
+		Hence Conj(~u) = ~Conj(u).
+
+qed.
+
 Proposition Conj2. Conj(u**v) = Conj(u) ** Conj(v).
 Proof. 	Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
 		Then u ** v = ((x*a)-(y*b),(x*b)+(y*a)) (by CMult).
@@ -366,6 +372,20 @@ Proof.	Let not u = (0,0).
 		u**Conj(u) = (x,y)**Conj((x,y)) = (x,y)**(x,-y) = ((x*x) - (y*(-y)) , (x*(-y)) + (y*x)) = ((x*x) + -(-(y*y)) , -(x*y) + (x*y)) = ((x*x) + (y*y), 0) = (z,0).
 		z is a real number.
 		Then z is a real number and (z>0 and u**Conj(u) = (z,0)).
+qed.
+
+Lemma Conj41.	Re(u**Conj(u)) >= 0.
+Proof. 			Case not u = (0,0).
+					Take z such that ( z>0 and u**Conj(u) = (z,0)) (by Conj4). Then Re(u**Conj(u)) = z > 0. end.
+				Case u = (0,0). 
+					Then u**Conj(u) = (0,0). Thus Re(u) = 0 >= 0. end.
+qed.
+
+Lemma Conj42. Im(u**Conj(u)) = 0.
+Proof.			Case not u = (0,0).
+					Take z such that ( z>0 and u**Conj(u) = (z,0)) (by Conj4). Then Im(u**Conj(u)) = 0. end.
+				Case u = (0,0). 
+					Then u**Conj(u) = (0,0). Thus Im(u) = 0. end. 
 qed.
 
 Proposition Conj5. Conj(Conj(u)) = u.
@@ -500,3 +520,118 @@ Proof. (|u ++ v|*|u ++ v|,0)	= (u ++ v) ** Conj(u ++ v) = (u ++ v) ** (Conj(u) +
 qed.
 
 
+
+[sum/-s] [dimension/-s]
+
+Signature NatSort.  A natural number is a notion.
+
+Let l,m,n denote natural numbers.
+
+Signature ZeroNat.  00 is a natural number.
+
+Let n is nonzero stand for n != 00.
+
+Signature SuccNat.   succ n is a nonzero natural number.
+
+Axiom NatExtr.      Let m be a nonzero natural number. Then there exists n such that m = succ n.
+
+Axiom SuccEqu.      succ m = succ n => m = n.
+
+Signature IHOrd.    m -<- n is an atom.
+Axiom IH.           n -<- succ n.
+
+
+Signature VcSort.   A sum is a notion.
+
+Let p,q,r,s,t denote sums.
+
+Signature DimNat.   The length of t is a natural number.
+
+Let Len t stand for the length of t.
+
+Signature ElmSc.    t[n] is a complex number.
+
+Definition DefInit. Let Len t != 00.
+  init t is a sum such that succ Len init t = Len t
+      and for every natural number n  (init t)[n] = t[n].
+
+Lemma EqInit.   Let Len p = Len q != 00.
+                Then Len init p = Len init q .
+
+Signature DefEval. Eval p is a complex number.
+
+Axiom DefSPZ.   Let Len p = 00.
+                Eval p = (0,0).
+
+Axiom DefSPN.   Let Len p != 00.
+                Eval p  = Eval init p ++ p[Len p].
+
+Signature SumCMult. 	u " t is a sum such that Len (u"t) = Len t and forall n (u"t)[n] = u ** t[n].
+
+Signature. t +' s is a sum.
+Axiom SumAdd. 	Let Len t = Len s. Then  Len (t +' s) = Len t and forall n (t +' s)[n] = t[n] ++ s[n].
+
+Signature. 	t *' s is a sum.
+Axiom SumMult. 	Let Len t = Len s. Then Len (t *' s) = Len t and forall n (t *' s)[n] = t[n] ** s[n].
+
+Signature SumAbs. absq t is a sum such that Len absq t = Len t and forall n (absq t)[n] = t[n]**Conj(t[n]).
+Signature SumNeg. ~'t is a sum such that Len ~'t = Len t and forall n (~'t)[n] = ~t[n].
+
+Axiom Eval. 	If (forall n t[n] = s[n]) and Len t = Len s then Eval t = Eval s.
+Axiom SumDistr. Eval (u"t) = u ** (Eval t).
+Axiom SumAdd. 	Eval (t +' s) = (Eval t) ++ (Eval s). 
+Axiom SumReal. 	If (forall n Im(t[n]) = 0) then Im(Eval t) = 0.
+Let sq x stand for x ** x.
+
+#[prove on]
+
+Lemma. (~u ** ~v) = u**v.
+Proof. 	Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
+		(~u ** ~v) 	= (-x,-y) ** (-a,-b) = ((-x*-a) - (-y*-b), (-x*-b) + (-y*-a))
+					= (-(x*-a) - -(y*-b), -(x*-b) + -(y*-a))
+					= (--(x*a) - --(y*b), --(x*b) + --(y*a))
+					= ((x*a) - (y*b), (x*b) + (y*a))
+					= u ** v.
+		Hence the thesis.
+qed.
+[prove off]
+Lemma. (u ** ~v) = ~(u**v) = (~u ** v). 
+[prove on]
+
+Theorem Cauchy. Let Len p = Len q = Len t = m.
+				Let t[n] = Conj(p[n]) ** q[n]. 
+				Then |Eval t| <= Re(Eval r ** Eval s).
+Proof.
+	Take a complex number A equal to Eval absq p.
+	Take a complex number B equal to Eval absq q.
+	Take a complex number C equal to Eval t.
+
+	(absq p)[n] = p[n]**Conj(p[n]). Thus Im((absq p)[n]) = 0. Hence Im(Eval absq p) = 0.
+	Take a real number x such that A = (x,0). Then Conj(A) = A. 
+
+	(absq q)[n] = q[n]**Conj(q[n]). Thus Im((absq q)[n]) = 0. Hence Im(Eval absq q) = 0.
+	Take a real number y such that B = (y,0). Then Conj(B) = B. 
+	Let s[n] = Conj(s[n]) and Len s = Len t
+	(absq ((B"p) +' ~'(C"q)))[n] 
+	= ((B"p) +' ~'(C"q))[n] ** Conj(((B"p) +' ~'(C"q))[n])
+	= ((B"p)[n] ++ (~'(C"q))[n]) ** Conj((B"p)[n] ++ (~'(C"q))[n])
+	= ((B"p)[n] ++ ~((C"q)[n])) ** Conj((B"p)[n] ++ ~((C"q)[n]))
+	= ((B**p[n]) ++ ~(C**q[n]) ) ** Conj((B**p[n]) ++ ~(C**q[n]))
+	= ((B**p[n]) ++ ~(C**q[n]) ) ** (Conj(B**p[n]) ++ Conj(~(C**q[n])))
+	= ((B**p[n]) ++ ~(C**q[n]) ) ** ((Conj(B)**Conj(p[n])) ++ Conj(~(C**q[n])))
+	= ((B**p[n]) ++ ~(C**q[n]) ) ** ((B**Conj(p[n])) ++ Conj(~(C**q[n])))
+	= ((B**p[n]) ++ ~(C**q[n]) ) ** ((B**Conj(p[n])) ++ ~Conj(C**q[n]))
+	= (((B**p[n]) ++ ~(C**q[n]) ) ** (B**Conj(p[n]))) ++ (((B**p[n]) ++ ~(C**q[n]) ) ** ~Conj(C**q[n]))
+	= ((B**Conj(p[n])) ** ((B**p[n]) ++ ~(C**q[n]) ) ) ++ ( ~Conj(C**q[n]) ** ((B**p[n]) ++ ~(C**q[n])) )
+	= (((B**Conj(p[n])) ** (B**p[n])) ++ ((B**Conj(p[n])) ** ~(C**q[n])) )  ++ (( ~Conj(C**q[n]) **(B**p[n])) ++ (~Conj(C**q[n]) ** ~(C**q[n])))
+	= (((B**Conj(p[n])) ** (B**p[n])) ++ ~((B**Conj(p[n])) ** (C**q[n])) )  ++ (~(Conj(C**q[n]) **(B**p[n])) ++ (Conj(C**q[n]) ** (C**q[n])))
+	= (((B**B) ** (Conj(p[n])**p[n])) ++ ~((B**C) ** (Conj(p[n])**q[n])) )  ++ (~(Conj(C**q[n]) **(B**p[n])) ++ (Conj(C**q[n]) ** (C**q[n])))
+	= (((B**B) ** (Conj(p[n])**p[n])) ++ ~((B**C) ** (Conj(p[n])**q[n])) )  ++ (~((Conj(C)**Conj(q[n])) **(B**p[n])) ++ ((Conj(C)**Conj(q[n])) ** (C**q[n])))
+	= (((B**B) ** (Conj(p[n])**p[n])) ++ ~((B**C) ** (Conj(p[n])**q[n])) )  ++ (~((Conj(C)**B) **(Conj(q[n])**p[n])) ++ ((Conj(C)**C) ** (Conj(q[n])**q[n])))
+	= (((B**B) ** (Conj(p[n])**p[n])) ++ ~((B**C) ** (Conj(p[n])**q[n])) )  ++ (~((Conj(C)**B) **(Conj(q[n])**p[n])) ++ ((Conj(C)**C) ** (Conj(q[n])**q[n])))
+	= (((B**B) ** (Conj(p[n])**p[n])) ++ ~((B**C) ** t[n]) )  ++ (~((Conj(C)**B) ** (Conj(Conj(p[n])**q[n]))) ++ ((Conj(C)**C) ** (Conj(q[n])**q[n])))
+	= (((B**B) ** (Conj(p[n])**p[n])) ++ ~((B**C) ** t[n]) )  ++ (~((Conj(C)**B) ** (Conj(t[n]))) ++ ((Conj(C)**C) ** (Conj(q[n])**q[n])))
+	= (((B**B) ** (absq p)[n]) ++ ~((B**C) ** t[n]) )  ++ (~((Conj(C)**B) ** (Conj(t[n]))) ++ ((Conj(C)**C) ** (absq q)[n]))
+	= (((B**B)"(absq p))[n] ++ ~(((B**C)"t)[n]) )  ++ (~((Conj(C)**B) ** (s[n])) ++ ((Conj(C)**C) ** (absq q)[n]))
+	= (((B**B)"(absq p))[n] ++ (~'((B**C)"t))[n]) )  ++ (~(((Conj(C)**B)"s)[n]) ++ (((Conj(C)**C)"(absq q))[n])).
+qed.
