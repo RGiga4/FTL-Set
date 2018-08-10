@@ -44,7 +44,7 @@ Axiom D. Let x,y,z be elements of car(AM). Then mul(AM)[(x,  add(AM)[(y,z)])] = 
 Proposition P114a. #Auto
 	Let x,y,z be elements of car(AM). If add(AM)[(x,y)] = add(AM)[(x,z)] then y = z.
 Proof.
-	Let x,y,z be elements of car(AM). Assume add(AM)[(x,y)] = add(AM)[(x,z)].
+	Assume add(AM)[(x,y)] = add(AM)[(x,z)].
 	Then y  = add(AM)[(zero(AM), y)] 
 			= add(AM)[(add(AM)[(neq(AM)[x], x)],y)]
 			= add(AM)[(neq(AM)[x], add(AM)[(x,y)])]
@@ -58,14 +58,14 @@ Proposition P114b.
 Proposition P114c. #Auto
 	Let x,y be elements of car(AM). If add(AM)[(x,y)] = zero(AM) then y = neq(AM)[x].
 Proof.
-	Let x,y be elements of car(AM). Assume add(AM)[(x,y)] = zero(AM).
-	Let z be neq(AM)[x]. Then add(AM)[(x,z)] = zero(AM).
+	Assume add(AM)[(x,y)] = zero(AM).
+	Take z = neq(AM)[x]. Then add(AM)[(x,z)] = zero(AM).
 	Then add(AM)[(x,z)] = add(AM)[(x,y)]. Then y = neq(AM)[x] (by P114a).
 qed.
 Proposition P114d. #Auto
 	Let x be elements of car(AM). neq(AM)[neq(AM)[x]] = x.
 Proof.
-	Let x be element of car(AM).Then add(AM)[(neq(AM)[x], x)] = zero(AM).
+	Then add(AM)[(neq(AM)[x], x)] = zero(AM).
 	Then neq(AM)[neq(AM)[x]] = x (by P114c).
 qed.
 
@@ -84,7 +84,6 @@ Proposition.
 Proposition P116a. #Auto
 	Let x be elements of car(AM). mul(AM)[(zero(AM), x)] = zero(AM).
 Proof.
-	Let x be element of car(AM).
 	Then add(AM)[(mul(AM)[(zero(AM), x)], mul(AM)[(zero(AM), x)])]
 		= mul(AM)[(add(AM)[(zero(AM),zero(AM))], x)]
 		= mul(AM)[(zero(AM), x)].
@@ -93,7 +92,7 @@ qed.
 Proposition P116b. #Auto
 	Let x,y be elements of car(AM). If x is not equal to zero(AM) and y is not equal to zero(AM) then mul(AM)[(x,y)] is not equal to zero(AM).
 Proof.
-	Let x,y be elements of car(AM). Assume x is not equal to zero(AM) and y is not equal to zero(AM).
+	Assume x is not equal to zero(AM) and y is not equal to zero(AM).
 	Assume the contrary.
 
 	Then one(AM) = mul(AM)[(mul(AM)[(inv(AM)[x],inv(AM)[y])],mul(AM)[(x,y)])]
@@ -106,26 +105,22 @@ Lemma. #(-x)y + xy = (-x + x)y = 0  #Extra
  
 Proposition P116c. #Extra
 	Let x,y be elements of car(AM). mul(AM)[(neq(AM)[x], y)] = neq(AM)[mul(AM)[(x,y)]] = mul(AM)[(x, neq(AM)[y])].
-Proof. 
-	Let x,y,a,b be elements of car(AM).
+Proof.
 	# (-x)y + xy = (-x+x)y = 0y = 0
-	Assume add(AM)[(mul(AM)[(neq(AM)[x], y)],mul(AM)[(x,y)])] = zero(AM).
-	Assume a = mul(AM)[(neq(AM)[x], y)] and b = mul(AM)[(x,y)].
-	Then add(AM)[(a,b)] = zero(AM).
-	Then a = neq(AM)[b].
-	Then mul(AM)[(neq(AM)[x], y)] = neq(AM)[mul(AM)[(x,y)]].
+	Let us show that mul(AM)[(neq(AM)[x], y)] = neq(AM)[mul(AM)[(x,y)]].
+		Then add(AM)[(mul(AM)[(neq(AM)[x], y)],mul(AM)[(x,y)])] = zero(AM).
+		Take a = mul(AM)[(neq(AM)[x], y)] and b = mul(AM)[(x,y)].
+		Then add(AM)[(a,b)] = zero(AM).
+		Then a = neq(AM)[b].
+		Then mul(AM)[(neq(AM)[x], y)] = neq(AM)[mul(AM)[(x,y)]].
+	end.
+	mul(AM)[(neq(AM)[x], y)] = neq(AM)[mul(AM)[(x,y)]]
+		= neq(AM)[mul(AM)[(y,x)]]
+		= mul(AM)[(neq(AM)[y], x)]
+		= mul(AM)[(x, neq(AM)[y])].
 qed.
 Proposition P116d.
 	Let x,y be elements of car(AM). mul(AM)[(neq(AM)[x], neq(AM)[y])] = mul(AM)[(x,y)].
 
 
 
-#Signature. An ordered field is a notion.
-
-#Axiom O1. Let F be an ordered field. Then F is addmult structure.
-#Let F denote an ordered field. 
-#Axiom O2. Let x, y, z be elements of car(F). Then x is element of car(F).
-
-
-#Proposition.
-#	Contradiction.

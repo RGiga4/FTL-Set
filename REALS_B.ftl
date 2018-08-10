@@ -117,9 +117,9 @@ Axiom VK3. if m-1<=x<m and x<m2 then m<=m2.
 Proposition P120b. if x < y then exists q   x<q<y.
 Proof.
 	Assume x < y.
-	Let z = y-x.Then z >0.
+	Take z = y-x.Then z >0.
 	Take n  such that n*z>1 (by P120a).
-	Let v = n*x.Then 1 is a real number. then 1>0.
+	Take v = n*x.Then 1 is a real number. then 1>0.
 	Take m1 such that m1*1>v (by P120a).
 	Take m2 such that m2*1>-v (by P120a).
 	Then m2>-v.	
@@ -127,7 +127,7 @@ Proof.
 	Then -m2<n*x<m1.
 	Take m such that m-1<=v<m.
 	Then -m2<=v<m1.
-	Let mt = -m2.
+	Take mt = -m2.
 	Then m-1<=v<m and mt<=v<m1.
 	Then mt<=m  . 
 	Then m<=m1 .
