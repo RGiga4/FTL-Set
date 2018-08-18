@@ -114,6 +114,7 @@ Let m, m1, m2, mt denote integer.
 Axiom VK1. for every x exists m m-1<=x<m.
 Axiom VK2. if m-1<=x<m and m1<=x<m2 then m1<=m and m<=m2.
 Axiom VK3. if m-1<=x<m and x<m2 then m<=m2.
+
 Proposition P120b. if x < y then exists q   x<q<y.
 Proof.
 	Assume x < y.

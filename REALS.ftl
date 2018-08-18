@@ -142,7 +142,7 @@ Definition least_upper_bound_property.
 
 Axiom. REL is lub.
 AXiom. If x-y = z then x =z+y. 
-
+[prove off]
 
 Proposition P120a. If x>0 and y is element of REL then exists n  n*x>y.
 Proof.
@@ -161,7 +161,46 @@ Proof.
 	Then (m+1)*x is element of J.
 	A Contradiction.
 qed.
+[prove on]
+Let q denote rational number.
+Let m, m1, m2,j, mt denote integer.
 
+Axiom VK2. if m-1<=x<m and m1<=x<m2 then m1<=m and m<=m2.
+Axiom VK4. If x>-y then y>-x.
+Axiom VK7. not (m-1<j<m).
+
+Axiom VK5. for every real number x exists m m-1<=x<m.
+Proposition P120b. if x < y then exists q   x<q<y.
+Proof.
+	Assume x < y.
+	Take z = y-x.Then z >0.
+	Take n  such that n*z>1 (by P120a).
+	Take v = n*x.
+	Then 1>0.
+	Take m1 such that m1*1>v (by P120a).
+	Take m2 such that m2*1>-v (by P120a).
+	#Then m2>-v.	
+	#Then v > -m2.
+	Then -m2<n*x<m1.
+	Take m such that m-1<=v<m.
+	Then -m2<=v<m1. # wichtig
+	#Take mt = -m2.
+	#Then m-1<=v<m and mt<=v<m1.
+	#Then mt<=m  . 
+	Then m<=m1.
+	Then -m2<=m<=m1. 
+	Then n*x<m.
+	Then m<=1+(n*x).
+	Then n*z = n*(y-x)=(n*y)-(n*x).
+	Then (n*y)-(n*x)>1.
+	Then 1+(n*x)<n*y.
+	Then n*x<m<n*y.  #wichtig
+	
+	Then x<m*inv(n)<y. #wichtig
+	
+	
+	
+qed.
 
 
 

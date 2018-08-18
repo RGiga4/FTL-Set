@@ -225,7 +225,92 @@ Let x > y stand for y < x.
 Let x <= y stand for x<y or x=y.
 Let x >= y stand for y <= x.
 
-######Copy in ordered_field.ftl
+
+
+
+###Axiome fur ordfield
+
+Axiom A1. If y<z then x+y<x+z.
+Axiom A2. If x>0 and y>0 then x*y>0.
+
+Proposition P118a. If x>0 then -x<0. #Auto
+Proof.
+	Assume x>0. Then 0= -x + x > -x + 0.
+	Then -x<0.
+qed.
+Proposition P118a2. If x<0 then -x>0. #Auto
+Proof.
+	Assume x<0. Then 0= -x + x < -x + 0.
+	Then -x>0.
+qed.
+Proposition P118b. If x>0 and y<z then x*y<x*z.
+Proof.
+	Assume x>0 and y<z. Then z-y > y-y = 0.
+	Then x*(z-y)>0.
+	Then x*z = (x*(z-y))+(x*y).# war Hard
+
+	Take a = x*(z-y) and b = x*y.
+	Then a>0.
+	Then x*z = a + b > 0+b = (x*y).
+	
+	Then x*z > x*y.
+qed.
+Proposition P118c. If x<0 and y<z then x*y>x*z.
+Proof.
+	Assume x<0 and y<z.
+	Then -x>0 (by P118a2).
+	Then z-y>0. # Kein Hinweis geben
+	Then -(x*(z-y)) = (-x)*(z-y) (by P116c).
+	Then (-x)*(z-y) > 0.
+	Then x*(z-y) < 0.
+	Then (x*z) - (x*y) < 0.
+	
+	Take a = (x*z) and b = - (x*y).
+	Then a+b<0.
+	Then a < -b.
+	
+	Then x*z < x*y.
+qed.
+
+Proposition P118d. If not x = 0 then x*x > 0.
+Proof.
+	Case x>0. Then x*x > 0.
+	end.
+	Case x<0. Then -x>0. Then x*x = (-x)*(-x)>0.
+	end.
+
+qed.
+Lemma. 1>0. #Auto
+Proof.
+	Then 1 = 1*1 > 0 (by P118d, M42).#keine Hinweise
+qed.
+
+Proposition P118e1. If 0<y then 0 < inv(y).#Auto
+Proof.
+(1) Assume the contrary.
+	Then y*inv(y) <= 0.
+	Then y*inv(y) = 1 > 0.
+	Contradiction.
+
+qed.
+Proposition P118e2. If 0<x<y then 0 < inv(y)<inv(x).
+Proof. 
+	Assume 0<x<y.Then 0<inv(y) and 0<inv(x).# Ab hier Auto
+	Then inv(x)*inv(y)>0.
+	Take a = inv(y)*inv(x).	
+	Then x<y. Then x*a<y*a.
+	Then x*(inv(x)*inv(y))< y*(inv(x)*inv(y)).
+	Then (x*inv(x))*inv(y)< (y*inv(y))*inv(x).#leicht Extra
+	Then inv(y) < inv(x).
+	
+qed.
+
+
+
+
+
+
+
 
 
 
