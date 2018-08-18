@@ -30,7 +30,6 @@ Axiom A2. Let x, y are elements of car(AM). Then add(AM)[(x,y)] = add(AM)[(y,x)]
 Axiom A3. Let x, y, z are elements of car(AM). Then add(AM)[(add(AM)[(x,y)],z)] = add(AM)[(x,add(AM)[(y,z)])].
 Axiom A4. Let x is element of car(AM). Then add(AM)[(x,zero(AM))] = x.
 Axiom A5. Let x is element of car(AM). Then add(AM)[(x,neq(AM)[x])] = zero(AM).
-#Signature Neg. Let x is element of car(AM). -x is element of car(AM) such that add(AM)[(x,-x)] = zero(AM).
 
 Axiom M1. Let x, y are elements of car(AM). Then mul(AM)[(x,y)] is element of car(AM).
 Axiom M2. Let x, y are elements of car(AM). Then mul(AM)[(x,y)] = mul(AM)[(y,x)].
@@ -40,6 +39,12 @@ Axiom M42. Let x is element of car(AM). Then mul(AM)[(x,one(AM))] = x.
 Axiom A5. Let x is element of car(AM). If x is not equal to zero(AM) then mul(AM)[(x,inv(AM)[x])] = one(AM).
 
 Axiom D. Let x,y,z be elements of car(AM). Then mul(AM)[(x,  add(AM)[(y,z)])] = add(AM)[(mul(AM)[(x,y)],mul(AM)[(x,z)])].
+
+#Look up
+#A2 Komm x+y = y+x
+#A3 Assoz
+#A4 x+0 = x
+#A5 x-x = 0
 
 Proposition P114a. #Auto
 	Let x,y,z be elements of car(AM). If add(AM)[(x,y)] = add(AM)[(x,z)] then y = z.
@@ -53,6 +58,7 @@ Proof.
 			= add(AM)[(zero(AM), z)]
 			= z.
 qed.
+
 Proposition P114b.
 	Let x,y be elements of car(AM). If add(AM)[(x,y)] = x then y = zero(AM).
 Proposition P114c. #Auto
