@@ -98,7 +98,7 @@ qed.
 
 
 
-
+##### FIELD
 Signature. A field is a notion.
 
 Let x,y,z denote real numbers.
@@ -220,14 +220,12 @@ Proposition P116d.
 
 Let x - y stand for x + (-y).
 
-Signature. x < y is an atom.
+
 Let x > y stand for y < x.
 Let x <= y stand for x<y or x=y.
 Let x >= y stand for y <= x.
 
-Axiom. Then x<y or y<x or x = y.
-Axiom. Then not ((x<y and y<x) or (x<y and y=x) or (x=y and y<x)).
-Axiom. If x<y and y<z then x<z.
+######Copy in ordered_field.ftl
 
 
 

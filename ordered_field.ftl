@@ -20,7 +20,7 @@ Axiom. x*y = y*x.
 Axiom. (x*y)*z = x*(y*z).
 Signature. 1 is a field element such that for every field element x x*1 = x.
 Signature. Assume not x = 0. inv(x) is a field element such that inv(x)*x = 1.
-Axiom. 1 is not equal to 0.
+Axiom M42. 1 is not equal to 0.
 
 Axiom. x*(y+z)=(x*y)+(x*z).
 
@@ -101,7 +101,7 @@ Proof.
 qed.
 Lemma. 1>0. #Auto
 Proof.
-	Then 1 = 1*1 > 0 .#keine Hinweise
+	Then 1 = 1*1 > 0 (by P118d, M42).#keine Hinweise
 qed.
 
 Proposition P118e1. If 0<y then 0 < inv(y).#Auto
