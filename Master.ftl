@@ -7,7 +7,7 @@ Axiom. every real numbers is element of REL.
 
 
 
-
+[prove off]
 
 
 Let S,T,A,B,C denote sets.
@@ -304,6 +304,42 @@ Proof.
 	Then inv(y) < inv(x).
 	
 qed.
+
+
+#### Axiome Naturliche Zahlen
+Signature. A natural number is a real number.
+
+Definition NatSet.
+NAT is the set of natural numbers.
+
+Axiom. 0 is natural number.
+Let n denote a natural number.
+Axiom. n+1 is a natural number.
+
+Axiom R. REL is lub.
+[prove on]
+
+Proposition P120a. If x>0 and y is element of REL then exists n  n*x>y.
+Proof.
+	Assume x>0 and y is element of REL.
+(1)	Assume the contrary.	
+	Define J = {g*x | g is natural number}.
+	Then J is bounded above.
+	Take an element al of REL such that al is supremum of J.
+	Then al-x is not an upper bound of J.
+	Take element beta of J such that al-x<beta.
+	Take natural number m such that beta = m*x.
+	Then al-x<m*x. Then al <(m*x)+x.	
+	Then al<(m+1)*x.
+	Then m+1 is natural number.
+	Then (m+1)*x is element of J.
+	A Contradiction.
+qed.
+
+
+
+
+
 
 
 
