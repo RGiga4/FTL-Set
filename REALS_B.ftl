@@ -76,10 +76,10 @@ Signature. A natural number is a real number.
 Definition NatSet.
 NAT is the set of natural numbers.
 
-Axiom. 0 is natural number.
+Axiom. 1 is natural number.
 Let n denote a natural number.
 Axiom. n+1 is a natural number.
-
+Axiom. 0 is not a natural number.
 #### Axiome ganze Zahlen
 Signature. A integer is a real number.
 
@@ -114,7 +114,8 @@ Let m, m1, m2, mt denote integer.
 Axiom VK1. for every x exists m m-1<=x<m.
 Axiom VK2. if m-1<=x<m and m1<=x<m2 then m1<=m and m<=m2.
 Axiom VK3. if m-1<=x<m and x<m2 then m<=m2.
-
+Axiom VK7. if n*x<m then x<m*inv(n).
+Axiom VK8. if m<n*y then m*inv(n)<y.
 Proposition P120b. if x < y then exists q   x<q<y.
 Proof.
 	Assume x < y.
@@ -139,7 +140,7 @@ Proof.
 	Then 1+(n*x)<n*y.
 	Then n*x<m<n*y.
 	Then n is natural number.
-	Then n is real number.
+	Then n is not 0.
 	Then x<m*inv(n)<y.
 	
 	
