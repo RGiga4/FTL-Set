@@ -142,7 +142,7 @@ Definition least_upper_bound_property.
 
 Axiom. REL is lub.
 AXiom. If x-y = z then x =z+y. 
-[prove off]
+
 
 Proposition P120a. If x>0 and y is element of REL then exists n  n*x>y.
 Proof.
@@ -151,7 +151,6 @@ Proof.
 	Define J = {g*x | g is natural number}.
 	Then J is bounded above.
 	Take an element al of REL such that al is supremum of J.
-	Then al-x<al.
 	Then al-x is not an upper bound of J.
 	Take element beta of J such that al-x<beta.
 	Take natural number m such that beta = m*x.
@@ -161,7 +160,7 @@ Proof.
 	Then (m+1)*x is element of J.
 	A Contradiction.
 qed.
-[prove on]
+[prove off]
 Let q denote rational number.
 Let m, m1, m2,j, mt denote integer.
 
