@@ -100,7 +100,6 @@ Axiom. Let m be an element of ZS and n be an element of NAT. then m*inv(n) is a 
 Signature. A natural number is an integer.
 
 
-
 Axiom. If x-y = z then x =z+y. 
 Axiom. If x>-y then y>-x. 
 
@@ -112,9 +111,12 @@ Axiom P120a. If x>0 and y is element of REL then exists n  n*x>y.
 
 Let q denote an element of QS.
 Let m, m1, m2, mt denote integer.
+### Axiome uber ganze Zahlen
 Axiom VK1. for every x exists m m-1<=x<m.
 Axiom VK2. if m-1<=x<m and m1<=x<m2 then m1<=m and m<=m2.
 Axiom VK3. if m-1<=x<m and x<m2 then m<=m2.
+
+### wenigsten Bewiesen
 Axiom VK7. if n*x<m then x<m*inv(n).
 Axiom VK8. if m<n*y then m*inv(n)<y.
 
@@ -141,7 +143,6 @@ Proof.
 	Then (n*y)-(n*x)>1.
 	Then 1+(n*x)<n*y.
 	Then n*x<m<n*y.
-	Then n is natural number.
 	Then n is not 0.
 	Then x<m*inv(n)<y.
 	
