@@ -313,12 +313,39 @@ Definition NatSet.
 NAT is the set of natural numbers.
 
 Axiom. 0 is natural number.
-Let n denote a natural number.
+Let n, m denote a natural number.
 Axiom. n+1 is a natural number.
+Axiom. n >=0.
 
-Axiom R. REL is lub.
+Signature. a natural number is a real number.
+#Axiom R. REL is lub.
 [prove on]
 
+###VK-Abteilung
+
+Proposition VK7. Let n be a natural number and not n=0. If n*x<m then x<m*inv(n).
+Proof.
+	Assume n*x<m.
+	n > 0.
+	inv(n) > 0 (by P118e1).
+	inv(n)*(n*x)<inv(n)*m (by P118b).
+	(x*n)*inv(n)<m*inv(n).
+	x*(n*inv(n))<m*inv(n).
+	x*1<m*inv(n).
+	x<m*inv(n).
+qed.
+Proposition VK8. Let n be a natural number and not n=0. if m<n*y then m*inv(n)<y.
+Proof.
+	Assume m<n*y.
+	n > 0.
+	inv(n) > 0 (by P118e1).
+	inv(n)*m<inv(n)*(n*y) (by P118b).
+	m*inv(n)<(n*inv(n))*y.
+	m*inv(n)<1*y.
+	m*inv(n)<y.
+qed.
+
+[prove off]
 Proposition P120a. If x>0 and y is element of REL then exists n  n*x>y.
 Proof.
 	Assume x>0 and y is element of REL.

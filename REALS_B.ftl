@@ -80,6 +80,7 @@ Axiom. 1 is natural number.
 Let n denote a natural number.
 Axiom. n+1 is a natural number.
 Axiom. 0 is not a natural number.
+Axiom. n >=0.
 #### Axiome ganze Zahlen
 Signature. A integer is a real number.
 
