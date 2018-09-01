@@ -82,26 +82,11 @@ Definition upperBound.
 	Assume A is a subset of REL.
 	An upper bound of A is an element b of REL such that ( y<b or y = b ) for every element y of A.
 
-Definition lowerBound.
-	Assume A is a subset of REL.
-	A lower bound of A is an element b of REL such that ( b<y or y = b ) for every element y of A.
-
 Definition Supremum.
     Assume A is a subset of REL.
 	Let s be an element of REL.
     s is supremum of A  iff s is an upper bound of A 
 		and for every element x of REL if x<s then x is not an upper bound of A .
-
-Definition Infimum.
-	Assume A is a subset of REL.
-	Let s be an element of REL.
-    s is infimum of A  iff s is an lower bound of A 
-		and for every element x of REL if s<x then x is not an lower bound of A .
-
-Definition BoundedBelow.
-	Assume A is a subset of REL.
-	A is bounded below  iff 
-		there exists an element b of REL such that b is a lower bound of A .
 
 Definition BoundedAbove.
 	Assume A is a subset of REL.
@@ -129,7 +114,6 @@ Proof.
 	Take natural number m such that beta = m*x.
 	Then al-x<m*x. Then al <(m*x)+x.	
 	Then al<(m+1)*x.
-	Then m+1 is natural number.
 	Then (m+1)*x is element of J.
 	A Contradiction.
 qed.

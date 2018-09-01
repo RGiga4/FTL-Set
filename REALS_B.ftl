@@ -86,7 +86,7 @@ Signature. A integer is a real number.
 Definition ZSet.
 ZS is the set of integer.
 Let i,j denote integer.
-Axiom. if (not i=j) then (i-j>=1) or (i-j<=1).
+#Axiom. if (not i=j) then (i-j>=1) or (i-j<=1).
 
 #### Axiome ratio Zahlen
 Signature. A rational number is a real number.
@@ -94,10 +94,10 @@ Signature. A rational number is a real number.
 Definition QSet.
 QS is the set of rational numbers.
 
-Axiom. Let m be an element of ZS and n be an element of NAT and (not n = 0). then m*inv(n) is a rational number.
+Axiom. Let m be an element of ZS and n be an element of NAT. then m*inv(n) is a rational number.
 
 Signature. A natural number is an integer.
-Signature. An integer is a real number.
+
 
 
 Axiom. If x-y = z then x =z+y. 
@@ -116,6 +116,7 @@ Axiom VK2. if m-1<=x<m and m1<=x<m2 then m1<=m and m<=m2.
 Axiom VK3. if m-1<=x<m and x<m2 then m<=m2.
 Axiom VK7. if n*x<m then x<m*inv(n).
 Axiom VK8. if m<n*y then m*inv(n)<y.
+
 Proposition P120b. if x < y then exists q   x<q<y.
 Proof.
 	Assume x < y.
@@ -124,16 +125,16 @@ Proof.
 	Take v = n*x.Then 1 is a real number. then 1>0.
 	Take m1 such that m1*1>v (by P120a).
 	Take m2 such that m2*1>-v (by P120a).
-	Then m2>-v.	
-	Then v > -m2.
-	Then -m2<n*x<m1.
+	#Then m2>-v.#	
+	#Then v > -m2.#
+	#Then -m2<n*x<m1.#
 	Take m such that m-1<=v<m.
-	Then -m2<=v<m1.
-	Take mt = -m2.
-	Then m-1<=v<m and mt<=v<m1.
-	Then mt<=m  . 
+	#Then -m2<=v<m1.#
+	#Take mt = -m2.#
+	Then m-1<=v<m and -m2<=v<m1.
+	Then -m2<=m  . 
 	Then m<=m1 .
-	Then mt<=m<=m1. 
+	Then -m2<=m<=m1. 
 	Then n*x<m<=1+(n*x).
 	Then n*z = n*(y-x)=(n*y)-(n*x).
 	Then (n*y)-(n*x)>1.
