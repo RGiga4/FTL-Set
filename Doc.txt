@@ -1,0 +1,24 @@
+Die Datein ord_set, field, ord_field, complex sind nah am Rudin geschrieben. Für die Abgabe und zusamenführung mit den anderen Arbeitgruppen wurden die Dateine in den spezialen Fall von reelenzahlen umgeschrieben. Praktisch gesehen war das umschreiben nicht viel, aber das wiederherstellen der funktionalität war mühsam. Da durch den erhöhten Kontext (4 Kapitel) es in manchen Beweisen zu problemen führt.
+Lösung dafür ist die Beweise mit Atrubuten zu ergänzen z.B. "(by Satz_name)".
+
+Die zwei Versionen für die Meisten Datein unterscheiden sich so. OrdSet.ftl sind die Relationen mit R bennant und beliebige Realtionen, das heiheißt man kann beweisen, fall man eine 2-steliges-fkt-symbol hat das diese eine Realtion ist falls Sie eine ist.
+In der Version in Master.ftl is OrdSet in der Schreibweise mit < geschrieben sodass später Kapitel, dies benutzen können.
+
+Am Dramtischten ist diese Änderung in Field.ftl zu sehen da mul(AM)[( _ , _ )] zu einem einfachen * geworden ist.
+
+in Field und ord_field werden aus den Axiomen viele einfache Aussagen der Körperthrorie gezeigt und Umformung-, Rechen- und kürzungregen gezeigt, Diese sind esssenziel für das weiter Rechnen in anderen Beweisen.
+
+Reals_a und Reals_b kann man nicht vereinigen.
+Ich habs versucht. die Beweise gehen so schnell kaputt durch kleineste Veränderungen.
+Reals_B ist einfach unmöglich Hab "q is elmenet of QS" zu "q is an integer" gewechelt und dann failt es.
+
+Einsetzen von trivialen Ausssagen kann hilfreich sein. natürlich sollen die Aussen zielführen sein P120a hat "1>0" drin stehen.
+REALS_B ist sehr empfindlich das hinzufügen von Axiomen wie "i-1" is an integer führt dazu das P120b fail.
+
+Ich häte mir eine bessere Feed-Back vom ausführendem Prozess gewünscht (alice). Zum Beispile das nach jedem Beweis irgend wie eine Zahl ausgegeben wird die sagt wie schwer der Bewies war.
+Damit könnete man früh erkennen das man irgendwelche Rooky-fehler macht oder sieht wo vlt man eine Lemma ergänzen muss oder sehen kann wo es später mit der lauffähigkeit eng wird.
+Und man könnte besser beurteieln ob Änderungen an dem Kontext, zu verbesserungen in Bewise führen.
+Irgend wie war das benutzen des DEC, komisch sogar einfachte Beweise die nur Zwei Axiome benutzne waren nicht lauffähig ohne eine Zwischen schritt. z.B. "y = 0 + y" funktionierte nicht.
+Ich habe gehofft, dass der DEC wäre eine Perfomantes und zuverlässiges Programm, dass alle Möglichkeiten durchprobiert, der 1-5 Axiome die man ihm mit gibt.
+
+
