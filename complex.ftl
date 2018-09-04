@@ -467,6 +467,7 @@ Proof. (|u ++ v|*|u ++ v|,0)	.= (u ++ v) ** Conj(u ++ v)
 								.=(((|u|*|u|) + (|v|*|v|)) + (Re(v ** Conj(u))+Re(v ** Conj(u))), 0 ).
 								Thus |u ++ v|*|u ++ v| = (((|u|*|u|) + (|v|*|v|)) + Re(v ** Conj(u))) + Re(v ** Conj(u)).
 
+
 								Then Re(v ** Conj(u)) <= |(Re(v ** Conj(u)),0)| (by AbsMon). |(Re(v ** Conj(u)),0)| <= |v**Conj(u)| (by Abs5).
 								Hence Re(v ** Conj(u)) <= |v**Conj(u)| (by LeqTrans).
 								Thus ((|u|*|u|) + (|v|*|v|)) + Re(v ** Conj(u)) <= ((|u|*|u|) + (|v|*|v|)) + |v**Conj(u)| (by LeqAdd).
