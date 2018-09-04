@@ -33,7 +33,7 @@ Axiom P116c. (-x)*y = -(x*y) = x*(-y).
 
 Axiom. -(x+y) = -x + -y. #Nicht Bewiesen
 Axiom. x*0 = 0. #name finden
-[prove off]
+
 Proposition. (c + d) + (e  + f) = (c + e) + (f   + d).
 Proof. (c + d) + (e  + f)	= ((c +  d) +  e)  + f 
        	 	   				= ( c + (d  +  e)) + f 
@@ -446,7 +446,7 @@ Proof.
 		x <= 0 <= |(Re(u),0)|.
 	end.
 qed.
-[prove on]
+
 Proposition Abs6. |u ++ v| <= |u| + |v|.
 Proof. (|u ++ v|*|u ++ v|,0)	.= (u ++ v) ** Conj(u ++ v)
 								.=  ((u ++ v) ** Conj(u)) ++ ((u ++ v) ** Conj(v)) 
@@ -465,8 +465,7 @@ Proof. (|u ++ v|*|u ++ v|,0)	.= (u ++ v) ** Conj(u ++ v)
 								.= ((|u|*|u|) + (|v|*|v|),0+0) ++ (Re(v ** Conj(u))+Re(v ** Conj(u)),0)
 								.=(((|u|*|u|) + (|v|*|v|)) + (Re(v ** Conj(u))+Re(v ** Conj(u))), 0 + 0)
 								.=(((|u|*|u|) + (|v|*|v|)) + (Re(v ** Conj(u))+Re(v ** Conj(u))), 0 ).
-								Thus |u ++ v|*|u ++ v| = (((|u|*|u|) + (|v|*|v|)) + Re(v ** Conj(u))) + Re(v ** Conj(u)).[prove off]
-								
+								Thus |u ++ v|*|u ++ v| = (((|u|*|u|) + (|v|*|v|)) + Re(v ** Conj(u))) + Re(v ** Conj(u)).
 
 								Then Re(v ** Conj(u)) <= |(Re(v ** Conj(u)),0)| (by AbsMon). |(Re(v ** Conj(u)),0)| <= |v**Conj(u)| (by Abs5).
 								Hence Re(v ** Conj(u)) <= |v**Conj(u)| (by LeqTrans).
