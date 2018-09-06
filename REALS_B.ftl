@@ -120,6 +120,8 @@ Axiom VK3. if m-1<=x<m and x<m2 then m<=m2.
 Axiom VK7. if n*x<m then x<m*inv(n).
 Axiom VK8. if m<n*y then m*inv(n)<y.
 
+
+
 Proposition P120b. if x < y then exists q   x<q<y.
 Proof.
 	Assume x < y.

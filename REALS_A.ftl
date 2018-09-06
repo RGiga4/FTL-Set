@@ -83,7 +83,7 @@ Definition upperBound.
 	An upper bound of A is an element b of REL such that ( y<b or y = b ) for every element y of A.
 
 Definition Supremum.
-    Assume A is a subset of REL.
+    Assume A is a subset of REL and not empty.
 	Let s be an element of REL.
     s is supremum of A  iff s is an upper bound of A 
 		and for every element x of REL if x<s then x is not an upper bound of A .
@@ -96,7 +96,7 @@ Definition BoundedAbove.
 Definition least_upper_bound_property.
 	Assume R is a subset of REL.
 	R is lub iff for every subset A of R
-		if (A is bounded above ) then (there exists an element s of R such that s is supremum of A ).
+		if (A is bounded above and not empty) then (there exists an element s of R such that s is supremum of A ).
 
 Axiom. REL is lub.
 AXiom. If x-y = z then x =z+y. 
