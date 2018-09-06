@@ -54,7 +54,7 @@ Axiom A2. If x>0 and y>0 then x*y>0.
 Axiom P118a. If x>0 then -x<0.
 Axiom P118a2. If x<0 then -x>0.
 
-
+Axiom. 1 > 0.
 
 #### Axiome Naturliche Zahlen
 Signature. A natural number is a real number.
@@ -113,12 +113,13 @@ Definition least_upper_bound_property.
 	R is lub iff for every subset A of R
 		if (A is bounded above and not empty) then (there exists an element s of R such that s is supremum of A ).
 
-Definition least_lower_bound_property.
+Definition greatest_lower_bound_property.
 	Assume R is a subset of REL.
-	R is llb iff for every subset A of R
+	R is glb iff for every subset A of R
 		if (A is bounded below and not empty) then (there exists an element s of R such that s is infimum of A ).
 
 Axiom. REL is lub.
+Axiom. REL is glb.
 
 AXiom. If x-y = z then x =z+y. 
 
@@ -150,19 +151,23 @@ Axiom. 0,1 is an integer.
 
 Let i,j denote integer.
 Axiom. i+j, -i are integer.
-Axiom. ZS is llb.
 
-Let x > y stand for y < x.
 Let x <= y stand for x<y or x=y.
 Let x >= y stand for y <= x.
 
 Proposition Lis1. for every x exists j j-1<=x<j.
 Proof.
-	Take a real number x.
+	Let x be a real number.
 	Define J = {g | g is integer and x<g}.
 	Then J is a subset of ZS and bounded below.
 	Then J is a subset of REL.
+	1 > 0 and x is element of REL.
+	Take a natural number n such that n*1> x.
+	n is a real number. Thus n is an element of J. Then J is not empty.
 	Take an element alpha of REL such that alpha is infimum of J.
+	Take an element beta of REL such that beta = alpha + 1 .
+	beta is not a lower bound of J.
+	Take an element i of J such that i < beta. Then  alpha <= i and i-1 < beta - 1 = alpha. Thus i-1 <= x < i.
 	
 qed.
 
