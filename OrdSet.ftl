@@ -45,14 +45,14 @@ Definition lowerBound.
 
 Definition Supremum.
 	Let R be an order.
-    Assume A is a subset of Dm(R).
+    Assume A is a subset of Dm(R) and not empty.
 	Let s be an element of Dm(R).
     s is supremum of A wrt R iff s is an upper bound of A wrt R
 		and for every element x of Dm(R) if R(x,s) then x is not an upper bound of A wrt R.
 
 Definition Infimum.
 	Let R be an order.
-	Assume A is a subset of Dm(R).
+	Assume A is a subset of Dm(R) and not empty.
 	Let s be an element of Dm(R).
     s is infimum of A wrt R iff s is an lower bound of A wrt R
 		and for every element x of Dm(R) if R(s,x) then x is not an lower bound of A wrt R.
@@ -72,7 +72,7 @@ Definition BoundedAbove.
 Definition least_upper_bound_property.
 	Let R be an order.
 	R is lub iff for every subset A of Dm(R)
-		if (A is bounded above wrt R) then (there exists an element s of Dm(R) such that s is supremum of A wrt R).
+		if (A is bounded above wrt R and not empty) then (there exists an element s of Dm(R) such that s is supremum of A wrt R).
 
 Proposition.
 	Let R be an order.

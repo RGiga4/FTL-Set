@@ -7,7 +7,7 @@ Axiom. every real numbers is element of REL.
 
 
 
-[prove off]
+#[prove off]
 
 
 Let S,T,A,B,C denote sets.
@@ -67,7 +67,7 @@ Definition BoundedAbove.
 Definition least_upper_bound_property.
 	Assume R is a subset of REL.
 	R is lub iff for every subset A of R
-		if (A is bounded above ) then (there exists an element s of R such that s is supremum of A ).
+		if (A is bounded above and not empty) then (there exists an element s of R such that s is supremum of A ).
 
 Proposition.
 	
@@ -245,7 +245,12 @@ Proof.
 qed.
 Proposition P118b. If x>0 and y<z then x*y<x*z.
 Proof.
-	Assume x>0 and y<z. Then z-y > y-y = 0.
+	Assume x>0 and y<z. 
+	Let us show that z-y > y-y = 0.
+		y<z.
+		then (-y)+y<(-y)+z (by A1).
+		
+	end.
 	Then x*(z-y)>0.
 	Then x*z = (x*(z-y))+(x*y).# war Hard
 
@@ -260,6 +265,11 @@ Proof.
 	Assume x<0 and y<z.
 	Then -x>0 (by P118a2).
 	Then z-y>0. # Kein Hinweis geben
+	Let us show that z-y>0.
+		y<z.
+		then (-y)+y<(-y)+z (by A1).
+		then z-y>y-y=0.
+	end.
 	Then -(x*(z-y)) = (-x)*(z-y) (by P116c).
 	Then (-x)*(z-y) > 0.
 	Then x*(z-y) < 0.
@@ -319,7 +329,7 @@ Axiom. n >=0.
 
 Signature. a natural number is a real number.
 #Axiom R. REL is lub.
-[prove on]
+#[prove on]
 
 ###VK-Abteilung
 
@@ -345,23 +355,7 @@ Proof.
 	m*inv(n)<y.
 qed.
 
-[prove off]
-Proposition P120a. If x>0 and y is element of REL then exists n  n*x>y.
-Proof.
-	Assume x>0 and y is element of REL.
-(1)	Assume the contrary.	
-	Define J = {g*x | g is natural number}.
-	Then J is bounded above.
-	Take an element al of REL such that al is supremum of J.
-	Then al-x is not an upper bound of J.
-	Take element beta of J such that al-x<beta.
-	Take natural number m such that beta = m*x.
-	Then al-x<m*x. Then al <(m*x)+x.	
-	Then al<(m+1)*x.
-	Then m+1 is natural number.
-	Then (m+1)*x is element of J.
-	A Contradiction.
-qed.
+
 
 
 
