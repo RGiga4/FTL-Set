@@ -65,7 +65,7 @@ NAT is the set of natural numbers.
 Axiom. 0 is natural number.
 Let n denote a natural number.
 Axiom. n+1 is a natural number.
-
+Axiom. n > 0 or n = 0.
 
 
 ### Axiome OrdSet
@@ -82,11 +82,26 @@ Definition upperBound.
 	Assume A is a subset of REL.
 	An upper bound of A is an element b of REL such that ( y<b or y = b ) for every element y of A.
 
+Definition lowerBound.
+	Assume A is a subset of REL.
+	A lower bound of A is an element b of REL such that ( b<y or y = b ) for every element y of A.
+
 Definition Supremum.
     Assume A is a subset of REL and not empty.
 	Let s be an element of REL.
     s is supremum of A  iff s is an upper bound of A 
 		and for every element x of REL if x<s then x is not an upper bound of A .
+
+Definition Infimum.
+	Assume A is a subset of REL and not empty.
+	Let s be an element of REL.
+    s is infimum of A  iff s is an lower bound of A 
+		and for every element x of REL if s<x then x is not an lower bound of A .
+
+Definition BoundedBelow.
+	Assume A is a subset of REL.
+	A is bounded below  iff 
+		there exists an element b of REL such that b is a lower bound of A .
 
 Definition BoundedAbove.
 	Assume A is a subset of REL.
@@ -98,25 +113,59 @@ Definition least_upper_bound_property.
 	R is lub iff for every subset A of R
 		if (A is bounded above and not empty) then (there exists an element s of R such that s is supremum of A ).
 
+Definition least_lower_bound_property.
+	Assume R is a subset of REL.
+	R is llb iff for every subset A of R
+		if (A is bounded below and not empty) then (there exists an element s of R such that s is infimum of A ).
+
 Axiom. REL is lub.
+
 AXiom. If x-y = z then x =z+y. 
 
-
+[prove off]
 Proposition P120a. If x>0 and y is element of REL then exists n  n*x>y.
 Proof.
 	Assume x>0 and y is element of REL.
 (1)	Assume the contrary.	
 	Define J = {g*x | g is natural number}.
 	Then J is bounded above.
-	Take an element al of REL such that al is supremum of J.
-	Then al-x is not an upper bound of J.
-	Take element beta of J such that al-x<beta.
+	Take an element alpha of REL such that alpha is supremum of J.
+	Then alpha-x is not an upper bound of J.
+	Take element beta of J such that alpha-x<beta.
 	Take natural number m such that beta = m*x.
-	Then al-x<m*x. Then al <(m*x)+x.	
-	Then al<(m+1)*x.
+	Then alpha-x<m*x. Then alpha <(m*x)+x.	
+	Then alpha<(m+1)*x.
 	Then (m+1)*x is element of J.
 	A Contradiction.
 qed.
+[prove on]
+#### Axiome ganze Zahlen
+
+Signature. A integer is a real number.
+Signature. A natural number is an integer.
+
+Definition ZSet.
+ZS is the set of integer.
+Axiom. 0,1 is an integer.
+
+Let i,j denote integer.
+Axiom. i+j, -i are integer.
+Axiom. ZS is llb.
+
+Let x > y stand for y < x.
+Let x <= y stand for x<y or x=y.
+Let x >= y stand for y <= x.
+
+Proposition Lis1. for every x exists j j-1<=x<j.
+Proof.
+	Take a real number x.
+	Define J = {g | g is integer and x<g}.
+	Then J is a subset of ZS and bounded below.
+	Then J is a subset of REL.
+	Take an element alpha of REL such that alpha is infimum of J.
+	
+qed.
+
 
 
 
