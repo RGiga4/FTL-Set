@@ -328,8 +328,7 @@ Axiom. n+1 is a natural number.
 Axiom. n >=0.
 
 Signature. a natural number is a real number.
-#Axiom R. REL is lub.
-#[prove on]
+
 
 ###Lis-Abteilung
 

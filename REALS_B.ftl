@@ -1,4 +1,4 @@
-[set/-s] [element/-s] [number/-s]
+[set/-s] [element/-s] [number/-s] [integer/-s]
 
 Signature. A real number is a notion.
 
@@ -30,8 +30,7 @@ Axiom. x*(y+z)=(x*y)+(x*z).
 ###weitere bewissene Aussagen
 Axiom P114c. If x+y = 0 then y = -x.
 Axiom P114d. -(-x) = x.
-#Axiom P115c. If (not x=0) and x*y = 1 then y = inv(x).  
-#Axiom P115d. If not x=0 then inv(inv(x)) = x.
+
 Axiom P116c. (-x)*y = -(x*y) = x*(-y).
 
 
@@ -46,8 +45,6 @@ Axiom. Then x<y or y<x or x = y.
 Axiom. Then not ((x<y and y<x) or (x<y and y=x) or (x=y and y<x)).
 Axiom. If x<y and y<z then x<z.
 
-###weitere 
-
 
 
 ###Axiome fur ordfield
@@ -58,16 +55,6 @@ Axiom A21. If x>0 and y>0 then x*y>0.
 Axiom P118a. If x>0 then -x<0.
 Axiom P118a2. If x<0 then -x>0.
 
-#Proposition P118b. If x>0 and y<z then x*y<x*z.
-
-#Proposition P118c. If x<0 and y<z then x*y>x*z.
-
-
-#Proposition P118d. If not x = 0 then x*x > 0.
-
-#Lemma. 1>0. #Auto
-#Proposition P118e1. If 0<y then 0 < inv(y).
-#Proposition P118e2. If 0<x<y then 0 < inv(y)<inv(x).
 
 
 #### Axiome Naturliche Zahlen
@@ -76,10 +63,10 @@ Signature. A natural number is a real number.
 Definition NatSet.
 NAT is the set of natural numbers.
 
-Axiom. 1 is natural number.
+Axiom. 0 is natural number.
 Let n denote a natural number.
 Axiom. n+1 is a natural number.
-Axiom. 0 is not a natural number.
+
 Axiom. n >=0.
 #### Axiome ganze Zahlen
 Signature. A integer is a real number.
@@ -87,7 +74,6 @@ Signature. A integer is a real number.
 Definition ZSet.
 ZS is the set of integer.
 Let i,j denote integer.
-#Axiom. if (not i=j) then (i-j>=1) or (i-j<=1).
 
 #### Axiome ratio Zahlen
 Signature. A rational number is a real number.
@@ -103,10 +89,8 @@ Signature. A natural number is an integer.
 Axiom. If x-y = z then x =z+y. 
 Axiom. If x>-y then y>-x. 
 
-#Axiom. if z*x<y then x<y*inv(z).
 
 Axiom P120a. If x>0 and y is element of REL then exists n  n*x>y.
-
 
 
 Let q denote an element of QS.
@@ -124,6 +108,7 @@ Proof.
 	Assume x < y.
 	Take z = y-x.Then z >0.
 	Take n  such that n*z>1 (by P120a).
+	Then n is not 0.
 	Take v = n*x. then 1>0.
 	
 	Take m such that m-1<=v<m.
@@ -143,7 +128,7 @@ Proof.
 		1+(n*x)<n*y.
 	end.
 	Then n*x<m<n*y.
-	Then n is not 0.
+	
 	Then x<m*inv(n)<y.
 	
 	
