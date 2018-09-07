@@ -123,7 +123,7 @@ Axiom. REL is glb.
 
 AXiom. If x-y = z then x =z+y. 
 
-[prove off]
+
 Proposition P120a. If x>0 and y is element of REL then exists n  n*x>y.
 Proof.
 	Assume x>0 and y is element of REL.
@@ -139,7 +139,7 @@ Proof.
 	Then (m+1)*x is element of J.
 	A Contradiction.
 qed.
-[prove on]
+
 #### Axiome ganze Zahlen
 
 Signature. A integer is a real number.

@@ -292,7 +292,7 @@ Proof.
 qed.
 Lemma. 1>0. #Auto
 Proof.
-	Then 1 = 1*1 > 0 (by P118d, M42).#keine Hinweise
+	Then 1 = 1*1 > 0 (by P118d, M42).
 qed.
 
 Proposition P118e1. If 0<y then 0 < inv(y).#Auto
@@ -331,9 +331,9 @@ Signature. a natural number is a real number.
 #Axiom R. REL is lub.
 #[prove on]
 
-###VK-Abteilung
+###Lis-Abteilung
 
-Proposition VK7. Let n be a natural number and not n=0. If n*x<m then x<m*inv(n).
+Proposition Lis2. Let n be a natural number and not n=0. If n*x<m then x<m*inv(n).
 Proof.
 	Assume n*x<m.
 	n > 0.
@@ -344,7 +344,7 @@ Proof.
 	x*1<m*inv(n).
 	x<m*inv(n).
 qed.
-Proposition VK8. Let n be a natural number and not n=0. if m<n*y then m*inv(n)<y.
+Proposition Lis3. Let n be a natural number and not n=0. if m<n*y then m*inv(n)<y.
 Proof.
 	Assume m<n*y.
 	n > 0.

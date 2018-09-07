@@ -10,8 +10,8 @@ Let x,y,z,v, a,b denote real numbers.
 ###Axiome fur field
 
 Signature Add. x + y is real number.
-Axiom. x+y = y+x.
-Axiom. (x+y)+z = x+(y+z).
+Axiom A2. x+y = y+x.
+Axiom A3. (x+y)+z = x+(y+z).
 Signature. 0 is a real number such that for every real number x x + 0 = x.
 Signature. -x is a real number such that -x + x = 0.
 
@@ -52,8 +52,8 @@ Axiom. If x<y and y<z then x<z.
 
 ###Axiome fur ordfield
 
-Axiom A1. If y<z then x+y<x+z.
-Axiom A2. If x>0 and y>0 then x*y>0.
+Axiom A11. If y<z then x+y<x+z.
+Axiom A21. If x>0 and y>0 then x*y>0.
 
 Axiom P118a. If x>0 then -x<0.
 Axiom P118a2. If x<0 then -x>0.
@@ -111,14 +111,11 @@ Axiom P120a. If x>0 and y is element of REL then exists n  n*x>y.
 
 Let q denote an element of QS.
 Let m, m1, m2, mt denote integer.
-### Axiome uber ganze Zahlen
-Axiom VK1. for every x exists m m-1<=x<m.
-Axiom VK2. if m-1<=x<m and m1<=x<m2 then m1<=m and m<=m2.
-Axiom VK3. if m-1<=x<m and x<m2 then m<=m2.
 
-### wenigsten Bewiesen
-Axiom VK7. if n*x<m then x<m*inv(n).
-Axiom VK8. if m<n*y then m*inv(n)<y.
+### Axiome uber ganze Zahlen
+Axiom Lis1. for every x exists m m-1<=x<m.
+Axiom Lis2. if n*x<m then x<m*inv(n).
+Axiom Lis3. if m<n*y then m*inv(n)<y.
 
 
 
@@ -127,23 +124,24 @@ Proof.
 	Assume x < y.
 	Take z = y-x.Then z >0.
 	Take n  such that n*z>1 (by P120a).
-	Take v = n*x.Then 1 is a real number. then 1>0.
-	Take m1 such that m1*1>v (by P120a).
-	Take m2 such that m2*1>-v (by P120a).
-	#Then m2>-v.#	
-	#Then v > -m2.#
-	#Then -m2<n*x<m1.#
+	Take v = n*x. then 1>0.
+	
 	Take m such that m-1<=v<m.
-	#Then -m2<=v<m1.#
-	#Take mt = -m2.#
-	Then m-1<=v<m and -m2<=v<m1.
-	Then -m2<=m  . 
-	Then m<=m1 .
-	Then -m2<=m<=m1. 
+	
 	Then n*x<m<=1+(n*x).
+
 	Then n*z = n*(y-x)=(n*y)-(n*x).
 	Then (n*y)-(n*x)>1.
-	Then 1+(n*x)<n*y.
+	Let us show that 1+(n*x)<n*y.
+		
+		Take a = (n*y) and b = (n*x).
+		a-b>1.
+		b+(a+(-b))>b+1 (by A11).
+		(a+(-b))+b>1+b (by A2).
+		a+((-b)+b)>1+b (by A3).
+		a>1+b.
+		1+(n*x)<n*y.
+	end.
 	Then n*x<m<n*y.
 	Then n is not 0.
 	Then x<m*inv(n)<y.
