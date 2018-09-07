@@ -7,7 +7,6 @@ Axiom. every real numbers is element of REL.
 
 
 
-#[prove off]
 
 
 Let S,T,A,B,C denote sets.
