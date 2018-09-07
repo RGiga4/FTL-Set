@@ -35,6 +35,9 @@
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\NN}{\mathbb{N}}
+\newcommand{\cmul}{\cdot}
+\newcommand{\cadd}{+}
+
 \begin{document}
 
 \title{The Complex Field}
@@ -70,29 +73,29 @@ Let x,y,z,a,b,c,d,e,f,g,h,j,k,r,s denote real numbers.
 
 Let x - y stand for x + (-y).
 
-\begin{signature} Mult. x * y is real number.
+\begin{signature} Mult. x $\cdot$ y is real number.
 
 \end{signature}
-\begin{axiom}. x*y = y*x.
+\begin{axiom}. x$\cdot$y = y$\cdot$x.
 
 \end{axiom}
-\begin{axiom}. (x*y)*z = x*(y*z).
+\begin{axiom}. (x$\cdot$y)$\cdot$z = x$\cdot$(y$\cdot$z).
 
 \end{axiom}
-\begin{signature} One. 1 is a real number such that for every real number x x*1 = x.
+\begin{signature} One. 1 is a real number such that for every real number x x$\cdot$1 = x.
 
 \end{signature}
-\begin{signature}. Assume not x = 0. inv(x) is a real number such that inv(x)*x = 1 .
+\begin{signature}. Assume not x = 0. inv(x) is a real number such that inv(x)$\cdot$x = 1 .
 
 \end{signature}
 \begin{axiom}. 1 is not equal to 0.
 
 \end{axiom}
 
-\begin{axiom} Dis1. x*(y+z)=(x*y)+(x*z).
+\begin{axiom} Dis1. x$\cdot$(y+z)=(x$\cdot$y)+(x$\cdot$z).
 
 \end{axiom}
-\begin{axiom} Dis2. (y+z)*x=(y*x)+(z*x).
+\begin{axiom} Dis2. (y+z)$\cdot$x=(y$\cdot$x)+(z$\cdot$x).
 
 \end{axiom}
 
@@ -103,20 +106,20 @@ Let x - y stand for x + (-y).
 \begin{axiom} P114d. -(-x) = x.
 
 \end{axiom}
-\begin{axiom} P115c. If (not x=0) and x*y = 1 then y = inv(x).  
+\begin{axiom} P115c. If (not x=0) and x$\cdot$y = 1 then y = inv(x).  
 
 \end{axiom}
 \begin{axiom} P115d. If not x=0 then inv(inv(x)) = x.
 
 \end{axiom}
-\begin{axiom} P116c. (-x)*y = -(x*y) = x*(-y).
+\begin{axiom} P116c. (-x)$\cdot$y = -(x$\cdot$y) = x$\cdot$(-y).
 
 \end{axiom}
 
 \begin{axiom}. -(x+y) = -x + -y. 
 
 \end{axiom}
-\begin{axiom}. x*0 = 0. 
+\begin{axiom}. x$\cdot$0 = 0. 
 
 \end{axiom}
 
@@ -132,16 +135,16 @@ Let x - y stand for x + (-y).
 
 
 \begin{theorem}
-. (x*x) - (y*y) = (x+y)*(x-y).
+. (x$\cdot$x) - (y$\cdot$y) = (x+y)$\cdot$(x-y).
 \end{theorem}\begin{proof}
- (x+y)*(x-y) 	= (x+y)*(x+ -y) = (((x+y)*x)+ ((x+y)*(-y))) = ( ((x*x) + (y*x)) + ((x*(-y)) + (y*(-y))) )
-= ( ((x*x) + (y*x)) + ((x*(-y)) + -(y*y)) )
-= ( (x*x) + ((y*x) + ((x*(-y)) + -(y*y))) )
-= ( (x*x) + (((y*x) + (x*(-y))) + -(y*y) ) )
-= ( (x*x) + (((y*x) + -(x*y)) + -(y*y) ) )
-= ( (x*x) + (((y*x) + -(y*x)) + -(y*y) ) )
-= ( (x*x) + (0 + -(y*y) ) )
-= (x*x) - (y*y).
+ (x+y)$\cdot$(x-y) 	= (x+y)$\cdot$(x+ -y) = (((x+y)$\cdot$x)+ ((x+y)$\cdot$(-y))) = ( ((x$\cdot$x) + (y$\cdot$x)) + ((x$\cdot$(-y)) + (y$\cdot$(-y))) )
+= ( ((x$\cdot$x) + (y$\cdot$x)) + ((x$\cdot$(-y)) + -(y$\cdot$y)) )
+= ( (x$\cdot$x) + ((y$\cdot$x) + ((x$\cdot$(-y)) + -(y$\cdot$y))) )
+= ( (x$\cdot$x) + (((y$\cdot$x) + (x$\cdot$(-y))) + -(y$\cdot$y) ) )
+= ( (x$\cdot$x) + (((y$\cdot$x) + -(x$\cdot$y)) + -(y$\cdot$y) ) )
+= ( (x$\cdot$x) + (((y$\cdot$x) + -(y$\cdot$x)) + -(y$\cdot$y) ) )
+= ( (x$\cdot$x) + (0 + -(y$\cdot$y) ) )
+= (x$\cdot$x) - (y$\cdot$y).
 \end{proof}
 
 
@@ -158,19 +161,19 @@ Let u,v,w, u2 denote complex numbers.
 \begin{signature}. Let x,y be real numbers. (x,y) is a complex number.
 
 \end{signature}
-\begin{signature}. u ++ v is a complex number.
+\begin{signature}. u $\cadd$ v is a complex number.
 
 \end{signature}
-\begin{signature}. u ** v is a complex number.
+\begin{signature}. u $\cmul$ v is a complex number.
 
 \end{signature}
 \begin{axiom}. If u is a complex number then there exist real numbers x,y such that u = (x,y).
 
 \end{axiom}
-\begin{axiom} CAdd. (x, y) ++ (a, b) = (x + a, y + b) .
+\begin{axiom} CAdd. (x, y) $\cadd$ (a, b) = (x + a, y + b) .
 
 \end{axiom}
-\begin{axiom} CMult. (x, y) ** (a, b) = ((x*a) - (y*b), (x*b) + (y*a)).
+\begin{axiom} CMult. (x, y) $\cmul$ (a, b) = ((x$\cdot$a) - (y$\cdot$b), (x$\cdot$b) + (y$\cdot$a)).
 
 \end{axiom}
 
@@ -178,96 +181,96 @@ Let u,v,w, u2 denote complex numbers.
 
 
 \begin{theorem}
- CmpFld2.  u ++ v = v ++ u.
+ CmpFld2.  u $\cadd$ v = v $\cadd$ u.
 \end{theorem}\begin{proof}
  Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
-Then u ++ v = (x,y) ++ (a,b).
-Then (x,y) ++ (a,b) = (x + a, y + b) (by CAdd).	
+Then u $\cadd$ v = (x,y) $\cadd$ (a,b).
+Then (x,y) $\cadd$ (a,b) = (x + a, y + b) (by CAdd).	
 (x + a, y + b) = (a + x, b + y). 
-(a + x, b + y) = (a,b) ++ (x,y) (by CAdd).
-(a,b) ++ (x,y) = v ++ u. 
-Then u ++ v = v ++ u.
+(a + x, b + y) = (a,b) $\cadd$ (x,y) (by CAdd).
+(a,b) $\cadd$ (x,y) = v $\cadd$ u. 
+Then u $\cadd$ v = v $\cadd$ u.
 \end{proof}
  
 
 
 
 \begin{theorem}
- CmpFld3. (u ++ v) ++ w = u ++ (v ++ w).
+ CmpFld3. (u $\cadd$ v) $\cadd$ w = u $\cadd$ (v $\cadd$ w).
 \end{theorem}\begin{proof}
  Let x,y,a,b,r,s be real numbers such that (u = (x,y) and v = (a,b) and w = (r,s)).
-Then (u ++ v) ++ w = ((x+a)+r, (y+b)+s) (by CAdd). 
+Then (u $\cadd$ v) $\cadd$ w = ((x+a)+r, (y+b)+s) (by CAdd). 
 ((x+a)+r, (y+b)+s)= (x+(a+r), y+(b+s)).
-(x+(a+r), y+(b+s)) = u ++ (v ++ w) (by CAdd).
-Then (u++v)++w=u++(v++w). 
+(x+(a+r), y+(b+s)) = u $\cadd$ (v $\cadd$ w) (by CAdd).
+Then (u$\cadd$v)$\cadd$w=u$\cadd$(v$\cadd$w). 
 \end{proof}
 
 
 \begin{theorem}
- CmpFld4. u ++ (0,0) = u.
+ CmpFld4. u $\cadd$ (0,0) = u.
 \end{theorem}\begin{proof}
  
-Let x,y be real numbers such that u = (x,y). Then u ++ (0,0) = (x+0,y+0) (by CAdd). (x+0,y+0) = (x,y) = u. 
+Let x,y be real numbers such that u = (x,y). Then u $\cadd$ (0,0) = (x+0,y+0) (by CAdd). (x+0,y+0) = (x,y) = u. 
 \end{proof}
 
 
 
 
 \begin{theorem}
- CmpFld5. For every complex number u there exists a complex number v such that u ++ v = (0,0).
+ CmpFld5. For every complex number u there exists a complex number v such that u $\cadd$ v = (0,0).
 \end{theorem}\begin{proof}
  Let u be a complex number.
-Take real numbers x,y such that u = (x,y). Take v = (-x, -y). Then  u ++ v = (x-x, y-y)(by CAdd) . (x-x, y-y) = (0,0). 
-Then v is a complex number such that u++v = (0,0).
+Take real numbers x,y such that u = (x,y). Take v = (-x, -y). Then  u $\cadd$ v = (x-x, y-y)(by CAdd) . (x-x, y-y) = (0,0). 
+Then v is a complex number such that u$\cadd$v = (0,0).
 
 \end{proof}
 
 
 \begin{theorem}
- CmpFld6. u**v = v**u.
+ CmpFld6. u$\cmul$v = v$\cmul$u.
 \end{theorem}\begin{proof}
  Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
-Then u**v =  ((x*a) - (y*b), (x*b) + (y*a)) =  ((a*x) - (b*y), (a*y) + (b*x)) = v**u. Then u**v = v**u. \end{proof}
+Then u$\cmul$v =  ((x$\cdot$a) - (y$\cdot$b), (x$\cdot$b) + (y$\cdot$a)) =  ((a$\cdot$x) - (b$\cdot$y), (a$\cdot$y) + (b$\cdot$x)) = v$\cmul$u. Then u$\cmul$v = v$\cmul$u. \end{proof}
 
 
 \begin{theorem}
- CmpFld7. (u**v)**w = u**(v**w).
+ CmpFld7. (u$\cmul$v)$\cmul$w = u$\cmul$(v$\cmul$w).
 \end{theorem}\begin{proof}
  Let x,y,a,b,r,s be real numbers such that (u = (x,y) and v = (a,b) and w = (r,s)). 
-(u**v)**w = (((x*a) - (y*b), (x*b) + (y*a))) ** w 
-= (  ( ((x*a)  - (y*b))*r ) - ( ((x*b) + (y*a))*s )  ,  ( ((x*a)  - (y*b))*s ) + ( ((x*b) + (y*a))*r ) )
-= (  ( ((x*a) + -(y*b))*r ) - ( ((x*b) + (y*a))*s )  ,  ( ((x*a) + -(y*b))*s ) + ( ((x*b) + (y*a))*r ) )
-= (  ( ((x*a) + -(y*b))*r ) - ( ((x*b)*s) + ((y*a)*s) )  ,  ( ((x*a) + -(y*b))*s ) + ( ((x*b)*r) + ((y*a)*r) )  )
-= (  ( ((x*a)*r) + ((-(y*b))*r) ) - ( ((x*b)*s) + ((y*a)*s) )  ,  ( ((x*a)*s) + ((-(y*b))*s) ) + ( ((x*b)*r) + ((y*a)*r) )  ) 
-= (  ( ((x*a)*r) + -((y*b)*r) ) - ( ((x*b)*s) + ((y*a)*s) )  ,  ( ((x*a)*s) - ((y*b)*s) ) + ( ((x*b)*r) + ((y*a)*r) )  )
-= (  ( ((x*a)*r) + -((y*b)*r) ) + ( -((x*b)*s) + -((y*a)*s) )  ,  ( ((x*a)*s) + -((y*b)*s) ) + ( ((x*b)*r) + ((y*a)*r) )  ).
-Let c = (x*a)*r and d = -((y*b)*r) and e = -((x*b)*s) and f = -((y*a)*s) and g = ((x*a)*s) and  h = -((y*b)*s) and  j = ((x*b)*r) and k = ((y*a)*r).
-Then (u**v)**w =  ( (c + d) + (e  + f) , (g + h) +  (j + k)  )
+(u$\cmul$v)$\cmul$w = (((x$\cdot$a) - (y$\cdot$b), (x$\cdot$b) + (y$\cdot$a))) $\cmul$ w 
+= (  ( ((x$\cdot$a)  - (y$\cdot$b))$\cdot$r ) - ( ((x$\cdot$b) + (y$\cdot$a))$\cdot$s )  ,  ( ((x$\cdot$a)  - (y$\cdot$b))$\cdot$s ) + ( ((x$\cdot$b) + (y$\cdot$a))$\cdot$r ) )
+= (  ( ((x$\cdot$a) + -(y$\cdot$b))$\cdot$r ) - ( ((x$\cdot$b) + (y$\cdot$a))$\cdot$s )  ,  ( ((x$\cdot$a) + -(y$\cdot$b))$\cdot$s ) + ( ((x$\cdot$b) + (y$\cdot$a))$\cdot$r ) )
+= (  ( ((x$\cdot$a) + -(y$\cdot$b))$\cdot$r ) - ( ((x$\cdot$b)$\cdot$s) + ((y$\cdot$a)$\cdot$s) )  ,  ( ((x$\cdot$a) + -(y$\cdot$b))$\cdot$s ) + ( ((x$\cdot$b)$\cdot$r) + ((y$\cdot$a)$\cdot$r) )  )
+= (  ( ((x$\cdot$a)$\cdot$r) + ((-(y$\cdot$b))$\cdot$r) ) - ( ((x$\cdot$b)$\cdot$s) + ((y$\cdot$a)$\cdot$s) )  ,  ( ((x$\cdot$a)$\cdot$s) + ((-(y$\cdot$b))$\cdot$s) ) + ( ((x$\cdot$b)$\cdot$r) + ((y$\cdot$a)$\cdot$r) )  ) 
+= (  ( ((x$\cdot$a)$\cdot$r) + -((y$\cdot$b)$\cdot$r) ) - ( ((x$\cdot$b)$\cdot$s) + ((y$\cdot$a)$\cdot$s) )  ,  ( ((x$\cdot$a)$\cdot$s) - ((y$\cdot$b)$\cdot$s) ) + ( ((x$\cdot$b)$\cdot$r) + ((y$\cdot$a)$\cdot$r) )  )
+= (  ( ((x$\cdot$a)$\cdot$r) + -((y$\cdot$b)$\cdot$r) ) + ( -((x$\cdot$b)$\cdot$s) + -((y$\cdot$a)$\cdot$s) )  ,  ( ((x$\cdot$a)$\cdot$s) + -((y$\cdot$b)$\cdot$s) ) + ( ((x$\cdot$b)$\cdot$r) + ((y$\cdot$a)$\cdot$r) )  ).
+Let c = (x$\cdot$a)$\cdot$r and d = -((y$\cdot$b)$\cdot$r) and e = -((x$\cdot$b)$\cdot$s) and f = -((y$\cdot$a)$\cdot$s) and g = ((x$\cdot$a)$\cdot$s) and  h = -((y$\cdot$b)$\cdot$s) and  j = ((x$\cdot$b)$\cdot$r) and k = ((y$\cdot$a)$\cdot$r).
+Then (u$\cmul$v)$\cmul$w =  ( (c + d) + (e  + f) , (g + h) +  (j + k)  )
 =  ( (c + e) + (d + f) , (g +  j) + (h  + k) )
 = ( (c + e) + (f + d) , (g + j) + (k + h) ).
-Then v ** w = ((a*r) - (b*s),(a*s) + (b*r)) (by CMult).
-u**(v**w) = u ** ((a,b) ** (r,s)) 
-= u ** (  ((a*r) - (b*s) , (a*s) + (b*r))  )
-= (  ( x * ((a*r) -(b*s)) ) - (y*((a*s) + (b*r))) , (x*((a*s) + (b*r))) + (y*((a*r) - (b*s))))
-= ((x*((a*r) + -(b*s))) + -(y*((a*s) + (b*r))) , (x*((a*s) 	+ (b*r))) + (y*((a*r) + -(b*s))))
-= (  ( (x*(a*r)) + (x*(-(b*s))) ) + -( (y*(a*s)) + (y*(b*r)) )  , ( (x*(a*s)) + (x*(b*r)) ) + ( (y*(a*r)) + (y*(-(b*s))) ) )
-= (  ( (x*(a*r)) + -(x*(b*s)) ) + ( -(y*(a*s)) + -(y*(b*r)) )  ,  ( (x*(a*s)) + (x*(b*r)) ) + ( (y*(a*r)) + -(y*(b*s)) ) )
-= (  ( ((x*a)*r) + -((x*b)*s) ) + ( -((y*a)*s) + -((y*b)*r) )  ,  ( ((x*a)*s) + ((x*b)*r) ) + ( ((y*a)*r) + -((y*b)*s) ) )
-= ( (c + e) + (f + d) , (g + j) + (k + h) ) = (u**v)**w.
-Then (u**v)**w = u**(v**w). \end{proof}
+Then v $\cmul$ w = ((a$\cdot$r) - (b$\cdot$s),(a$\cdot$s) + (b$\cdot$r)) (by CMult).
+u$\cmul$(v$\cmul$w) = u $\cmul$ ((a,b) $\cmul$ (r,s)) 
+= u $\cmul$ (  ((a$\cdot$r) - (b$\cdot$s) , (a$\cdot$s) + (b$\cdot$r))  )
+= (  ( x $\cdot$ ((a$\cdot$r) -(b$\cdot$s)) ) - (y$\cdot$((a$\cdot$s) + (b$\cdot$r))) , (x$\cdot$((a$\cdot$s) + (b$\cdot$r))) + (y$\cdot$((a$\cdot$r) - (b$\cdot$s))))
+= ((x$\cdot$((a$\cdot$r) + -(b$\cdot$s))) + -(y$\cdot$((a$\cdot$s) + (b$\cdot$r))) , (x$\cdot$((a$\cdot$s) 	+ (b$\cdot$r))) + (y$\cdot$((a$\cdot$r) + -(b$\cdot$s))))
+= (  ( (x$\cdot$(a$\cdot$r)) + (x$\cdot$(-(b$\cdot$s))) ) + -( (y$\cdot$(a$\cdot$s)) + (y$\cdot$(b$\cdot$r)) )  , ( (x$\cdot$(a$\cdot$s)) + (x$\cdot$(b$\cdot$r)) ) + ( (y$\cdot$(a$\cdot$r)) + (y$\cdot$(-(b$\cdot$s))) ) )
+= (  ( (x$\cdot$(a$\cdot$r)) + -(x$\cdot$(b$\cdot$s)) ) + ( -(y$\cdot$(a$\cdot$s)) + -(y$\cdot$(b$\cdot$r)) )  ,  ( (x$\cdot$(a$\cdot$s)) + (x$\cdot$(b$\cdot$r)) ) + ( (y$\cdot$(a$\cdot$r)) + -(y$\cdot$(b$\cdot$s)) ) )
+= (  ( ((x$\cdot$a)$\cdot$r) + -((x$\cdot$b)$\cdot$s) ) + ( -((y$\cdot$a)$\cdot$s) + -((y$\cdot$b)$\cdot$r) )  ,  ( ((x$\cdot$a)$\cdot$s) + ((x$\cdot$b)$\cdot$r) ) + ( ((y$\cdot$a)$\cdot$r) + -((y$\cdot$b)$\cdot$s) ) )
+= ( (c + e) + (f + d) , (g + j) + (k + h) ) = (u$\cmul$v)$\cmul$w.
+Then (u$\cmul$v)$\cmul$w = u$\cmul$(v$\cmul$w). \end{proof}
 
 
 
 \begin{theorem}
- CmpFld8. u**(1,0) = u.
+ CmpFld8. u$\cmul$(1,0) = u.
 \end{theorem}\begin{proof}
- Let x,y be real numbers such that u = (x,y). Then u ** (1,0) = ((x,y)) ** (1,0) = ((x*1)-(y*0) , (x*0)+(y*1)). 
-Let a = x*1 and b = y*0 and c = x*0 and d = y*1.
+ Let x,y be real numbers such that u = (x,y). Then u $\cmul$ (1,0) = ((x,y)) $\cmul$ (1,0) = ((x$\cdot$1)-(y$\cdot$0) , (x$\cdot$0)+(y$\cdot$1)). 
+Let a = x$\cdot$1 and b = y$\cdot$0 and c = x$\cdot$0 and d = y$\cdot$1.
 
-((x*1)-(y*0) , (x*0)+(y*1)) = (a-b, c+d).
+((x$\cdot$1)-(y$\cdot$0) , (x$\cdot$0)+(y$\cdot$1)) = (a-b, c+d).
 Then a = x and b = 0 and c = 0 and d = y.
 (a-b, c+d) = (x-0 , 0+y) = (x,y) = u .
-Then u**(1,0) = u.
+Then u$\cmul$(1,0) = u.
 \end{proof}
 
 
@@ -298,38 +301,38 @@ Let x $\geq$ y stand for y $\leq$ x.
 \begin{axiom} InEqAdd. If y$<$z then x+y$<$x+z.
 
 \end{axiom}
-\begin{axiom} InEqMult. If x$>$0 and y$>$0 then x*y$>$0.
+\begin{axiom} InEqMult. If x$>$0 and y$>$0 then x$\cdot$y$>$0.
 
 \end{axiom}
 
 
-\begin{axiom} P118d. If not x = 0 then x*x $>$ 0.
+\begin{axiom} P118d. If not x = 0 then x$\cdot$x $>$ 0.
 
 \end{axiom}
 \begin{axiom} P118e1. If 0$<$y then 0 $<$ inv(y).
 
 \end{axiom}
 
-\begin{axiom} SqrtEind. If x*x = y*y and x$\geq$0 and y $\geq$ 0 then x=y.
+\begin{axiom} SqrtEind. If x$\cdot$x = y$\cdot$y and x$\geq$0 and y $\geq$ 0 then x=y.
 
 \end{axiom}
 
 \begin{theorem}
- SqrtMon. If x*x $>$ y*y and x $>$ 0  and y $\geq$ 0 then x$>$y.
+ SqrtMon. If x$\cdot$x $>$ y$\cdot$y and x $>$ 0  and y $\geq$ 0 then x$>$y.
 \end{theorem}\begin{proof}
-	Assume x*x $>$ y*y and x$>$0 and y $\geq$ 0.
-Thus  -(y*y) + (x*x) $>$ -(y*y) + (y*y) (by InEqAdd). 
-Hence (x*x) - (y*y) $>$ 0.
-Then  (x + y) * (x - y) $>$ 0.
+	Assume x$\cdot$x $>$ y$\cdot$y and x$>$0 and y $\geq$ 0.
+Thus  -(y$\cdot$y) + (x$\cdot$x) $>$ -(y$\cdot$y) + (y$\cdot$y) (by InEqAdd). 
+Hence (x$\cdot$x) - (y$\cdot$y) $>$ 0.
+Then  (x + y) $\cdot$ (x - y) $>$ 0.
 x + y $>$ 0.
 proof. 	x $>$ 0. Then x + y $>$ y.
 case y $>$ 0. Then x + y $>$ 0 (by Trans). end.
 case y = 0. Then x + y  $>$ 0 . end.
 end.
-Thus inv(x + y) $>$ 0. Hence inv(x + y) * ((x + y) * (x - y)) $>$ 0.
-We have inv(x + y) * ((x + y) * (x - y)) 
-= (inv(x + y) * (x + y)) * (x - y)
-= 1 * (x - y) = x - y.
+Thus inv(x + y) $>$ 0. Hence inv(x + y) $\cdot$ ((x + y) $\cdot$ (x - y)) $>$ 0.
+We have inv(x + y) $\cdot$ ((x + y) $\cdot$ (x - y)) 
+= (inv(x + y) $\cdot$ (x + y)) $\cdot$ (x - y)
+= 1 $\cdot$ (x - y) = x - y.
 Then x - y $>$ 0.
 Thus (x + -y) + y $>$ 0 + y.
 Hence x + (-y + y) $>$ 0 + y.
@@ -365,13 +368,13 @@ Then a+c $\leq$ b+d (by LeqTrans). end.
 
 
 
-\begin{lemma} 21O. If (not x = 0) or (not y = 0) then (x*x) + (y*y)$>$0.
+\begin{lemma} 21O. If (not x = 0) or (not y = 0) then (x$\cdot$x) + (y$\cdot$y)$>$0.
 
 \end{lemma}
 \begin{proof}
  
 Assume (not x=0) or (not y=0).
-Let a = x*x and b = y*y.
+Let a = x$\cdot$x and b = y$\cdot$y.
 Then a$>$ 0 or b$>$0.
 Then a$\geq$ 0 and b$\geq$0.
 Let us show that a + b $>$ 0.
@@ -382,27 +385,27 @@ end.
 
 
 \begin{theorem}
- CmpFld9. If not u = (0,0) then there exists a complex number v such that u**v = (1,0).
+ CmpFld9. If not u = (0,0) then there exists a complex number v such that u$\cmul$v = (1,0).
 \end{theorem}\begin{proof}
  Assume not u = (0,0).
 Let x,y be real numbers such that u = (x,y).
 
 Then (not x=0) or (not y=0).
-Then (x*x) + (y*y)$>$0 (by 21O).
-Then not (x*x) + (y*y) = 0 .
+Then (x$\cdot$x) + (y$\cdot$y)$>$0 (by 21O).
+Then not (x$\cdot$x) + (y$\cdot$y) = 0 .
 
-Let d = inv((x*x) + (y*y)) and 
-v = (x*d , -y*d). 
-Then u**v = ( (x*(x*d)) - (y*(-y*d)) , (x*(-y*d)) + (y*(x*d)))
-= ( (x*(x*d)) + -(-y*(y*d)) , -(x*(y*d)) + (y*(x*d)))
-= ( (x*(x*d)) + (y*(y*d)) , -(x*(y*d)) + (y*(x*d)))
-= ( ((x*x)*d) + ((y*y)*d) , -((x*y)*d) + ((y*x)*d))
-= ( ((x*x) + (y*y))*d , -((x*y)*d) + ((x*y)*d))
-= ( ((x*x) + (y*y))*inv((x*x) + (y*y)) , 0)
+Let d = inv((x$\cdot$x) + (y$\cdot$y)) and 
+v = (x$\cdot$d , -y$\cdot$d). 
+Then u$\cmul$v = ( (x$\cdot$(x$\cdot$d)) - (y$\cdot$(-y$\cdot$d)) , (x$\cdot$(-y$\cdot$d)) + (y$\cdot$(x$\cdot$d)))
+= ( (x$\cdot$(x$\cdot$d)) + -(-y$\cdot$(y$\cdot$d)) , -(x$\cdot$(y$\cdot$d)) + (y$\cdot$(x$\cdot$d)))
+= ( (x$\cdot$(x$\cdot$d)) + (y$\cdot$(y$\cdot$d)) , -(x$\cdot$(y$\cdot$d)) + (y$\cdot$(x$\cdot$d)))
+= ( ((x$\cdot$x)$\cdot$d) + ((y$\cdot$y)$\cdot$d) , -((x$\cdot$y)$\cdot$d) + ((y$\cdot$x)$\cdot$d))
+= ( ((x$\cdot$x) + (y$\cdot$y))$\cdot$d , -((x$\cdot$y)$\cdot$d) + ((x$\cdot$y)$\cdot$d))
+= ( ((x$\cdot$x) + (y$\cdot$y))$\cdot$inv((x$\cdot$x) + (y$\cdot$y)) , 0)
 = (1,0).
-Then u**v = (1,0).
-Then v is a complex number such that u**v = (1,0).
-If not u = (0,0) then there exists a complex number w such that u**w = (1,0).
+Then u$\cmul$v = (1,0).
+Then v is a complex number such that u$\cmul$v = (1,0).
+If not u = (0,0) then there exists a complex number w such that u$\cmul$w = (1,0).
 \end{proof}
 
 
@@ -410,56 +413,56 @@ If not u = (0,0) then there exists a complex number w such that u**w = (1,0).
 
 
 \begin{theorem}
- CmpFld10. u**(v++w) = (u**v) ++ (u**w).
+ CmpFld10. u$\cmul$(v$\cadd$w) = (u$\cmul$v) $\cadd$ (u$\cmul$w).
 \end{theorem}\begin{proof}
 	Let x,y,a,b,r,s be real numbers such that (u = (x,y) and v = (a,b) and w = (r,s)).
-Let c = x*a and d = x*r and e = -(y*b) and f = -(y*s) and g = x*b and  h = x*s and  j = y*a and k = y*r.
-v++w = (a+r,b+s) (by CAdd).
-u**v = (x,y) ** (a,b) = ((x*a) - (y*b), (x*b) + (y*a)) (by CMult).  
-u**w = (x,y) ** (r,s) = ((x*r) - (y*s) , (x*s) + (y*r)) (by CMult). 
-Then u**(v++w) 	= (x,y) ** (a+r,b+s) = ( (x*(a+r)) - (y*(b+s)) , (x*(b+s)) + (y*(a+r)) ).
-( (x*(a+r)) - (y*(b+s)) , (x*(b+s)) + (y*(a+r)) )
-.= ( ((x*a) + (x*r)) - (y*(b+s)) , (x*(b+s)) + (y*(a+r)) )
-.= ( ((x*a) + (x*r)) - ((y*b) + (y*s)) , (x*(b+s)) + (y*(a+r)) ).
+Let c = x$\cdot$a and d = x$\cdot$r and e = -(y$\cdot$b) and f = -(y$\cdot$s) and g = x$\cdot$b and  h = x$\cdot$s and  j = y$\cdot$a and k = y$\cdot$r.
+v$\cadd$w = (a+r,b+s) (by CAdd).
+u$\cmul$v = (x,y) $\cmul$ (a,b) = ((x$\cdot$a) - (y$\cdot$b), (x$\cdot$b) + (y$\cdot$a)) (by CMult).  
+u$\cmul$w = (x,y) $\cmul$ (r,s) = ((x$\cdot$r) - (y$\cdot$s) , (x$\cdot$s) + (y$\cdot$r)) (by CMult). 
+Then u$\cmul$(v$\cadd$w) 	= (x,y) $\cmul$ (a+r,b+s) = ( (x$\cdot$(a+r)) - (y$\cdot$(b+s)) , (x$\cdot$(b+s)) + (y$\cdot$(a+r)) ).
+( (x$\cdot$(a+r)) - (y$\cdot$(b+s)) , (x$\cdot$(b+s)) + (y$\cdot$(a+r)) )
+= ( ((x$\cdot$a) + (x$\cdot$r)) - (y$\cdot$(b+s)) , (x$\cdot$(b+s)) + (y$\cdot$(a+r)) )
+= ( ((x$\cdot$a) + (x$\cdot$r)) - ((y$\cdot$b) + (y$\cdot$s)) , (x$\cdot$(b+s)) + (y$\cdot$(a+r)) ).
 
-( ((x*a) + (x*r)) - ((y*b) + (y*s)) , (x*(b+s)) + (y*(a+r)) )
-= ( ((x*a) + (x*r)) - ((y*b) + (y*s)) , ((x*b) + (x*s)) + (y*(a+r)) ) (by Dis1).
+( ((x$\cdot$a) + (x$\cdot$r)) - ((y$\cdot$b) + (y$\cdot$s)) , (x$\cdot$(b+s)) + (y$\cdot$(a+r)) )
+= ( ((x$\cdot$a) + (x$\cdot$r)) - ((y$\cdot$b) + (y$\cdot$s)) , ((x$\cdot$b) + (x$\cdot$s)) + (y$\cdot$(a+r)) ) (by Dis1).
 
-( ((x*a) + (x*r)) - ((y*b) + (y*s)) , ((x*b) + (x*s)) + (y*(a+r)) )
-= ( ((x*a) + (x*r)) - ((y*b) + (y*s)) , ((x*b) + (x*s)) + ((y*a) + (y*r)) ) (by Dis1).
+( ((x$\cdot$a) + (x$\cdot$r)) - ((y$\cdot$b) + (y$\cdot$s)) , ((x$\cdot$b) + (x$\cdot$s)) + (y$\cdot$(a+r)) )
+= ( ((x$\cdot$a) + (x$\cdot$r)) - ((y$\cdot$b) + (y$\cdot$s)) , ((x$\cdot$b) + (x$\cdot$s)) + ((y$\cdot$a) + (y$\cdot$r)) ) (by Dis1).
 
-( ((x*a) + (x*r)) - ((y*b) + (y*s)) , ((x*b) + (x*s)) + ((y*a) + (y*r)) )
-= (((x*a) + (x*r)) + -((y*b) + (y*s)) , ((x*b) + (x*s)) + ((y*a) + (y*r)) )
-= (((x*a) + (x*r)) + (-(y*b) + -(y*s)) , ((x*b) + (x*s)) + ((y*a) + (y*r)) )
+( ((x$\cdot$a) + (x$\cdot$r)) - ((y$\cdot$b) + (y$\cdot$s)) , ((x$\cdot$b) + (x$\cdot$s)) + ((y$\cdot$a) + (y$\cdot$r)) )
+= (((x$\cdot$a) + (x$\cdot$r)) + -((y$\cdot$b) + (y$\cdot$s)) , ((x$\cdot$b) + (x$\cdot$s)) + ((y$\cdot$a) + (y$\cdot$r)) )
+= (((x$\cdot$a) + (x$\cdot$r)) + (-(y$\cdot$b) + -(y$\cdot$s)) , ((x$\cdot$b) + (x$\cdot$s)) + ((y$\cdot$a) + (y$\cdot$r)) )
 = ((c + d) + (e + f) , (g + h) + (j + k))
 = ((c + e) + (d + f) , (g + j) + (h + k))
-= (c+e,g+j) ++ (d+f,h+k)
-= ((x*a) + -(y*b), (x*b) + (y*a)) ++ ((x*r) + -(y*s) , (x*s) + (y*r))
-= ((x*a) - (y*b), (x*b) + (y*a)) ++ ((x*r) - (y*s) , (x*s) + (y*r))
-= ((x,y) ** (a,b)) ++ ((x,y) ** (r,s)) 
-= (u**v) ++ (u**w).
-Then u**(v++w) = (u**v) ++ (u**w).
+= (c+e,g+j) $\cadd$ (d+f,h+k)
+= ((x$\cdot$a) + -(y$\cdot$b), (x$\cdot$b) + (y$\cdot$a)) $\cadd$ ((x$\cdot$r) + -(y$\cdot$s) , (x$\cdot$s) + (y$\cdot$r))
+= ((x$\cdot$a) - (y$\cdot$b), (x$\cdot$b) + (y$\cdot$a)) $\cadd$ ((x$\cdot$r) - (y$\cdot$s) , (x$\cdot$s) + (y$\cdot$r))
+= ((x,y) $\cmul$ (a,b)) $\cadd$ ((x,y) $\cmul$ (r,s)) 
+= (u$\cmul$v) $\cadd$ (u$\cmul$w).
+Then u$\cmul$(v$\cadd$w) = (u$\cmul$v) $\cadd$ (u$\cmul$w).
 \end{proof}
 
 
 \begin{theorem}
- ZeroMult. u**(0,0) = (0,0).
+ ZeroMult. u$\cmul$(0,0) = (0,0).
 \end{theorem}\begin{proof}
- Let x,y be real numbers such that u = (x,y). Then u**(0,0) = ((x*0) - (y*0), (x*0) + (y*0)) (by CMult). 
-Let a=x*0 and b=y*0.
-((x*0) - (y*0), (x*0) + (y*0)) = (a-b,a+b) = (0 - 0, 0 + 0) = (0,0). 
-Then u**(0,0) = (0,0). 
+ Let x,y be real numbers such that u = (x,y). Then u$\cmul$(0,0) = ((x$\cdot$0) - (y$\cdot$0), (x$\cdot$0) + (y$\cdot$0)) (by CMult). 
+Let a=x$\cdot$0 and b=y$\cdot$0.
+((x$\cdot$0) - (y$\cdot$0), (x$\cdot$0) + (y$\cdot$0)) = (a-b,a+b) = (0 - 0, 0 + 0) = (0,0). 
+Then u$\cmul$(0,0) = (0,0). 
 \end{proof}
 
 
 \begin{theorem}
-. (a,0) ++ (b,0) = (a+b,0) and (a,0)**(b,0) = (a*b,0).
+. (a,0) $\cadd$ (b,0) = (a+b,0) and (a,0)$\cmul$(b,0) = (a$\cdot$b,0).
 \end{theorem}\begin{proof}
- 	(a,0) ++ (b,0) = (a+b,0+0) = (a+b,0) (by CAdd).
-(a,0) ** (b,0) = ((a*b) - (0*0), (a*0) + (0*b)) (by CMult).
-Let c = a*0 and d = b*0 and e = 0*0.
+ 	(a,0) $\cadd$ (b,0) = (a+b,0+0) = (a+b,0) (by CAdd).
+(a,0) $\cmul$ (b,0) = ((a$\cdot$b) - (0$\cdot$0), (a$\cdot$0) + (0$\cdot$b)) (by CMult).
+Let c = a$\cdot$0 and d = b$\cdot$0 and e = 0$\cdot$0.
 Then c = 0 and d = 0 and e = 0.
-Then ((a*b) - e, c + d) = ((a*b) -0, 0 + 0) = ((a*b )+ -0,0) = (a*b,0) . \end{proof}
+Then ((a$\cdot$b) - e, c + d) = ((a$\cdot$b) -0, 0 + 0) = ((a$\cdot$b )+ -0,0) = (a$\cdot$b,0) . \end{proof}
 
 
 \begin{signature}. ! is a complex number such that ! = (0,1).
@@ -467,34 +470,34 @@ Then ((a*b) - e, c + d) = ((a*b) -0, 0 + 0) = ((a*b )+ -0,0) = (a*b,0) . \end{pr
 \end{signature}
 
 \begin{theorem}
-. !**! = (-1,0).
+. !$\cmul$! = (-1,0).
 \end{theorem}\begin{proof}
- 	!**! .= (0,1) ** (0,1) 
-.= ((0*0) - (1*1),( 0*1) + (1*0)) (by CMult)
-.=((0*0) - (1*1),( 0*1) + (1*0)) 
-.= (0 - 1, 0+0) 
-.= (0+(-1),0).
+ 	!$\cmul$! = (0,1) $\cmul$ (0,1) 
+= ((0$\cdot$0) - (1$\cdot$1),( 0$\cdot$1) + (1$\cdot$0)) (by CMult)
+=((0$\cdot$0) - (1$\cdot$1),( 0$\cdot$1) + (1$\cdot$0)) 
+= (0 - 1, 0+0) 
+= (0+(-1),0).
 Then (0+(-1),0) = ((-1),0). 
 \end{proof}
 
 
-Let x+y! stand for (x,0) ++ ((y,0)**!).
+Let x+y! stand for (x,0) $\cadd$ ((y,0)$\cmul$!).
 
 
 \begin{theorem}
 . a+b! = (a,b).
 \end{theorem}\begin{proof}
- 	(b,0)**(0,1) = ((b*0)-(0*1) , (b*1)+(0*0)) (by CMult).
-a+b! = (a,0) ++ ((b,0)**(0,1)). 
+ 	(b,0)$\cmul$(0,1) = ((b$\cdot$0)-(0$\cdot$1) , (b$\cdot$1)+(0$\cdot$0)) (by CMult).
+a+b! = (a,0) $\cadd$ ((b,0)$\cmul$(0,1)). 
 
-(a,0) ++ ((b,0)**(0,1))
-= (a,0) ++ ((b*0)-(0*1) , (b*1)+(0*0)) (by CMult).
+(a,0) $\cadd$ ((b,0)$\cmul$(0,1))
+= (a,0) $\cadd$ ((b$\cdot$0)-(0$\cdot$1) , (b$\cdot$1)+(0$\cdot$0)) (by CMult).
 
-(a,0) ++ ((b*0)-(0*1) , (b*1)+(0*0))
-= (a,0) ++ (0-0,b+0) 
-= (a,0) ++ (0,b).
+(a,0) $\cadd$ ((b$\cdot$0)-(0$\cdot$1) , (b$\cdot$1)+(0$\cdot$0))
+= (a,0) $\cadd$ (0-0,b+0) 
+= (a,0) $\cadd$ (0,b).
 
-(a,0) ++ (0,b)
+(a,0) $\cadd$ (0,b)
 = (a+0,0+b) 
 = (a,b).
 \end{proof}
@@ -521,56 +524,56 @@ a+b! = (a,0) ++ ((b,0)**(0,1)).
 \end{axiom}
 
 \begin{theorem}
- Conj1. Conj(u++v) = Conj(u) ++ Conj(v).
+ Conj1. Conj(u$\cadd$v) = Conj(u) $\cadd$ Conj(v).
 \end{theorem}\begin{proof}
  	Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
-Then u++v = (x+a,y+b) (by CAdd).
-Then Conj(u ++ v) = Conj((x+a,y+b)) = (x+a,-(y+b)) = (x+a, -y + -b) = (x,-y) ++ (a,-b) = Conj(u) ++ Conj(v).
-Then Conj(u++v) = Conj(u) ++ Conj(v).
+Then u$\cadd$v = (x+a,y+b) (by CAdd).
+Then Conj(u $\cadd$ v) = Conj((x+a,y+b)) = (x+a,-(y+b)) = (x+a, -y + -b) = (x,-y) $\cadd$ (a,-b) = Conj(u) $\cadd$ Conj(v).
+Then Conj(u$\cadd$v) = Conj(u) $\cadd$ Conj(v).
 \end{proof}
 		
 \begin{theorem}
- Conj2. Conj(u**v) = Conj(u) ** Conj(v).
+ Conj2. Conj(u$\cmul$v) = Conj(u) $\cmul$ Conj(v).
 \end{theorem}\begin{proof}
  	Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
-Then u ** v = ((x*a)-(y*b),(x*b)+(y*a)) (by CMult).
-Then Conj(u ** v) 	= Conj(((x*a)-(y*b),(x*b)+(y*a))) 
-= ((x*a) - (y*b)       ,-((x*b)+(y*a))) 
-= ((x*a) - (y*b)       , -(x*b)+ -(y*a))
-= ((x*a) - (-(-(y*b))) , -(x*b)+ -(y*a))
-= ((x*a) - ( -((-y)*b) ) , (x*(-b))+ ((-y)*a))
-= ((x*a) - ((-y)*(-b)) , (x*(-b))+ ((-y)*a))
-= (x,-y) ** (a,-b)
-= Conj(u) ** Conj(v). 
-Then Conj(u**v) = Conj(u) ** Conj(v).
+Then u $\cmul$ v = ((x$\cdot$a)-(y$\cdot$b),(x$\cdot$b)+(y$\cdot$a)) (by CMult).
+Then Conj(u $\cmul$ v) 	= Conj(((x$\cdot$a)-(y$\cdot$b),(x$\cdot$b)+(y$\cdot$a))) 
+= ((x$\cdot$a) - (y$\cdot$b)       ,-((x$\cdot$b)+(y$\cdot$a))) 
+= ((x$\cdot$a) - (y$\cdot$b)       , -(x$\cdot$b)+ -(y$\cdot$a))
+= ((x$\cdot$a) - (-(-(y$\cdot$b))) , -(x$\cdot$b)+ -(y$\cdot$a))
+= ((x$\cdot$a) - ( -((-y)$\cdot$b) ) , (x$\cdot$(-b))+ ((-y)$\cdot$a))
+= ((x$\cdot$a) - ((-y)$\cdot$(-b)) , (x$\cdot$(-b))+ ((-y)$\cdot$a))
+= (x,-y) $\cmul$ (a,-b)
+= Conj(u) $\cmul$ Conj(v). 
+Then Conj(u$\cmul$v) = Conj(u) $\cmul$ Conj(v).
 \end{proof}
 
 
 \begin{theorem}
- Conj3. u ++ Conj(u) = (Re(u)+Re(u),0) and u ++ ((-1,0)**Conj(u)) = (0,Im(u)+Im(u)).
+ Conj3. u $\cadd$ Conj(u) = (Re(u)+Re(u),0) and u $\cadd$ ((-1,0)$\cmul$Conj(u)) = (0,Im(u)+Im(u)).
 \end{theorem}\begin{proof}
  Let x,y be real numbers such that u=(x,y).
-Then u ++ Conj(u) = (x,y) ++ Conj((x,y)) = (x,y) ++ (x,-y) = (x+x,y-y) = (x+x,0) = (Re(u)+Re(u),0).
-(-1,0)**(x,-y) = ( ((-1)*x) - (0*(-y)) , ((-1)*(-y)) + (0*x)) (by CMult).
-u ++ ((-1,0)**Conj(u))	= (x,y) ++ ((-1,0)**Conj((x,y))) = (x,y) ++ ((-1,0)**(x,-y)) 
-= (x,y) ++ ( ((-1)*x) - (0*(-y)) , ((-1)*(-y)) + (0*x))
-= (x,y) ++ (-x - 0, -(-y) + 0)
-= (x,y) ++ (-x , y) = (x-x,y+y) = (0,Im(u)+Im(u)).
-Then u ++ Conj(u) = (Re(u)+Re(u),0) and u ++ ((-1,0)**Conj(u)) = (0,Im(u)+Im(u)).
+Then u $\cadd$ Conj(u) = (x,y) $\cadd$ Conj((x,y)) = (x,y) $\cadd$ (x,-y) = (x+x,y-y) = (x+x,0) = (Re(u)+Re(u),0).
+(-1,0)$\cmul$(x,-y) = ( ((-1)$\cdot$x) - (0$\cdot$(-y)) , ((-1)$\cdot$(-y)) + (0$\cdot$x)) (by CMult).
+u $\cadd$ ((-1,0)$\cmul$Conj(u))	= (x,y) $\cadd$ ((-1,0)$\cmul$Conj((x,y))) = (x,y) $\cadd$ ((-1,0)$\cmul$(x,-y)) 
+= (x,y) $\cadd$ ( ((-1)$\cdot$x) - (0$\cdot$(-y)) , ((-1)$\cdot$(-y)) + (0$\cdot$x))
+= (x,y) $\cadd$ (-x - 0, -(-y) + 0)
+= (x,y) $\cadd$ (-x , y) = (x-x,y+y) = (0,Im(u)+Im(u)).
+Then u $\cadd$ Conj(u) = (Re(u)+Re(u),0) and u $\cadd$ ((-1,0)$\cmul$Conj(u)) = (0,Im(u)+Im(u)).
 \end{proof}
 	   
 
 \begin{theorem}
- Conj4. If not u = (0,0) then there exists a real number z such that (z$>$0 and u ** Conj(u) = (z,0)).
+ Conj4. If not u = (0,0) then there exists a real number z such that (z$>$0 and u $\cmul$ Conj(u) = (z,0)).
 \end{theorem}\begin{proof}
 	Let not u = (0,0).
 Take real numbers x,y such that u = (x,y).
 
-Then (x*x)$>$ 0 or (y*y)$>$0. Take z = (x*x) + (y*y). 
+Then (x$\cdot$x)$>$ 0 or (y$\cdot$y)$>$0. Take z = (x$\cdot$x) + (y$\cdot$y). 
 Then z $>$ 0 (by 21O).
-u**Conj(u) = (x,y)**Conj((x,y)) = (x,y)**(x,-y) = ((x*x) - (y*(-y)) , (x*(-y)) + (y*x)) = ((x*x) + -(-(y*y)) , -(x*y) + (x*y)) = ((x*x) + (y*y), 0) = (z,0).
+u$\cmul$Conj(u) = (x,y)$\cmul$Conj((x,y)) = (x,y)$\cmul$(x,-y) = ((x$\cdot$x) - (y$\cdot$(-y)) , (x$\cdot$(-y)) + (y$\cdot$x)) = ((x$\cdot$x) + -(-(y$\cdot$y)) , -(x$\cdot$y) + (x$\cdot$y)) = ((x$\cdot$x) + (y$\cdot$y), 0) = (z,0).
 z is a real number.
-Then z is a real number and (z$>$0 and u**Conj(u) = (z,0)).
+Then z is a real number and (z$>$0 and u$\cmul$Conj(u) = (z,0)).
 \end{proof}
 
 
@@ -582,83 +585,83 @@ Then Conj(Conj(u)) = Conj(Conj((x,y))) = Conj((x,-y)) = (x,--y) = (x,y) = u. \en
 
 
 
-\begin{signature}. |u| is a real number such that (|u|*|u|,0) = u**Conj(u) and |u| $\geq$ 0. 
+\begin{signature}. $|$u$|$ is a real number such that ($|$u$|$$\cdot$$|$u$|$,0) = u$\cmul$Conj(u) and $|$u$|$ $\geq$ 0. 
 
 \end{signature}
-\begin{axiom}  EindAbs. If (x*x,0) = u**Conj(u) and x $\geq$ 0 then x = |u|.
+\begin{axiom}  EindAbs. If (x$\cdot$x,0) = u$\cmul$Conj(u) and x $\geq$ 0 then x = $|$u$|$.
 
 \end{axiom}
 
 
 
 \begin{theorem}
- Abs1. If not u = (0,0) then |u| $>$ 0.
+ Abs1. If not u = (0,0) then $|$u$|$ $>$ 0.
 \end{theorem}\begin{proof}
-  Let z be a real number such that (z $>$ 0 and u**Conj(u) = (z,0)). Then (|u|*|u|,0) = (z,0).
-Assume |u| = 0. Then z = 0*0 = 0. Contradiction. 
-Then |u| $>$ 0.
+  Let z be a real number such that (z $>$ 0 and u$\cmul$Conj(u) = (z,0)). Then ($|$u$|$$\cdot$$|$u$|$,0) = (z,0).
+Assume $|$u$|$ = 0. Then z = 0$\cdot$0 = 0. Contradiction. 
+Then $|$u$|$ $>$ 0.
 \end{proof}
 
 
 \begin{theorem}
- Abs2. |(0,0)| = 0.
+ Abs2. $|$(0,0)$|$ = 0.
 \end{theorem}\begin{proof}
- 	(0,0) ** Conj((0,0)) = Conj((0,0)) ** (0,0) = (0,0). 
-Let us show that |(0,0)|*|(0,0)| = 0.
-Assume |(0,0)| $>$ 0. Then not |(0,0)| = 0 .Then |(0,0)|*|(0,0)| $>$ 0. Then not |(0,0)|*|(0,0)| = 0. Contradiction.end. 
-Hence |(0,0)| = 0.
+ 	(0,0) $\cmul$ Conj((0,0)) = Conj((0,0)) $\cmul$ (0,0) = (0,0). 
+Let us show that $|$(0,0)$|$$\cdot$$|$(0,0)$|$ = 0.
+Assume $|$(0,0)$|$ $>$ 0. Then not $|$(0,0)$|$ = 0 .Then $|$(0,0)$|$$\cdot$$|$(0,0)$|$ $>$ 0. Then not $|$(0,0)$|$$\cdot$$|$(0,0)$|$ = 0. Contradiction.end. 
+Hence $|$(0,0)$|$ = 0.
 \end{proof}
 
 
 \begin{theorem}
- Abs3. |u| = |Conj(u)|.
+ Abs3. $|$u$|$ = $|$Conj(u)$|$.
 \end{theorem}\begin{proof}
- 	|u| is a real number such that ((|u|*|u|,0) = u**Conj(u) and |u| $\geq$ 0). 
-(|u|*|u|,0) = Conj(Conj(u))**Conj(u) = Conj(u)**Conj(Conj(u)).
-Let v = Conj(u). Then |u| is real number such that ((|u|*|u|,0) = v**Conj(v) and |u| $\geq$ 0). 
-Hence |u| = |v|.
+ 	$|$u$|$ is a real number such that (($|$u$|$$\cdot$$|$u$|$,0) = u$\cmul$Conj(u) and $|$u$|$ $\geq$ 0). 
+($|$u$|$$\cdot$$|$u$|$,0) = Conj(Conj(u))$\cmul$Conj(u) = Conj(u)$\cmul$Conj(Conj(u)).
+Let v = Conj(u). Then $|$u$|$ is real number such that (($|$u$|$$\cdot$$|$u$|$,0) = v$\cmul$Conj(v) and $|$u$|$ $\geq$ 0). 
+Hence $|$u$|$ = $|$v$|$.
 \end{proof}
 
 
 \begin{theorem}
- Abs4. |u**v| = |u| * |v|.
+ Abs4. $|$u$\cmul$v$|$ = $|$u$|$ $\cdot$ $|$v$|$.
 \end{theorem}\begin{proof}
- 	Case u = (0,0) or v = (0,0). Then v**u = (0,0) or u**v = (0,0) (by ZeroMult). Hence |u**v| = 0.
-|u| = 0 or |v| = 0 (by Abs2). Hence |u| * |v| = 0.
-Then  |u**v| = |u|*|v|. end.
-Case (not u=(0,0)) and (not v = (0,0)). Then |u| $>$ 0 and |v| $>$ 0 (by Abs1). Let z = |u| * |v|. Then z $>$ 0.
-z*z = (|u|*|v|) * (|u|*|v|) = ((|u|*|v|)*|u|)*|v| = (|u|*(|v|*|u|))*|v|
-= (|u|*(|u|*|v|))*|v| = ((|u|*|u|)*|v|)*|v| = (|u|*|u|)*(|v|*|v|).
-Hence (z*z,0)	= ((|u|*|u|)*(|v|*|v|), 0) = (|u|*|u|,0) ** (|v|*|v|,0)
-= (u  **  Conj(u)) ** (v   ** Conj(v)) 
-= ((u **  Conj(u)) **  v)  ** Conj(v) 
-= ( u ** (Conj(u)  **  v)) ** Conj(v) 
-= ( u ** (v  **  Conj(u))) ** Conj(v) 
-= ((u **  v) **  Conj(u))  ** Conj(v) 
-= ( u **  v) **  (Conj(u)   ** Conj(v)) = (u**v)**Conj(u**v).
-Then z = |u**v|. Then |u| * |v| = |u**v|. end.
+ 	Case u = (0,0) or v = (0,0). Then v$\cmul$u = (0,0) or u$\cmul$v = (0,0) (by ZeroMult). Hence $|$u$\cmul$v$|$ = 0.
+$|$u$|$ = 0 or $|$v$|$ = 0 (by Abs2). Hence $|$u$|$ $\cdot$ $|$v$|$ = 0.
+Then  $|$u$\cmul$v$|$ = $|$u$|$$\cdot$$|$v$|$. end.
+Case (not u=(0,0)) and (not v = (0,0)). Then $|$u$|$ $>$ 0 and $|$v$|$ $>$ 0 (by Abs1). Let z = $|$u$|$ $\cdot$ $|$v$|$. Then z $>$ 0.
+z$\cdot$z = ($|$u$|$$\cdot$$|$v$|$) $\cdot$ ($|$u$|$$\cdot$$|$v$|$) = (($|$u$|$$\cdot$$|$v$|$)$\cdot$$|$u$|$)$\cdot$$|$v$|$ = ($|$u$|$$\cdot$($|$v$|$$\cdot$$|$u$|$))$\cdot$$|$v$|$
+= ($|$u$|$$\cdot$($|$u$|$$\cdot$$|$v$|$))$\cdot$$|$v$|$ = (($|$u$|$$\cdot$$|$u$|$)$\cdot$$|$v$|$)$\cdot$$|$v$|$ = ($|$u$|$$\cdot$$|$u$|$)$\cdot$($|$v$|$$\cdot$$|$v$|$).
+Hence (z$\cdot$z,0)	= (($|$u$|$$\cdot$$|$u$|$)$\cdot$($|$v$|$$\cdot$$|$v$|$), 0) = ($|$u$|$$\cdot$$|$u$|$,0) $\cmul$ ($|$v$|$$\cdot$$|$v$|$,0)
+= (u  $\cmul$  Conj(u)) $\cmul$ (v   $\cmul$ Conj(v)) 
+= ((u $\cmul$  Conj(u)) $\cmul$  v)  $\cmul$ Conj(v) 
+= ( u $\cmul$ (Conj(u)  $\cmul$  v)) $\cmul$ Conj(v) 
+= ( u $\cmul$ (v  $\cmul$  Conj(u))) $\cmul$ Conj(v) 
+= ((u $\cmul$  v) $\cmul$  Conj(u))  $\cmul$ Conj(v) 
+= ( u $\cmul$  v) $\cmul$  (Conj(u)   $\cmul$ Conj(v)) = (u$\cmul$v)$\cmul$Conj(u$\cmul$v).
+Then z = $|$u$\cmul$v$|$. Then $|$u$|$ $\cdot$ $|$v$|$ = $|$u$\cmul$v$|$. end.
 \end{proof}
 
 
 \begin{theorem}
- Abs5. |(Re(u),0)| $\leq$ |u|.
+ Abs5. $|$(Re(u),0)$|$ $\leq$ $|$u$|$.
 \end{theorem}\begin{proof}
  	Let x,y be real numbers such that u = (x,y). 
-Case y = 0. Then |u| = |(x,y)| = |(Re(u),0)|. end.
-Case not y = 0. Then not u = (0,0). Thus |u| $>$ 0.
-(|u|*|u|,0) = u**Conj(u) = (x,y) ** (x,-y) = ((x*x) - (y*(-y)) , (x*(-y)) + (y*x)) = ((x*x) + -(-(y*y)) , -(x*y) + (x*y)) 
-= ((x*x) + (y*y), 0). Then |u|*|u| = (x*x)+(y*y).
-(|(Re(u),0)|*|(Re(u),0)|,0) = (Re(u),0)**Conj((Re(u),0)) = (Re(u),0)**(Re(u),-0) = (Re(u),0)**(Re(u),0) = (x,0)**(x,0) = (x*x,0).
-Then |(Re(u),0)|*|(Re(u),0)| = x*x.
-Hence (|u|*|u|) -  (|(Re(u),0)|*|(Re(u),0)|) = ((x*x) + (y*y)) - (x*x) = ((y*y) + (x*x)) + -(x*x) = (y*y) + ((x*x) + -(x*x)) = (y*y) + 0 = y*y and y*y $>$ 0.
-Thus (|u|*|u|) -  (|(Re(u),0)|*|(Re(u),0)|) $>$ 0.
-Hence |u|*|u| $>$ |(Re(u),0)|*|(Re(u),0)| and |u| $>$ 0 and |(Re(u),0)| $\geq$ 0.
-Thus  |u| $>$ |(Re(u),0)| (by SqrtMon).
+Case y = 0. Then $|$u$|$ = $|$(x,y)$|$ = $|$(Re(u),0)$|$. end.
+Case not y = 0. Then not u = (0,0). Thus $|$u$|$ $>$ 0.
+($|$u$|$$\cdot$$|$u$|$,0) = u$\cmul$Conj(u) = (x,y) $\cmul$ (x,-y) = ((x$\cdot$x) - (y$\cdot$(-y)) , (x$\cdot$(-y)) + (y$\cdot$x)) = ((x$\cdot$x) + -(-(y$\cdot$y)) , -(x$\cdot$y) + (x$\cdot$y)) 
+= ((x$\cdot$x) + (y$\cdot$y), 0). Then $|$u$|$$\cdot$$|$u$|$ = (x$\cdot$x)+(y$\cdot$y).
+($|$(Re(u),0)$|$$\cdot$$|$(Re(u),0)$|$,0) = (Re(u),0)$\cmul$Conj((Re(u),0)) = (Re(u),0)$\cmul$(Re(u),-0) = (Re(u),0)$\cmul$(Re(u),0) = (x,0)$\cmul$(x,0) = (x$\cdot$x,0).
+Then $|$(Re(u),0)$|$$\cdot$$|$(Re(u),0)$|$ = x$\cdot$x.
+Hence ($|$u$|$$\cdot$$|$u$|$) -  ($|$(Re(u),0)$|$$\cdot$$|$(Re(u),0)$|$) = ((x$\cdot$x) + (y$\cdot$y)) - (x$\cdot$x) = ((y$\cdot$y) + (x$\cdot$x)) + -(x$\cdot$x) = (y$\cdot$y) + ((x$\cdot$x) + -(x$\cdot$x)) = (y$\cdot$y) + 0 = y$\cdot$y and y$\cdot$y $>$ 0.
+Thus ($|$u$|$$\cdot$$|$u$|$) -  ($|$(Re(u),0)$|$$\cdot$$|$(Re(u),0)$|$) $>$ 0.
+Hence $|$u$|$$\cdot$$|$u$|$ $>$ $|$(Re(u),0)$|$$\cdot$$|$(Re(u),0)$|$ and $|$u$|$ $>$ 0 and $|$(Re(u),0)$|$ $\geq$ 0.
+Thus  $|$u$|$ $>$ $|$(Re(u),0)$|$ (by SqrtMon).
 end.
 \end{proof}
 
 
-\begin{lemma} AbsMon. Re(u) $\leq$ |(Re(u),0)|.
+\begin{lemma} AbsMon. Re(u) $\leq$ $|$(Re(u),0)$|$.
 
 \end{lemma}
 \begin{proof}
@@ -668,68 +671,68 @@ Let v = (x, 0).
 Then Re(u) = x = Re(v).
 Case x$>$0.
 
-Then (x*x,0) = v**Conj(v).
-Then x = |v| (by EindAbs).
-Then Re(u)=Re(v)=|v|=|(Re(v),0)| = |(Re(u),0)|.
-Then Re(u) $\leq$ |(Re(u),0)|.
+Then (x$\cdot$x,0) = v$\cmul$Conj(v).
+Then x = $|$v$|$ (by EindAbs).
+Then Re(u)=Re(v)=$|$v$|$=$|$(Re(v),0)$|$ = $|$(Re(u),0)$|$.
+Then Re(u) $\leq$ $|$(Re(u),0)$|$.
 end.
 Case x $\leq$ 0.
-Then |(Re(u),0)| $\geq$0.
-x $\leq$ 0 $\leq$ |(Re(u),0)|.
+Then $|$(Re(u),0)$|$ $\geq$0.
+x $\leq$ 0 $\leq$ $|$(Re(u),0)$|$.
 end.
 \end{proof}
 
 
 \begin{theorem}
- Abs6. |u ++ v| $\leq$ |u| + |v|.
+ Abs6. $|$u $\cadd$ v$|$ $\leq$ $|$u$|$ + $|$v$|$.
 \end{theorem}\begin{proof}
- (|u ++ v|*|u ++ v|,0)	.= (u ++ v) ** Conj(u ++ v)
-.=  ((u ++ v) ** Conj(u)) ++ ((u ++ v) ** Conj(v)) 
-.=  (Conj(u) ** (u ++ v)) ++ (Conj(v) ** (u ++ v)) 
-.=  ((Conj(u) ** u) ++ (Conj(u) ** v)) ++ ((Conj(v) ** u) ++ (Conj(v) ** v)) (by CmpFld10)
-.=  ((u ** Conj(u)) ++ (v ** Conj(u))) ++ ((u ** Conj(v)) ++ (v ** Conj(v)))
-.=  (u ** Conj(u)) ++ ((v ** Conj(u)) ++ ((u ** Conj(v)) ++ (v ** Conj(v))))
-.=  (u ** Conj(u)) ++ (((v ** Conj(u)) ++ (u ** Conj(v))) ++ (v ** Conj(v)))
-.=  (u ** Conj(u)) ++ ((v ** Conj(v)) ++ ((v ** Conj(u)) ++ (u ** Conj(v)))) 
-.=  (u ** Conj(u)) ++ ((v ** Conj(v)) ++ ((v ** Conj(u)) ++ (Conj(Conj(u)) ** Conj(v))))
-.=  (u ** Conj(u)) ++ ((v ** Conj(v)) ++ ((v ** Conj(u)) ++ Conj(Conj(u) ** v) ))
-.=  (u ** Conj(u)) ++ ((v ** Conj(v)) ++ ((v ** Conj(u)) ++ Conj(v ** Conj(u)) ))
-.=  (u ** Conj(u)) ++ ((v ** Conj(v)) ++ (Re(v ** Conj(u))+Re(v ** Conj(u)),0) )
-.=  (|u|*|u|,0) ++ ((|v|*|v|,0) ++ (Re(v ** Conj(u))+Re(v ** Conj(u)),0) )
-.=  ((|u|*|u|,0) ++ (|v|*|v|,0)) ++ (Re(v ** Conj(u))+Re(v ** Conj(u)),0)
-.= ((|u|*|u|) + (|v|*|v|),0+0) ++ (Re(v ** Conj(u))+Re(v ** Conj(u)),0)
-.=(((|u|*|u|) + (|v|*|v|)) + (Re(v ** Conj(u))+Re(v ** Conj(u))), 0 + 0)
-.=(((|u|*|u|) + (|v|*|v|)) + (Re(v ** Conj(u))+Re(v ** Conj(u))), 0 ).
-Thus |u ++ v|*|u ++ v| = (((|u|*|u|) + (|v|*|v|)) + Re(v ** Conj(u))) + Re(v ** Conj(u)).
+ ($|$u $\cadd$ v$|$$\cdot$$|$u $\cadd$ v$|$,0)	= (u $\cadd$ v) $\cmul$ Conj(u $\cadd$ v)
+=  ((u $\cadd$ v) $\cmul$ Conj(u)) $\cadd$ ((u $\cadd$ v) $\cmul$ Conj(v)) 
+=  (Conj(u) $\cmul$ (u $\cadd$ v)) $\cadd$ (Conj(v) $\cmul$ (u $\cadd$ v)) 
+=  ((Conj(u) $\cmul$ u) $\cadd$ (Conj(u) $\cmul$ v)) $\cadd$ ((Conj(v) $\cmul$ u) $\cadd$ (Conj(v) $\cmul$ v)) (by CmpFld10)
+=  ((u $\cmul$ Conj(u)) $\cadd$ (v $\cmul$ Conj(u))) $\cadd$ ((u $\cmul$ Conj(v)) $\cadd$ (v $\cmul$ Conj(v)))
+=  (u $\cmul$ Conj(u)) $\cadd$ ((v $\cmul$ Conj(u)) $\cadd$ ((u $\cmul$ Conj(v)) $\cadd$ (v $\cmul$ Conj(v))))
+=  (u $\cmul$ Conj(u)) $\cadd$ (((v $\cmul$ Conj(u)) $\cadd$ (u $\cmul$ Conj(v))) $\cadd$ (v $\cmul$ Conj(v)))
+=  (u $\cmul$ Conj(u)) $\cadd$ ((v $\cmul$ Conj(v)) $\cadd$ ((v $\cmul$ Conj(u)) $\cadd$ (u $\cmul$ Conj(v)))) 
+=  (u $\cmul$ Conj(u)) $\cadd$ ((v $\cmul$ Conj(v)) $\cadd$ ((v $\cmul$ Conj(u)) $\cadd$ (Conj(Conj(u)) $\cmul$ Conj(v))))
+=  (u $\cmul$ Conj(u)) $\cadd$ ((v $\cmul$ Conj(v)) $\cadd$ ((v $\cmul$ Conj(u)) $\cadd$ Conj(Conj(u) $\cmul$ v) ))
+=  (u $\cmul$ Conj(u)) $\cadd$ ((v $\cmul$ Conj(v)) $\cadd$ ((v $\cmul$ Conj(u)) $\cadd$ Conj(v $\cmul$ Conj(u)) ))
+=  (u $\cmul$ Conj(u)) $\cadd$ ((v $\cmul$ Conj(v)) $\cadd$ (Re(v $\cmul$ Conj(u))+Re(v $\cmul$ Conj(u)),0) )
+=  ($|$u$|$$\cdot$$|$u$|$,0) $\cadd$ (($|$v$|$$\cdot$$|$v$|$,0) $\cadd$ (Re(v $\cmul$ Conj(u))+Re(v $\cmul$ Conj(u)),0) )
+=  (($|$u$|$$\cdot$$|$u$|$,0) $\cadd$ ($|$v$|$$\cdot$$|$v$|$,0)) $\cadd$ (Re(v $\cmul$ Conj(u))+Re(v $\cmul$ Conj(u)),0)
+= (($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$),0+0) $\cadd$ (Re(v $\cmul$ Conj(u))+Re(v $\cmul$ Conj(u)),0)
+=((($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + (Re(v $\cmul$ Conj(u))+Re(v $\cmul$ Conj(u))), 0 + 0)
+=((($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + (Re(v $\cmul$ Conj(u))+Re(v $\cmul$ Conj(u))), 0 ).
+Thus $|$u $\cadd$ v$|$$\cdot$$|$u $\cadd$ v$|$ = ((($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + Re(v $\cmul$ Conj(u))) + Re(v $\cmul$ Conj(u)).
 
 
-Then Re(v ** Conj(u)) $\leq$ |(Re(v ** Conj(u)),0)| (by AbsMon). |(Re(v ** Conj(u)),0)| $\leq$ |v**Conj(u)| (by Abs5).
-Hence Re(v ** Conj(u)) $\leq$ |v**Conj(u)| (by LeqTrans).
-Thus ((|u|*|u|) + (|v|*|v|)) + Re(v ** Conj(u)) $\leq$ ((|u|*|u|) + (|v|*|v|)) + |v**Conj(u)| (by LeqAdd).
-Thus (((|u|*|u|) + (|v|*|v|)) + Re(v ** Conj(u))) + Re(v ** Conj(u)) $\leq$ (((|u|*|u|) + (|v|*|v|)) + |v**Conj(u)|)+|v**Conj(u)| (by LeqAdd2).
-(((|u|*|u|) + (|v|*|v|)) + |v**Conj(u)|)+|v**Conj(u)|
-= ((|u|*|u|) + (|v|*|v|)) + (|v**Conj(u)|+|v**Conj(u)|) 
-= ((|u|*|u|) + (|v|*|v|)) + ((|v|*|Conj(u)|) + (|v|*|Conj(u)|))
-= ((|u|*|u|) + (|v|*|v|)) + ((|v|*|u|) + (|v|*|u|))
-= ((|u|*|u|) + (|v|*|u|)) + ((|v|*|v|) + (|v|*|u|))
-= ((|u| + |v|) * |u|) + (|v|*(|v|+|u|))
-= (|u| * (|u| + |v|)) + (|v| * (|u| + |v|))
-= (|u| + |v|)*(|u| + |v|).
+Then Re(v $\cmul$ Conj(u)) $\leq$ $|$(Re(v $\cmul$ Conj(u)),0)$|$ (by AbsMon). $|$(Re(v $\cmul$ Conj(u)),0)$|$ $\leq$ $|$v$\cmul$Conj(u)$|$ (by Abs5).
+Hence Re(v $\cmul$ Conj(u)) $\leq$ $|$v$\cmul$Conj(u)$|$ (by LeqTrans).
+Thus (($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + Re(v $\cmul$ Conj(u)) $\leq$ (($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + $|$v$\cmul$Conj(u)$|$ (by LeqAdd).
+Thus ((($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + Re(v $\cmul$ Conj(u))) + Re(v $\cmul$ Conj(u)) $\leq$ ((($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + $|$v$\cmul$Conj(u)$|$)+$|$v$\cmul$Conj(u)$|$ (by LeqAdd2).
+((($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + $|$v$\cmul$Conj(u)$|$)+$|$v$\cmul$Conj(u)$|$
+= (($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + ($|$v$\cmul$Conj(u)$|$+$|$v$\cmul$Conj(u)$|$) 
+= (($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + (($|$v$|$$\cdot$$|$Conj(u)$|$) + ($|$v$|$$\cdot$$|$Conj(u)$|$))
+= (($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + (($|$v$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$u$|$))
+= (($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$u$|$)) + (($|$v$|$$\cdot$$|$v$|$) + ($|$v$|$$\cdot$$|$u$|$))
+= (($|$u$|$ + $|$v$|$) $\cdot$ $|$u$|$) + ($|$v$|$$\cdot$($|$v$|$+$|$u$|$))
+= ($|$u$|$ $\cdot$ ($|$u$|$ + $|$v$|$)) + ($|$v$|$ $\cdot$ ($|$u$|$ + $|$v$|$))
+= ($|$u$|$ + $|$v$|$)$\cdot$($|$u$|$ + $|$v$|$).
 
-Hence |u ++ v|*|u ++ v| $\leq$ (|u| + |v|)*(|u| + |v|).
-0 $\leq$ |u| and 0 $\leq$ |v|. Thus 0 + 0 $\leq$ |u| + |v| (by LeqAdd2).
-Case |u| + |v| $>$ 0. 
-Case |u ++ v|*|u ++ v| $<$ (|u| + |v|)*(|u| + |v|). 
-Then (|u| + |v|)*(|u| + |v|) $>$ |u ++ v|*|u ++ v| and |u ++ v| $\geq$ 0 and |u| + |v| $>$ 0 .
-Thus |u ++ v| $<$ |u| + |v| (by SqrtMon). end.
-Case |u ++ v|*|u ++ v| = (|u| + |v|)*(|u| + |v|). Then |u ++ v| = |u| + |v| (by SqrtEind).end.
+Hence $|$u $\cadd$ v$|$$\cdot$$|$u $\cadd$ v$|$ $\leq$ ($|$u$|$ + $|$v$|$)$\cdot$($|$u$|$ + $|$v$|$).
+0 $\leq$ $|$u$|$ and 0 $\leq$ $|$v$|$. Thus 0 + 0 $\leq$ $|$u$|$ + $|$v$|$ (by LeqAdd2).
+Case $|$u$|$ + $|$v$|$ $>$ 0. 
+Case $|$u $\cadd$ v$|$$\cdot$$|$u $\cadd$ v$|$ $<$ ($|$u$|$ + $|$v$|$)$\cdot$($|$u$|$ + $|$v$|$). 
+Then ($|$u$|$ + $|$v$|$)$\cdot$($|$u$|$ + $|$v$|$) $>$ $|$u $\cadd$ v$|$$\cdot$$|$u $\cadd$ v$|$ and $|$u $\cadd$ v$|$ $\geq$ 0 and $|$u$|$ + $|$v$|$ $>$ 0 .
+Thus $|$u $\cadd$ v$|$ $<$ $|$u$|$ + $|$v$|$ (by SqrtMon). end.
+Case $|$u $\cadd$ v$|$$\cdot$$|$u $\cadd$ v$|$ = ($|$u$|$ + $|$v$|$)$\cdot$($|$u$|$ + $|$v$|$). Then $|$u $\cadd$ v$|$ = $|$u$|$ + $|$v$|$ (by SqrtEind).end.
 end.
-Case |u| + |v| = 0. Thus (|u| + |v|)*(|u| + |v|) = 0. Hence |u ++ v|*|u ++ v| $\leq$ 0. 
-Let us show that |u ++ v| $\leq$ 0. 
-proof. 	Assume |u ++ v| $>$ 0. Then |u ++ v|*|u ++ v| $>$ 0 (by InEqMult). Contradiction.
-Thus not (|u ++ v| $>$ 0). Hence |u ++ v| $<$ 0 or |u ++ v| = 0 (by InEqCompl).
+Case $|$u$|$ + $|$v$|$ = 0. Thus ($|$u$|$ + $|$v$|$)$\cdot$($|$u$|$ + $|$v$|$) = 0. Hence $|$u $\cadd$ v$|$$\cdot$$|$u $\cadd$ v$|$ $\leq$ 0. 
+Let us show that $|$u $\cadd$ v$|$ $\leq$ 0. 
+proof. 	Assume $|$u $\cadd$ v$|$ $>$ 0. Then $|$u $\cadd$ v$|$$\cdot$$|$u $\cadd$ v$|$ $>$ 0 (by InEqMult). Contradiction.
+Thus not ($|$u $\cadd$ v$|$ $>$ 0). Hence $|$u $\cadd$ v$|$ $<$ 0 or $|$u $\cadd$ v$|$ = 0 (by InEqCompl).
 end.
-Thus |u ++ v| $\leq$ |u| + |v|.
+Thus $|$u $\cadd$ v$|$ $\leq$ $|$u$|$ + $|$v$|$.
 end.
 \end{proof}
 
