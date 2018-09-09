@@ -50,18 +50,18 @@
 
 \section{Introduction}
 SAD3 kann formalieserte Texte verifizieren, die für Menschen angenehm lesbar sind.
-Dies wird in diesem Text dargestellt, es folgen die Kapitel von Ordered Set, Field, Ordered Field von {\it Principles of Mathematical Analysis} by Walter Rudin \cite{Rudin}.
+Dies wird in diesem Text dargestellt. Es folgen die Kapitel von Ordered Set, Field, Ordered Field von {\it Principles of Mathematical Analysis} by Walter Rudin \cite{Rudin}.
 Die Kapitel Real Field and Complex Field sind in seperaten Texten.
 
-Die Datein ord-set.ftl, field.ftl, ord-field.ftl, complex sind nah am Rudin geschrieben. Für die Abgabe und zusamenführung mit den anderen Arbeitgruppen wurden die Dateine in den spezialen Fall von reelenzahlen umgeschrieben. Praktisch gesehen war das umschreiben nicht viel, aber das wiederherstellen der funktionalität war mühsam. Da durch den erhöhten Kontext (4 Kapitel) es in manchen Beweisen zu problemen führt.
-Lösung dafür ist die Beweise mit Atrubuten zu ergänzen z.B. "(by Satz-name)".
-Ich möchte mit der Anmerkung: "wenig Umschreiben", anmerken wie gut die Modularität von SAD3 funktioniert.
+Die Datein ord-set.ftl, field.ftl, ord-field.ftl und complex.ftl sind nah am Rudin geschrieben. Für die Abgabe und zusammenführung mit den anderen Arbeitgruppen wurden die Dateien in den spezialen Fall von reellen Zahlen umgeschrieben. Praktisch gesehen war das Umschreiben nicht viel, aber das Wiederherstellen der Funktionalität war mühsam, da es durch den erhöhten Kontext (4 Kapitel) in manchen Beweisen zu Problemen kommt.
+Lösung dafür ist, die Beweise mit Attributen zu ergänzen z.B. "(by Satz-name)".
+Ich möchte mit der Anmerkung "wenig Umschreiben" unterstreichen, wie gut die Modularität von SAD3 funktioniert.
 
-Die ForThel-Datein existieren für fast jedes Kapitel in zwei Versionen.
-Die zwei Versionen unterscheiden sich so, das z.B. OrdSet.ftl sind die Relationen mit R benannt und beliebige Relationen, das heißt man kann beweisen, falls man eine 2-stelliges-fkt-symbol hat das diese eine Relation ist falls Sie eine ist.
-In der Version in Master.ftl is OrdSet in der Schreibweise mit < geschrieben sodass später Kapitel, dies benutzen können.
+Die ForThel-Dateien existieren für fast jedes Kapitel in zwei Versionen.
+Die zwei Versionen unterscheiden sich insofern, dass z.B. in OrdSet.ftl die Relationen mit R benannt sind und die Relation deshalb beliebig ist. Das heißt, dass man beweisen kann, dass, falls man ein 2-stelliges Funktionssymbol hat, dieses eine Relation ist, falls es eine ist.
+In der Version in Master.ftl its OrdSet in der Schreibweise mit < geschrieben, sodass spätere Kapitel dies benutzen können.
 
-Am Dramatischsten ist diese Änderung in Field.ftl zu sehen da mul(AM)[( - , - )] zu einem einfachen * geworden ist.
+Am dramatischsten ist der Unterschied in Field.ftl zu sehen, da mul(AM)[( - , - )] zu einem einfachen * geworden ist.
 
 
 \subsection{Some Set-Theoretic Terminology}
@@ -197,8 +197,8 @@ a is an element of L.
 
 \subsection{The Field}
 
-Im Kapitel Field und ord-field werden aus den Axiomen viele einfache Aussagen der Körpertheorie gezeigt und Umformung-, Rechen- und Kürzungsregen gezeigt, Diese sind essenziell für das weiter Rechnen in anderen Beweisen.
-Manche Aussagen sind so einfach und der Kontext ist noch so klein das SAD diese Aussagen selbstst\"andig beweisen kann.
+Im Kapitel Field und ord-field werden aus den Axiomen viele einfache Aussagen der Körpertheorie gezeigt und Umformung-, Rechen- und Kürzungsregen gezeigt. Diese sind essenziell für das Weiterrechnen in anderen Beweisen.
+Manche Aussagen sind so einfach und der Kontext ist noch so klein, dass SAD diese Aussagen selbstst\"andig beweisen kann.
 
 \begin{forthel}
 
@@ -380,9 +380,9 @@ Let x $\geq$ y stand for y $\leq$ x.
 \end{forthel}
 
 \subsection{The Ordered Real Field}
-Im Kapitel Orderen Field werden sowohl Aussagen von Ordered Set und Field benutzt, um Aussagen über Ordered Field zuzeigen.
+Im Kapitel Orderen Field werden sowohl Aussagen von Ordered Set als auch von Field benutzt, um Aussagen über Ordered Field zu zeigen.
 Aber zuerst müssen Axiom A1 und Axiom A2 einführt werden.
-In diesem Kapitel muss man zusätzlich bestimmte Aussagen für SAD betonen da der Kontext schon ziemlich groß ist.
+In diesem Kapitel muss man zusätzlich bestimmte Aussagen für SAD betonen, da der Kontext schon ziemlich groß ist.
 
 \begin{forthel}
 	\begin{axiom} A1. If y$<$z then x+y$<$x+z.
@@ -510,9 +510,9 @@ In diesem Kapitel muss man zusätzlich bestimmte Aussagen für SAD betonen da de
 
 
 \subsection{Zusätzliche Aussagen als Vorbereitung}
-In diesem Kapitel werden Aussagen gezeigt die für die Kapitel Reals-A und Reals-B wichtig sind.
-Es war nicht möglich eine weitere Datei an Master.ftl anzuhägen da der Kontext zu groß war.
-Da SAD schwierige Existenz Aussagen zeigen muss die Zeitkritisch sind, besonders schwierig war der Beweis P118b. Diesem ist die Datei Reals-B gewidmet.
+In diesem Kapitel werden Aussagen gezeigt, die für die Kapitel Reals-A und Reals-B wichtig sind.
+Es war nicht möglich eine weitere Datei an Master.ftl anzuhägen, da der Kontext zu groß war
+un da SAD schwierige Existenzaussagen zeigen muss, die zeitaufwendig sind. Besonders schwierig war der Beweis P118b. Diesem ist die Datei Reals-B gewidmet.
  
 \begin{forthel}
 	\begin{signature} A natural number is a real number.
