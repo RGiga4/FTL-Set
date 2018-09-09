@@ -49,17 +49,17 @@
 
 
 \section{Einleitung}
-SAD3 kann formalieserte Texte verifizieren, die für Menschen angenehm lesbar sind.
+SAD3 kann formalieserte Texte verifizieren, die f\"ur Menschen angenehm lesbar sind.
 Dies wird in diesem Text dargestellt. Es folgen die Kapitel von Ordered Set, Field, Ordered Field von {\it Principles of Mathematical Analysis} by Walter Rudin \cite{Rudin}.\\
 Die Kapitel Reel Field and Complex Field sind in seperaten Texten.\\
 
-Die Datein ord-set.ftl, field.ftl, ord-field.ftl und complex.ftl sind nah am Rudin geschrieben. Für die Abgabe und zusammenführung mit den anderen Arbeitgruppen wurden die Dateien in den spezialen Fall von reellen Zahlen umgeschrieben. Praktisch gesehen war das Umschreiben nicht viel, aber das Wiederherstellen der Funktionalität war mühsam, da es durch den erhöhten Kontext (4 Kapitel) in manchen Beweisen zu Problemen kommt.\\
-Lösung dafür ist, die Beweise mit Attributen zu ergänzen z.B. "(by Satz-name)".
-Ich möchte mit der Anmerkung "wenig Umschreiben" unterstreichen, wie gut die Modularität von SAD3 funktioniert.\\
+Die Datein ord-set.ftl, field.ftl, ord-field.ftl und complex.ftl sind nah am Rudin geschrieben. F\"ur die Abgabe und zusammenf\"uhrung mit den anderen Arbeitgruppen wurden die Dateien in den spezialen Fall von reellen Zahlen umgeschrieben. Praktisch gesehen war das Umschreiben nicht viel, aber das Wiederherstellen der Funktionalit\"at war m\"uhsam, da es durch den erh\"ohten Kontext (4 Kapitel) in manchen Beweisen zu Problemen kommt.\\
+L\"osung daf\"ur ist, die Beweise mit Attributen zu erg\"anzen z.B. "(by Satz-name)".
+Ich m\"ochte mit der Anmerkung "wenig Umschreiben" unterstreichen, wie gut die Modularit\"at von SAD3 funktioniert.\\
 
-Die ForThel-Dateien existieren für fast jedes Kapitel in zwei Versionen.\\
-Die zwei Versionen unterscheiden sich insofern, dass z.B. in OrdSet.ftl die Relationen mit R benannt sind und die Relation deshalb beliebig ist. Das heißt, dass man beweisen kann, dass, falls man ein 2-stelliges Funktionssymbol hat, dieses eine Relation ist, falls es eine ist.\\
-In der Version in Master.ftl ist OrdSet in der Schreibweise mit < geschrieben, sodass spätere Kapitel dies benutzen können.\\
+Die ForThel-Dateien existieren f\"ur fast jedes Kapitel in zwei Versionen.\\
+Die zwei Versionen unterscheiden sich insofern, dass z.B. in OrdSet.ftl die Relationen mit R benannt sind und die Relation deshalb beliebig ist. Das hei\ss t, dass man beweisen kann, dass, falls man ein 2-stelliges Funktionssymbol hat, dieses eine Relation ist, falls es eine ist.\\
+In der Version in Master.ftl ist OrdSet in der Schreibweise mit < geschrieben, sodass sp\"atere Kapitel dies benutzen k\"onnen.\\
 
 Am dramatischsten ist der Unterschied in Field.ftl zu sehen, da mul(AM)[( - , - )] zu einem einfachen * geworden ist.\\
 
@@ -197,7 +197,7 @@ a is an element of L.
 
 \subsection{The Field}
 
-Im Kapitel Field und ord-field werden aus den Axiomen viele einfache Aussagen der Körpertheorie gezeigt und Umformung-, Rechen- und Kürzungsregen gezeigt. Diese sind essenziell für das Weiterrechnen in anderen Beweisen.
+Im Kapitel Field und ord-field werden aus den Axiomen viele einfache Aussagen der K\"orpertheorie gezeigt und Umformung-, Rechen- und K\"urzungsregen gezeigt. Diese sind essenziell f\"ur das Weiterrechnen in anderen Beweisen.
 Manche Aussagen sind so einfach und der Kontext ist noch so klein, dass SAD diese Aussagen selbstst\"andig beweisen kann.
 
 \begin{forthel}
@@ -380,9 +380,9 @@ Let x $\geq$ y stand for y $\leq$ x.
 \end{forthel}
 
 \subsection{The Ordered Real Field}
-Im Kapitel Orderen Field werden sowohl Aussagen von Ordered Set als auch von Field benutzt, um Aussagen über Ordered Field zu zeigen.
-Aber zuerst müssen Axiom A1 und Axiom A2 einführt werden.
-In diesem Kapitel muss man zusätzlich bestimmte Aussagen für SAD betonen, da der Kontext schon ziemlich groß ist.
+Im Kapitel Orderen Field werden sowohl Aussagen von Ordered Set als auch von Field benutzt, um Aussagen \"uber Ordered Field zu zeigen.
+Aber zuerst m\"ussen Axiom A1 und Axiom A2 einf\"uhrt werden.
+In diesem Kapitel muss man zus\"atzlich bestimmte Aussagen f\"ur SAD betonen, da der Kontext schon ziemlich gro\ss \enspace ist.
 
 \begin{forthel}
 	\begin{axiom} A1. If y$<$z then x+y$<$x+z.
@@ -509,9 +509,9 @@ In diesem Kapitel muss man zusätzlich bestimmte Aussagen für SAD betonen, da d
 
 
 
-\subsection{Zusätzliche Aussagen als Vorbereitung}
-In diesem Kapitel werden Aussagen gezeigt, die für die Kapitel Reals-A und Reals-B wichtig sind.
-Es war nicht möglich eine weitere Datei an Master.ftl anzuhägen, da der Kontext zu groß war
+\subsection{Zus\"atzliche Aussagen als Vorbereitung}
+In diesem Kapitel werden Aussagen gezeigt, die f\"ur die Kapitel Reals-A und Reals-B wichtig sind.
+Es war nicht m\"oglich eine weitere Datei an Master.ftl anzuh\"agen, da der Kontext zu gro\ss \enspace war
 un da SAD schwierige Existenzaussagen zeigen muss, die zeitaufwendig sind. Besonders schwierig war der Beweis P118b. Diesem ist die Datei Reals-B gewidmet.
  
 \begin{forthel}
@@ -571,25 +571,18 @@ un da SAD schwierige Existenzaussagen zeigen muss, die zeitaufwendig sind. Beson
 
 \end{forthel}
 
-\subsection{Archimedian properties}
-Finally we have formalized what Rudin assumes for the proof of his 1.20. We can now contrast the formalization with Rudin's original.
 
-\newpage
-The next two theorems correspond to Theorems 1.20(a) and (b) of Rudin. We start with the original introductory text of Rudin and then display the two texts in parallel to illustrate the closeness of the formalization to the original.
-
-\vspace{1cm}
-
-The next theorem could be extracted from this construction [of the real numbers] with very little extra effort. However, we prefer to derive it from Theorem 1.19 since this provides a good illustration of what one can do with the least-upper-bound property.
-
-
-\newpage
 
 
 \section{Bemerkungen}
 
-
-
-
+Ich h\"atte mir eine bessere Feed-Back vom ausf\"uhrendem Prozess gew\"unscht (alice).\\
+Zum Beispiel das nach jedem Beweis irgend wie eine Zahl ausgegeben wird die sagt wie schwer der Bewies war.\\
+Damit k\"onnte man fr\"uh erkennen das man irgendwelche Rooky-fehler macht oder sieht wo vlt man eine Lemma erg\"anzen muss oder sehen kann wo es sp\"ater mit der Lauff\"ahigkeit eng wird.\\
+Und man k\"onnte besser beurteilen ob \"Anderungen an dem Kontext, zu Verbesserungen in Beweisen f\"uhren oder nicht.
+Irgend wie war das benutzen des DEC komisch, weil manche Umformungen die lexikalischen Ordnung erh\"ohen (z.B. Kommutativit\"at) konnte mans nicht benutzen.\\
+Wir hatten eine Ideales Beispiel, wo eine Beweis so kleinlich aufgeschrieben war, dass der DEC ohne Problem es verifizieren konnte.\\
+Dazu musste man nur "= zu .=" \"andern. Nachteil war das alles kleinlich Aufschrieben war.\\
 
 
 
