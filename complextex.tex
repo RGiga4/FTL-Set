@@ -4,7 +4,6 @@
 \usepackage{framed, multicol}
 \newenvironment{forthel}{\begin{leftbar}}{\end{leftbar}}
 
-%%%%%%%%%% Start TeXmacs macros
 \newcommand{\tmaffiliation}[1]{\\ #1}
 \newcommand{\tmem}[1]{{\em #1\/}}
 \newenvironment{enumeratenumeric}{\begin{enumerate}[1.] }{\end{enumerate}}
@@ -16,7 +15,6 @@
 \newtheorem{definition}{Definition}
 \newtheorem{signature}{Signature}
 \newtheorem{proposition}{Proposition}
-%%%%%%%%%% End TeXmacs macros
 
 \newcommand{\event}{UITP 2018}
 \newcommand{\dom}{Dom}
@@ -35,116 +33,132 @@
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\NN}{\mathbb{N}}
+\newcommand{\CC}{\mathbb{C}}
 \newcommand{\cmul}{\cdot}
 \newcommand{\cadd}{+}
+\newcommand{\di }{i}
 
 \begin{document}
 
 \title{The Complex Field}
-\author{Marcin, Roman Pleskovsky}
+
 \maketitle
 
+Zunächst definieren wir die reellen Zahlen und übertragen einige Propositionen aus den vorherigen Kapiteln, die für die weiteren Beweise wichtig sein werden.
+
 \begin{forthel}
+
 [set/-s] [element/-s] [number/-s]
 \begin{signature}. A real number is a notion.
 
 \end{signature}
 
 
-Let x,y,z,a,b,c,d,e,f,g,h,j,k,r,s denote real numbers.
+Let $x,y,z,a,b,c,d,e,f,g,h,j,k,r,s$ denote real numbers.
 
 
 
-\begin{signature} Add. x + y is a real number.
-
-\end{signature}
-\begin{axiom} RComm. x+y = y+x.
-
-\end{axiom}
-\begin{axiom}. (x+y)+z = x+(y+z).
-
-\end{axiom}
-\begin{signature} Zero. 0 is a real number such that for every real number x x + 0 = x.
+\begin{signature}[Add] $x + y$ is a real number.
 
 \end{signature}
-\begin{signature}. -x is a real number such that -x + x = 0.
+\begin{axiom}[RComm]$x+y = y+x$.
+
+\end{axiom}
+\begin{axiom} $(x+y)+z = x+(y+z)$.
+
+\end{axiom}
+\begin{signature}[Zero] $0$ is a real number such that for every real number $x$ $x + 0 = x$.
+
+\end{signature}
+\begin{signature} $-x$ is a real number such that $-x + x = 0$.
 
 \end{signature}
 
-Let x - y stand for x + (-y).
+Let $x - y$ stand for $x + (-y)$.
 
-\begin{signature} Mult. x $\cdot$ y is real number.
-
-\end{signature}
-\begin{axiom}. x$\cdot$y = y$\cdot$x.
-
-\end{axiom}
-\begin{axiom}. (x$\cdot$y)$\cdot$z = x$\cdot$(y$\cdot$z).
-
-\end{axiom}
-\begin{signature} One. 1 is a real number such that for every real number x x$\cdot$1 = x.
+\begin{signature}[Mult]$x \cdot y$ is real number.
 
 \end{signature}
-\begin{signature}. Assume not x = 0. inv(x) is a real number such that inv(x)$\cdot$x = 1 .
+\begin{axiom} $x\cdot y = y\cdot x$.
+
+\end{axiom}
+\begin{axiom} $(x\cdot y)\cdot z = x\cdot (y\cdot z)$.
+
+\end{axiom}
+\begin{signature}[One] $1$ is a real number such that for every real number $x$ $x\cdot 1 = x$.
 
 \end{signature}
-\begin{axiom}. 1 is not equal to 0.
+\begin{signature} Assume not $x = 0$. $inv(x)$ is a real number such that $inv(x)\cdot x = 1$ .
+
+\end{signature}
+\begin{axiom} $1$ is not equal to $0$.
 
 \end{axiom}
 
-\begin{axiom} Dis1. x$\cdot$(y+z)=(x$\cdot$y)+(x$\cdot$z).
+\begin{axiom}[Dis1] $x\cdot(y+z)=(x\cdot y)+(x\cdot z)$.
 
 \end{axiom}
-\begin{axiom} Dis2. (y+z)$\cdot$x=(y$\cdot$x)+(z$\cdot$x).
-
-\end{axiom}
-
-
-\begin{axiom} P114c. If x+y = 0 then y = -x.
-
-\end{axiom}
-\begin{axiom} P114d. -(-x) = x.
-
-\end{axiom}
-\begin{axiom} P115c. If (not x=0) and x$\cdot$y = 1 then y = inv(x).  
-
-\end{axiom}
-\begin{axiom} P115d. If not x=0 then inv(inv(x)) = x.
-
-\end{axiom}
-\begin{axiom} P116c. (-x)$\cdot$y = -(x$\cdot$y) = x$\cdot$(-y).
+\begin{axiom}[Dis2] $(y+z) \cdot x=(y \cdot x)+(z \cdot x)$.
 
 \end{axiom}
 
-\begin{axiom}. -(x+y) = -x + -y. 
+
+\begin{axiom}[P114c] If $x+y = 0$ then $y = -x$.
 
 \end{axiom}
-\begin{axiom}. x$\cdot$0 = 0. 
+\begin{axiom}[P114d] $-(-x) = x$.
+
+\end{axiom}
+\begin{axiom}[P115c] If (not $x=0$) and $x\cdot y = 1$ then $y = inv(x)$.  
+
+\end{axiom}
+\begin{axiom}[P115d] If not $x=0$ then $inv(inv(x)) = x$.
+
+\end{axiom}
+\begin{axiom}[P116c] $(-x)\cdot y = -(x\cdot y) = x \cdot (-y)$.
 
 \end{axiom}
 
-\begin{theorem}
-. (c + d) + (e  + f) = (c + e) + (f   + d).
-\end{theorem}\begin{proof}
- (c + d) + (e  + f)	= ((c +  d) +  e)  + f 
-= ( c + (d  +  e)) + f 
-= ( c + (e  +  d)) + f 
-= ((c +  e) +  d)  + f 
-=  (c +  e) + (f   + d).
+\begin{axiom} $-(x+y) = -x + -y$. 
+
+\end{axiom}
+\begin{axiom} $x \cdot 0 = 0$. 
+
+\end{axiom}
+
+\end{forthel}
+Wir zeigen zwei nützliche Lemmas. Das erste spart an einigen Stellen Schreibarbeit. Rudin braucht kein derartiges Lemma, da aus der Assoziativität und der Kommutativität folgt, dass man in einem Term, der nur Addition enthält, die Klammern beliebig setzen und die atomaren Terme beliebig permutieren kann. Wir haben es jedoch nicht geschafft, eine analoge Aussage in FoTtheL zu formulieren geschweige denn zu beweisen. Also mussten wir das gesamte Kapitel hindurch alle Klammern und Variablen "per Hand" verschieben, was zu einem starken "Aufblasen" der Rechnungen geführt hat.\newline
+
+Das zweite Lemma entspricht der 3.ten binomischen Formel, die an einigen Stellen hilfreich ist.
+\begin{forthel}
+
+\begin{lemma} $(c + d) + (e  + f) = (c + e) + (f   + d)$.
+\end{lemma}
+\begin{proof}\begin{align*}
+&(c + d) + (e  + f)	= ((c +  d) +  e)  + f \\
+= &( c + (d  +  e)) + f \\
+= &( c + (e  +  d)) + f \\
+= &((c +  e) +  d)  + f \\
+=  &(c +  e) + (f   + d).
+\end{align*}
 \end{proof}
 
 
-\begin{theorem}
-. (x$\cdot$x) - (y$\cdot$y) = (x+y)$\cdot$(x-y).
-\end{theorem}\begin{proof}
- (x+y)$\cdot$(x-y) 	= (x+y)$\cdot$(x+ -y) = (((x+y)$\cdot$x)+ ((x+y)$\cdot$(-y))) = ( ((x$\cdot$x) + (y$\cdot$x)) + ((x$\cdot$(-y)) + (y$\cdot$(-y))) )
-= ( ((x$\cdot$x) + (y$\cdot$x)) + ((x$\cdot$(-y)) + -(y$\cdot$y)) )
-= ( (x$\cdot$x) + ((y$\cdot$x) + ((x$\cdot$(-y)) + -(y$\cdot$y))) )
-= ( (x$\cdot$x) + (((y$\cdot$x) + (x$\cdot$(-y))) + -(y$\cdot$y) ) )
-= ( (x$\cdot$x) + (((y$\cdot$x) + -(x$\cdot$y)) + -(y$\cdot$y) ) )
-= ( (x$\cdot$x) + (((y$\cdot$x) + -(y$\cdot$x)) + -(y$\cdot$y) ) )
-= ( (x$\cdot$x) + (0 + -(y$\cdot$y) ) )
-= (x$\cdot$x) - (y$\cdot$y).
+\begin{lemma}
+ $(x \cdot x) - (y \cdot y) = (x+y) \cdot (x-y)$.
+\end{lemma}
+\begin{proof}\begin{align*}
+ &(x+y) \cdot (x-y) 	= (x+y) \cdot (x+ -y) \\
+= &(((x+y) \cdot x)+ ((x+y) \cdot (-y)))\\
+= &( ((x \cdot x) + (y \cdot x)) + ((x \cdot (-y)) + (y \cdot (-y))) )\\
+= &( ((x \cdot x) + (y \cdot x)) + ((x \cdot (-y)) + -(y \cdot y)) )\\
+= &( (x \cdot x) + ((y \cdot x) + ((x \cdot (-y)) + -(y \cdot y))) )\\
+= &( (x \cdot x) + (((y \cdot x) + (x \cdot (-y))) + -(y \cdot y) ) )\\
+= &( (x \cdot x) + (((y \cdot x) + -(x \cdot y)) + -(y \cdot y) ) )\\
+= &( (x \cdot x) + (((y \cdot x) + -(y \cdot x)) + -(y \cdot y) ) )\\
+= &( (x \cdot x) + (0 + -(y \cdot y) ) )\\
+= &(x \cdot x) - (y \cdot y).
+\end{align*}
 \end{proof}
 
 
@@ -152,194 +166,212 @@ Let x - y stand for x + (-y).
 
 
 
+\end{forthel}
+Nun sind wir bereit Komplexe Zahlen einzuführen. Anders als Rudin beweisen wir die Abgeschlossenheit von $\CC$ bzgl. Addition und Multplikation nicht, da diese vorrausgesetzt werden muss, um die Operatoren für Add. und Mult. in ForTheL zu definieren. Die Theoreme CmpFld2 - CmpFld5 entsprechen den Körperaxiomen für Addition und CmpFld6 - CmpFld9 entsprechen denen für Multiplikation. 
+\begin{forthel}
 
 
-\begin{signature}. A complex number is a notion.
-
+\begin{signature} A complex number is a notion.
 \end{signature}
-Let u,v,w, u2 denote complex numbers.
-\begin{signature}. Let x,y be real numbers. (x,y) is a complex number.
 
+Let $u,v,w$ denote complex numbers.
+\begin{signature} Let $x,y$ be real numbers. $(x,y)$ is a complex number.
 \end{signature}
-\begin{signature}. u $\cadd$ v is a complex number.
 
-\end{signature}
-\begin{signature}. u $\cmul$ v is a complex number.
-
-\end{signature}
-\begin{axiom}. If u is a complex number then there exist real numbers x,y such that u = (x,y).
-
-\end{axiom}
-\begin{axiom} CAdd. (x, y) $\cadd$ (a, b) = (x + a, y + b) .
-
-\end{axiom}
-\begin{axiom} CMult. (x, y) $\cmul$ (a, b) = ((x$\cdot$a) - (y$\cdot$b), (x$\cdot$b) + (y$\cdot$a)).
-
+\begin{axiom} If $u$ is a complex number then there exist real numbers $x,y$ such that $u = (x,y)$.
 \end{axiom}
 
+\begin{signature} $u  \cadd  v$ is a complex number.
+\end{signature}
+
+\begin{signature} $u  \cmul  v$ is a complex number.
+\end{signature}
+
+\begin{axiom}[CAdd] $(x, y)  \cadd  (a, b) = (x + a, y + b)$ .
+\end{axiom}
+
+\begin{axiom}[CMult] $(x, y)  \cmul  (a, b) = ((x \cdot a) - (y \cdot b), (x \cdot b) + (y \cdot a))$.
+\end{axiom}
 
 
 
-\begin{theorem}
- CmpFld2.  u $\cadd$ v = v $\cadd$ u.
-\end{theorem}\begin{proof}
- Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
-Then u $\cadd$ v = (x,y) $\cadd$ (a,b).
-Then (x,y) $\cadd$ (a,b) = (x + a, y + b) (by CAdd).	
-(x + a, y + b) = (a + x, b + y). 
-(a + x, b + y) = (a,b) $\cadd$ (x,y) (by CAdd).
-(a,b) $\cadd$ (x,y) = v $\cadd$ u. 
-Then u $\cadd$ v = v $\cadd$ u.
+
+\begin{theorem}[CmpFld2]  $u  \cadd  v = v  \cadd  u$.
+\end{theorem}
+\begin{proof} 
+Let $x,y,a,b$ be real numbers such that ($u = (x,y)$ and $v = (a,b)$).\newline
+Then $u  \cadd  v = (x,y)  \cadd  (a,b)$. \newline
+Then $(x,y)  \cadd  (a,b) = (x + a, y + b)$ (by CAdd). \newline	
+$(x + a, y + b) = (a + x, b + y)$. \newline
+$(a + x, b + y) = (a,b)  \cadd  (x,y)$ (by CAdd).\newline
+$(a,b)  \cadd  (x,y) = v  \cadd  u$. \newline
+Then $u  \cadd  v = v  \cadd  u$.
 \end{proof}
  
 
 
 
-\begin{theorem}
- CmpFld3. (u $\cadd$ v) $\cadd$ w = u $\cadd$ (v $\cadd$ w).
-\end{theorem}\begin{proof}
- Let x,y,a,b,r,s be real numbers such that (u = (x,y) and v = (a,b) and w = (r,s)).
-Then (u $\cadd$ v) $\cadd$ w = ((x+a)+r, (y+b)+s) (by CAdd). 
-((x+a)+r, (y+b)+s)= (x+(a+r), y+(b+s)).
-(x+(a+r), y+(b+s)) = u $\cadd$ (v $\cadd$ w) (by CAdd).
-Then (u$\cadd$v)$\cadd$w=u$\cadd$(v$\cadd$w). 
+\begin{theorem}[CmpFld3] $(u  \cadd  v)  \cadd  w = u  \cadd  (v  \cadd  w)$.
+\end{theorem}
+\begin{proof} 
+Let $x,y,a,b,r,s$ be real numbers such that ($u = (x,y)$ and $v = (a,b)$ and $w = (r,s)$).\newline
+Then $(u  \cadd  v)  \cadd  w = ((x+a)+r, (y+b)+s)$ (by CAdd). \newline
+$((x+a)+r, (y+b)+s)= (x+(a+r), y+(b+s))$.\newline
+$(x+(a+r), y+(b+s)) = u  \cadd  (v  \cadd  w)$ (by CAdd).\newline
+Then $(u \cadd v) \cadd w=u \cadd (v \cadd w)$. 
 \end{proof}
 
 
-\begin{theorem}
- CmpFld4. u $\cadd$ (0,0) = u.
-\end{theorem}\begin{proof}
- 
-Let x,y be real numbers such that u = (x,y). Then u $\cadd$ (0,0) = (x+0,y+0) (by CAdd). (x+0,y+0) = (x,y) = u. 
+\begin{theorem}[CmpFld4] $u  \cadd  (0,0) = u$.
+\end{theorem}\begin{proof} 
+Let $x,y$ be real numbers such that $u = (x,y)$. Then $u  \cadd  (0,0) = (x+0,y+0)$ (by CAdd).\newline
+ $(x+0,y+0) = (x,y) = u$. 
 \end{proof}
 
 
 
 
-\begin{theorem}
- CmpFld5. For every complex number u there exists a complex number v such that u $\cadd$ v = (0,0).
+\begin{theorem}[CmpFld5] For every complex number $u$ there exists a complex number $v$ such that $u  \cadd  v = (0,0)$.
 \end{theorem}\begin{proof}
- Let u be a complex number.
-Take real numbers x,y such that u = (x,y). Take v = (-x, -y). Then  u $\cadd$ v = (x-x, y-y)(by CAdd) . (x-x, y-y) = (0,0). 
-Then v is a complex number such that u$\cadd$v = (0,0).
+ Let $u$ be a complex number.\newline
+Take real numbers $x,y$ such that $u = (x,y)$. Take $v = (-x, -y)$.\newline
+ Then  $u  \cadd  v = (x-x, y-y)(by CAdd) . (x-x, y-y) = (0,0)$. \newline
+Then $v$ is a complex number such that $u \cadd v = (0,0)$.
 
 \end{proof}
 
 
-\begin{theorem}
- CmpFld6. u$\cmul$v = v$\cmul$u.
-\end{theorem}\begin{proof}
- Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
-Then u$\cmul$v =  ((x$\cdot$a) - (y$\cdot$b), (x$\cdot$b) + (y$\cdot$a)) =  ((a$\cdot$x) - (b$\cdot$y), (a$\cdot$y) + (b$\cdot$x)) = v$\cmul$u. Then u$\cmul$v = v$\cmul$u. \end{proof}
+\begin{theorem}[CmpFld6] $u \cmul v = v \cmul u$.
+\end{theorem}
+\begin{proof}
+ Let $x,y,a,b$ be real numbers such that ($u = (x,y)$ and $v = (a,b)$).\newline
+Then $u \cmul v =  ((x \cdot a) - (y \cdot b), (x \cdot b) + (y \cdot a)) =  ((a \cdot x) - (b \cdot y), (a \cdot y) + (b \cdot x)) = v \cmul u$.\newline
+Then $u \cmul v = v \cmul u$. 
+ \end{proof}
 
 
-\begin{theorem}
- CmpFld7. (u$\cmul$v)$\cmul$w = u$\cmul$(v$\cmul$w).
+\begin{theorem}[CmpFld7] $(u \cmul v) \cmul w = u \cmul (v \cmul w)$.
 \end{theorem}\begin{proof}
- Let x,y,a,b,r,s be real numbers such that (u = (x,y) and v = (a,b) and w = (r,s)). 
-(u$\cmul$v)$\cmul$w = (((x$\cdot$a) - (y$\cdot$b), (x$\cdot$b) + (y$\cdot$a))) $\cmul$ w 
-= (  ( ((x$\cdot$a)  - (y$\cdot$b))$\cdot$r ) - ( ((x$\cdot$b) + (y$\cdot$a))$\cdot$s )  ,  ( ((x$\cdot$a)  - (y$\cdot$b))$\cdot$s ) + ( ((x$\cdot$b) + (y$\cdot$a))$\cdot$r ) )
-= (  ( ((x$\cdot$a) + -(y$\cdot$b))$\cdot$r ) - ( ((x$\cdot$b) + (y$\cdot$a))$\cdot$s )  ,  ( ((x$\cdot$a) + -(y$\cdot$b))$\cdot$s ) + ( ((x$\cdot$b) + (y$\cdot$a))$\cdot$r ) )
-= (  ( ((x$\cdot$a) + -(y$\cdot$b))$\cdot$r ) - ( ((x$\cdot$b)$\cdot$s) + ((y$\cdot$a)$\cdot$s) )  ,  ( ((x$\cdot$a) + -(y$\cdot$b))$\cdot$s ) + ( ((x$\cdot$b)$\cdot$r) + ((y$\cdot$a)$\cdot$r) )  )
-= (  ( ((x$\cdot$a)$\cdot$r) + ((-(y$\cdot$b))$\cdot$r) ) - ( ((x$\cdot$b)$\cdot$s) + ((y$\cdot$a)$\cdot$s) )  ,  ( ((x$\cdot$a)$\cdot$s) + ((-(y$\cdot$b))$\cdot$s) ) + ( ((x$\cdot$b)$\cdot$r) + ((y$\cdot$a)$\cdot$r) )  ) 
-= (  ( ((x$\cdot$a)$\cdot$r) + -((y$\cdot$b)$\cdot$r) ) - ( ((x$\cdot$b)$\cdot$s) + ((y$\cdot$a)$\cdot$s) )  ,  ( ((x$\cdot$a)$\cdot$s) - ((y$\cdot$b)$\cdot$s) ) + ( ((x$\cdot$b)$\cdot$r) + ((y$\cdot$a)$\cdot$r) )  )
-= (  ( ((x$\cdot$a)$\cdot$r) + -((y$\cdot$b)$\cdot$r) ) + ( -((x$\cdot$b)$\cdot$s) + -((y$\cdot$a)$\cdot$s) )  ,  ( ((x$\cdot$a)$\cdot$s) + -((y$\cdot$b)$\cdot$s) ) + ( ((x$\cdot$b)$\cdot$r) + ((y$\cdot$a)$\cdot$r) )  ).
-Let c = (x$\cdot$a)$\cdot$r and d = -((y$\cdot$b)$\cdot$r) and e = -((x$\cdot$b)$\cdot$s) and f = -((y$\cdot$a)$\cdot$s) and g = ((x$\cdot$a)$\cdot$s) and  h = -((y$\cdot$b)$\cdot$s) and  j = ((x$\cdot$b)$\cdot$r) and k = ((y$\cdot$a)$\cdot$r).
-Then (u$\cmul$v)$\cmul$w =  ( (c + d) + (e  + f) , (g + h) +  (j + k)  )
+ Let $x,y,a,b,r,s$ be real numbers such that ($u = (x,y)$ and $v = (a,b)$ and $w = (r,s)$).\newline 
+\begin{align*}
+&(u \cmul v) \cmul w \\
+= &(((x \cdot a) - (y \cdot b), (x \cdot b) + (y \cdot a)))  \cmul  w \\
+= &(  ( ((x \cdot a)  - (y \cdot b)) \cdot r ) - ( ((x \cdot b) + (y \cdot a)) \cdot s )  ,\\
+  &( ((x \cdot a)  - (y \cdot b)) \cdot s ) + ( ((x \cdot b) + (y \cdot a)) \cdot r ) )\\
+= &(  ( ((x \cdot a) + -(y \cdot b)) \cdot r ) - ( ((x \cdot b) + (y \cdot a)) \cdot s )  ,  \\
+  &( ((x \cdot a) + -(y \cdot b)) \cdot s ) + ( ((x \cdot b) + (y \cdot a)) \cdot r ) )\\
+= &(  ( ((x \cdot a) + -(y \cdot b)) \cdot r ) - ( ((x \cdot b) \cdot s) + ((y \cdot a) \cdot s) )  , \\
+  &( ((x \cdot a) + -(y \cdot b)) \cdot s ) + ( ((x \cdot b) \cdot r) + ((y \cdot a) \cdot r) )  )\\
+= &(  ( ((x \cdot a) \cdot r) + ((-(y \cdot b)) \cdot r) ) - ( ((x \cdot b) \cdot s) + ((y \cdot a) \cdot s) )  ,  \\
+  &( ((x \cdot a) \cdot s) + ((-(y \cdot b)) \cdot s) ) + ( ((x \cdot b) \cdot r) + ((y \cdot a) \cdot r) )  )\\ 
+= &(  ( ((x \cdot a) \cdot r) + -((y \cdot b) \cdot r) ) - ( ((x \cdot b) \cdot s) + ((y \cdot a) \cdot s) )  ,  \\
+  &( ((x \cdot a) \cdot s) - ((y \cdot b) \cdot s) ) + ( ((x \cdot b) \cdot r) + ((y \cdot a) \cdot r) )  )\\
+= &(  ( ((x \cdot a) \cdot r) + -((y \cdot b) \cdot r) ) + ( -((x \cdot b) \cdot s) + -((y \cdot a) \cdot s) )  ,  \\
+  &( ((x \cdot a) \cdot s) + -((y \cdot b) \cdot s) ) + ( ((x \cdot b) \cdot r) + ((y \cdot a) \cdot r) )  ).\\
+\end{align*}
+Let $c = (x \cdot a) \cdot r$ and $d = -((y \cdot b) \cdot r)$ and $e = -((x \cdot b) \cdot s)$ and $f = -((y \cdot a) \cdot s)$ and $g = ((x \cdot a) \cdot s)$ and  $h = -((y \cdot b) \cdot s)$ and  $j = ((x \cdot b) \cdot r)$ and $k = ((y \cdot a) \cdot r)$.\newline
+Then $(u \cmul v) \cmul w =  ( (c + d) + (e  + f) , (g + h) +  (j + k)  )
 =  ( (c + e) + (d + f) , (g +  j) + (h  + k) )
-= ( (c + e) + (f + d) , (g + j) + (k + h) ).
-Then v $\cmul$ w = ((a$\cdot$r) - (b$\cdot$s),(a$\cdot$s) + (b$\cdot$r)) (by CMult).
-u$\cmul$(v$\cmul$w) = u $\cmul$ ((a,b) $\cmul$ (r,s)) 
-= u $\cmul$ (  ((a$\cdot$r) - (b$\cdot$s) , (a$\cdot$s) + (b$\cdot$r))  )
-= (  ( x $\cdot$ ((a$\cdot$r) -(b$\cdot$s)) ) - (y$\cdot$((a$\cdot$s) + (b$\cdot$r))) , (x$\cdot$((a$\cdot$s) + (b$\cdot$r))) + (y$\cdot$((a$\cdot$r) - (b$\cdot$s))))
-= ((x$\cdot$((a$\cdot$r) + -(b$\cdot$s))) + -(y$\cdot$((a$\cdot$s) + (b$\cdot$r))) , (x$\cdot$((a$\cdot$s) 	+ (b$\cdot$r))) + (y$\cdot$((a$\cdot$r) + -(b$\cdot$s))))
-= (  ( (x$\cdot$(a$\cdot$r)) + (x$\cdot$(-(b$\cdot$s))) ) + -( (y$\cdot$(a$\cdot$s)) + (y$\cdot$(b$\cdot$r)) )  , ( (x$\cdot$(a$\cdot$s)) + (x$\cdot$(b$\cdot$r)) ) + ( (y$\cdot$(a$\cdot$r)) + (y$\cdot$(-(b$\cdot$s))) ) )
-= (  ( (x$\cdot$(a$\cdot$r)) + -(x$\cdot$(b$\cdot$s)) ) + ( -(y$\cdot$(a$\cdot$s)) + -(y$\cdot$(b$\cdot$r)) )  ,  ( (x$\cdot$(a$\cdot$s)) + (x$\cdot$(b$\cdot$r)) ) + ( (y$\cdot$(a$\cdot$r)) + -(y$\cdot$(b$\cdot$s)) ) )
-= (  ( ((x$\cdot$a)$\cdot$r) + -((x$\cdot$b)$\cdot$s) ) + ( -((y$\cdot$a)$\cdot$s) + -((y$\cdot$b)$\cdot$r) )  ,  ( ((x$\cdot$a)$\cdot$s) + ((x$\cdot$b)$\cdot$r) ) + ( ((y$\cdot$a)$\cdot$r) + -((y$\cdot$b)$\cdot$s) ) )
-= ( (c + e) + (f + d) , (g + j) + (k + h) ) = (u$\cmul$v)$\cmul$w.
-Then (u$\cmul$v)$\cmul$w = u$\cmul$(v$\cmul$w). \end{proof}
+= ( (c + e) + (f + d) , (g + j) + (k + h) )$.\newline
+Then $v  \cmul  w = ((a \cdot r) - (b \cdot s),(a \cdot s) + (b \cdot r))$ (by CMult).\newline
+\begin{align*}
+&u \cmul (v \cmul w) \\
+= &u  \cmul  ((a,b)  \cmul  (r,s)) \\
+= &u  \cmul  (  ((a \cdot r) - (b \cdot s) , (a \cdot s) + (b \cdot r))  )\\
+= &(  ( x  \cdot  ((a \cdot r) -(b \cdot s)) ) - (y \cdot ((a \cdot s) + (b \cdot r))) , \\
+  &(x \cdot ((a \cdot s) + (b \cdot r))) + (y \cdot ((a \cdot r) - (b \cdot s))))\\
+= &((x \cdot ((a \cdot r) + -(b \cdot s))) + -(y \cdot ((a \cdot s) + (b \cdot r))) , \\
+  &(x \cdot ((a \cdot s) 	+ (b \cdot r))) + (y \cdot ((a \cdot r) + -(b \cdot s))))\\
+= &(  ( (x \cdot (a \cdot r)) + (x \cdot (-(b \cdot s))) ) + -( (y \cdot (a \cdot s)) + (y \cdot (b \cdot r)) )  , \\
+  &( (x \cdot (a \cdot s)) + (x \cdot (b \cdot r)) ) + ( (y \cdot (a \cdot r)) + (y \cdot (-(b \cdot s))) ) )\\
+= &(  ( (x \cdot (a \cdot r)) + -(x \cdot (b \cdot s)) ) + ( -(y \cdot (a \cdot s)) + -(y \cdot (b \cdot r)) )  ,  \\
+  &( (x \cdot (a \cdot s)) + (x \cdot (b \cdot r)) ) + ( (y \cdot (a \cdot r)) + -(y \cdot (b \cdot s)) ) )\\
+= &(  ( ((x \cdot a) \cdot r) + -((x \cdot b) \cdot s) ) + ( -((y \cdot a) \cdot s) + -((y \cdot b) \cdot r) )  ,  \\
+  &( ((x \cdot a) \cdot s) + ((x \cdot b) \cdot r) ) + ( ((y \cdot a) \cdot r) + -((y \cdot b) \cdot s) ) )\\
+= &( (c + e) + (f + d) , (g + j) + (k + h) ) = (u \cmul v) \cmul w.
+\end{align*}
+Then $(u \cmul v) \cmul w = u \cmul (v \cmul w)$. \end{proof}
 
 
 
-\begin{theorem}
- CmpFld8. u$\cmul$(1,0) = u.
+\begin{theorem}[CmpFld8] $u \cmul (1,0) = u$.
 \end{theorem}\begin{proof}
- Let x,y be real numbers such that u = (x,y). Then u $\cmul$ (1,0) = ((x,y)) $\cmul$ (1,0) = ((x$\cdot$1)-(y$\cdot$0) , (x$\cdot$0)+(y$\cdot$1)). 
-Let a = x$\cdot$1 and b = y$\cdot$0 and c = x$\cdot$0 and d = y$\cdot$1.
-
-((x$\cdot$1)-(y$\cdot$0) , (x$\cdot$0)+(y$\cdot$1)) = (a-b, c+d).
-Then a = x and b = 0 and c = 0 and d = y.
-(a-b, c+d) = (x-0 , 0+y) = (x,y) = u .
-Then u$\cmul$(1,0) = u.
+ Let $x,y$ be real numbers such that $u = (x,y)$.\newline
+ Then $u  \cmul  (1,0) = ((x,y))  \cmul  (1,0) = ((x \cdot 1)-(y \cdot 0) , (x \cdot 0)+(y \cdot 1))$. \newline
+Let $a = x \cdot 1$ and $b = y \cdot 0$ and $c = x \cdot 0$ and $d = y \cdot 1$.\newline
+$((x \cdot 1)-(y \cdot 0) , (x \cdot 0)+(y \cdot 1)) = (a-b, c+d)$.\newline
+Then $a = x$ and $b = 0$ and $c = 0$ and $d = y$.\newline
+$(a-b, c+d) = (x-0 , 0+y) = (x,y) = u$ .\newline
+Then $u \cmul (1,0) = u$.
 \end{proof}
 
 
 
+\end{forthel}
+Im Folgenden muss die Relation $<$ eingeführt werden, da man sie nutzten kann, um die Existenz von multiplikativen Inversen in $\CC \verb|\| \{ 0 \}$ zu zeigen. Wir übertragen wieder Aussagen über $>$ aus vorherigen Kaptieln und leiten das eine oder andere Lemma für spätere Verwendung her. Diese Lemmas verwendet Rudin an ein paar Stellen implizit, ohne sie formal zu zeigen. Das Axiom SqrtEind ist ein Spezialfall des im Kapitel The Real Field bewiesenen Theorems über Eindeutigkeit und Existenz von Wurzeln.
+\begin{forthel}
 
 
-
-
-\begin{signature}. x $<$ y is an atom.
+\begin{signature}. $x < y$ is an atom.
 
 \end{signature}
-Let x $>$ y stand for y $<$ x.
-Let x $\leq$ y stand for x$<$y or x=y.
-Let x $\geq$ y stand for y $\leq$ x.
+Let $x  >  y$ stand for $y  <  x$.\newline
+Let $x  \leq  y$ stand for $x < y$ or $x=y$.\newline
+Let $x  \geq  y$ stand for $y  \leq  x$.
 
-\begin{axiom} InEqCompl. Then x$<$y or y$<$x or x = y.
-
-\end{axiom}
-\begin{axiom}. If x$<$y then not x=y.
+\begin{axiom}[InEqCompl] $x < y$ or $y < x$ or $x = y$.
 
 \end{axiom}
-
-\begin{axiom} Trans. If x$<$y and y$<$z then x$<$z.
+\begin{axiom} If $x < y$ then not $x=y$.
 
 \end{axiom}
 
-
-\begin{axiom} InEqAdd. If y$<$z then x+y$<$x+z.
-
-\end{axiom}
-\begin{axiom} InEqMult. If x$>$0 and y$>$0 then x$\cdot$y$>$0.
+\begin{axiom}[Trans] If $x < y$ and $y < z$ then $x < z$.
 
 \end{axiom}
 
 
-\begin{axiom} P118d. If not x = 0 then x$\cdot$x $>$ 0.
+\begin{axiom}[InEqAdd] If $y < z$ then $x+y < x+z$.
 
 \end{axiom}
-\begin{axiom} P118e1. If 0$<$y then 0 $<$ inv(y).
-
-\end{axiom}
-
-\begin{axiom} SqrtEind. If x$\cdot$x = y$\cdot$y and x$\geq$0 and y $\geq$ 0 then x=y.
+\begin{axiom}[InEqMult] If $x > 0$ and $y > 0$ then $x \cdot y > 0$.
 
 \end{axiom}
 
-\begin{theorem}
- SqrtMon. If x$\cdot$x $>$ y$\cdot$y and x $>$ 0  and y $\geq$ 0 then x$>$y.
-\end{theorem}\begin{proof}
-	Assume x$\cdot$x $>$ y$\cdot$y and x$>$0 and y $\geq$ 0.
-Thus  -(y$\cdot$y) + (x$\cdot$x) $>$ -(y$\cdot$y) + (y$\cdot$y) (by InEqAdd). 
-Hence (x$\cdot$x) - (y$\cdot$y) $>$ 0.
-Then  (x + y) $\cdot$ (x - y) $>$ 0.
-x + y $>$ 0.
-proof. 	x $>$ 0. Then x + y $>$ y.
-case y $>$ 0. Then x + y $>$ 0 (by Trans). end.
-case y = 0. Then x + y  $>$ 0 . end.
-end.
-Thus inv(x + y) $>$ 0. Hence inv(x + y) $\cdot$ ((x + y) $\cdot$ (x - y)) $>$ 0.
-We have inv(x + y) $\cdot$ ((x + y) $\cdot$ (x - y)) 
-= (inv(x + y) $\cdot$ (x + y)) $\cdot$ (x - y)
-= 1 $\cdot$ (x - y) = x - y.
-Then x - y $>$ 0.
-Thus (x + -y) + y $>$ 0 + y.
-Hence x + (-y + y) $>$ 0 + y.
+
+\begin{axiom}[P118d] If not $x = 0$ then $x \cdot x  >  0$.
+
+\end{axiom}
+\begin{axiom}[P118e1] If $0 < y$ then $0  <  inv(y)$.
+
+\end{axiom}
+
+\begin{axiom}[SqrtEind] If $x \cdot x = y \cdot y and x \geq 0 and y  \geq  0$ then $x=y$.
+
+\end{axiom}
+
+\begin{lemma}[SqrtMon] If $x \cdot x  >  y \cdot y $ and $x  >  0$  and $y  \geq  0 $ then $x > y$.
+\end{lemma}\begin{proof}
+	Assume $x \cdot x  >  y \cdot y$ and $x > 0$ and $y  \geq  0$. \newline
+Thus  $-(y \cdot y) + (x \cdot x)  >  -(y \cdot y) + (y \cdot y)$ (by InEqAdd).\newline 
+Hence $(x \cdot x) - (y \cdot y)  >  0$.\newline
+Then  $(x + y)  \cdot  (x - y)  >  0$.\newline
+$x + y  >  0$.\newline
+proof. 	$x  >  0$. Then $x + y  >  y$.\newline
+case $y  >  0$. Then $x + y  >  0$ (by Trans). end.\newline
+case $y = 0$. Then $x + y   >  0$ . end.\newline
+end.\newline
+Thus $inv(x + y)  >  0$. Hence $inv(x + y)  \cdot  ((x + y)  \cdot  (x - y))  >  0$.\newline
+We have $inv(x + y)  \cdot  ((x + y)  \cdot  (x - y)) 
+= (inv(x + y)  \cdot  (x + y))  \cdot  (x - y)
+= 1  \cdot  (x - y) = x - y$.\newline
+Then $x - y  >  0$.\newline
+Thus $(x + -y) + y  >  0 + y$.\newline
+Hence $x + (-y + y)  >  0 + y$.\newline
 \end{proof}
 
 
-\begin{lemma} LeqTrans. If x$\leq$y and y$\leq$z then x$\leq$z.
+\begin{lemma}[LeqTrans] If $x \leq y$ and $y \leq z$ then $x \leq z$.
 
 \end{lemma}
 \begin{proof}
@@ -347,393 +379,387 @@ Hence x + (-y + y) $>$ 0 + y.
 
 
 
-\begin{lemma} LeqAdd. 	If y $\leq$ z then x + y $\leq$ x+z.
+\begin{lemma}[LeqAdd] 	If $y  \leq  z$ then $x + y  \leq  x+z$.
 
 \end{lemma}
 \begin{proof}
-			Case y $<$ z. Then x + y $\leq$ x + z (by InEqAdd). end.
-Case y = z. Then x+y = x+z. end.
+Case $y  <  z$. Then $x + y  \leq  x + z$ (by InEqAdd). end.\newline
+Case $y = z$. Then $x+y = x+z$. end.
 \end{proof}
 
 
-\begin{lemma} LeqAdd2.  If a $\leq$ b and c $\leq$ d then a+c $\leq$ b+d.
+\begin{lemma}[LeqAdd2]  If $a  \leq  b$ and $c  \leq  d$ then $a+c  \leq  b+d$.
 
 \end{lemma}
 \begin{proof}
-			Assume a $\leq$ b and c $\leq$ d. 
-Case a=b. Then a+c = b+c. b+c $\leq$ b+d (by LeqAdd). Thus a+c $\leq$ b+d. end.
-Case a $<$ b. Then c+a $<$ c+b. Thus c+a $\leq$ c+b. Hence a+c $\leq$ b+c. b+c $\leq$ b+d (by LeqAdd).
-Then a+c $\leq$ b+d (by LeqTrans). end.
+Assume $a  \leq  b$ and $c  \leq  d$. \newline
+Case $a=b$. Then $a+c = b+c$. $b+c  \leq  b+d$ (by LeqAdd). Thus $a+c  \leq  b+d$. end.\newline
+Case $a  <  b$. Then $c+a  <  c+b$. Thus $c+a  \leq  c+b$. Hence $a+c  \leq  b+c$. $b+c  \leq  b+d$ (by LeqAdd).\newline
+Then $a+c  \leq  b+d$ (by LeqTrans). end.
 \end{proof}
 
 
 
-\begin{lemma} 21O. If (not x = 0) or (not y = 0) then (x$\cdot$x) + (y$\cdot$y)$>$0.
+\begin{lemma}[21O] If (not $x = 0$) or (not $y = 0$) then $(x \cdot x) + (y \cdot y) > 0$.
 
 \end{lemma}
 \begin{proof}
- 
-Assume (not x=0) or (not y=0).
-Let a = x$\cdot$x and b = y$\cdot$y.
-Then a$>$ 0 or b$>$0.
-Then a$\geq$ 0 and b$\geq$0.
-Let us show that a + b $>$ 0.
-Case a$>$0. Then a+b$\geq$a+0$\geq$a$>$0. end.
-Case b$>$0. Then a+b$\geq$0+b$\geq$b$>$0. end.
+Assume (not $x=0$) or (not $y=0$).\newline
+Let $a = x \cdot x$ and $b = y \cdot y$.\newline
+Then $a >  0$ or $b > 0$.\newline
+Then $a \geq  0$ and $b \geq 0$.\newline
+Let us show that $a + b  >  0$.\newline
+Case $a > 0$. Then $a+b \geq a+0 \geq a > 0$. end.\newline
+Case $b > 0$. Then $a+b \geq 0+b \geq b > 0$. end.\newline
 end.
 \end{proof}
 
 
-\begin{theorem}
- CmpFld9. If not u = (0,0) then there exists a complex number v such that u$\cmul$v = (1,0).
+\begin{theorem}[CmpFld9] If not $u = (0,0)$ then there exists a complex number $v$ such that $u \cmul v = (1,0)$.
 \end{theorem}\begin{proof}
- Assume not u = (0,0).
-Let x,y be real numbers such that u = (x,y).
-
-Then (not x=0) or (not y=0).
-Then (x$\cdot$x) + (y$\cdot$y)$>$0 (by 21O).
-Then not (x$\cdot$x) + (y$\cdot$y) = 0 .
-
-Let d = inv((x$\cdot$x) + (y$\cdot$y)) and 
-v = (x$\cdot$d , -y$\cdot$d). 
-Then u$\cmul$v = ( (x$\cdot$(x$\cdot$d)) - (y$\cdot$(-y$\cdot$d)) , (x$\cdot$(-y$\cdot$d)) + (y$\cdot$(x$\cdot$d)))
-= ( (x$\cdot$(x$\cdot$d)) + -(-y$\cdot$(y$\cdot$d)) , -(x$\cdot$(y$\cdot$d)) + (y$\cdot$(x$\cdot$d)))
-= ( (x$\cdot$(x$\cdot$d)) + (y$\cdot$(y$\cdot$d)) , -(x$\cdot$(y$\cdot$d)) + (y$\cdot$(x$\cdot$d)))
-= ( ((x$\cdot$x)$\cdot$d) + ((y$\cdot$y)$\cdot$d) , -((x$\cdot$y)$\cdot$d) + ((y$\cdot$x)$\cdot$d))
-= ( ((x$\cdot$x) + (y$\cdot$y))$\cdot$d , -((x$\cdot$y)$\cdot$d) + ((x$\cdot$y)$\cdot$d))
-= ( ((x$\cdot$x) + (y$\cdot$y))$\cdot$inv((x$\cdot$x) + (y$\cdot$y)) , 0)
-= (1,0).
-Then u$\cmul$v = (1,0).
-Then v is a complex number such that u$\cmul$v = (1,0).
-If not u = (0,0) then there exists a complex number w such that u$\cmul$w = (1,0).
+ Assume not $u = (0,0)$.\newline
+Let $x,y$ be real numbers such that $u = (x,y)$.\newline
+Then (not $x=0$) or (not $y=0$).\newline
+Then $(x \cdot x) + (y \cdot y) > 0$ (by 21O).\newline
+Then not $(x \cdot x) + (y \cdot y) = 0$ .\newline
+Let $d = inv((x \cdot x) + (y \cdot y))$ and  $v = (x \cdot d , -y \cdot d)$. \newline
+Then \begin{align*}
+&u \cmul v \\
+= &( (x \cdot (x \cdot d)) - (y \cdot (-y \cdot d)) , (x \cdot (-y \cdot d)) + (y \cdot (x \cdot d)))\\
+= &( (x \cdot (x \cdot d)) + -(-y \cdot (y \cdot d)) , -(x \cdot (y \cdot d)) + (y \cdot (x \cdot d)))\\
+= &( (x \cdot (x \cdot d)) + (y \cdot (y \cdot d)) , -(x \cdot (y \cdot d)) + (y \cdot (x \cdot d)))\\
+= &( ((x \cdot x) \cdot d) + ((y \cdot y) \cdot d) , -((x \cdot y) \cdot d) + ((y \cdot x) \cdot d))\\
+= &( ((x \cdot x) + (y \cdot y)) \cdot d , -((x \cdot y) \cdot d) + ((x \cdot y) \cdot d))\\
+= &( ((x \cdot x) + (y \cdot y)) \cdot inv((x \cdot x) + (y \cdot y)) , 0)\\
+= &(1,0).
+\end{align*}
+Then $u \cmul v = (1,0)$.\newline
+Then $v$ is a complex number such that $u \cmul v = (1,0)$.\newline
+If not $u = (0,0)$ then there exists a complex number w such that $u \cmul w = (1,0)$.
 \end{proof}
 
 
 
 
 
-\begin{theorem}
- CmpFld10. u$\cmul$(v$\cadd$w) = (u$\cmul$v) $\cadd$ (u$\cmul$w).
+\begin{theorem}[CmpFld10] $u \cmul (v \cadd w) = (u \cmul v)  \cadd  (u \cmul w)$.
 \end{theorem}\begin{proof}
-	Let x,y,a,b,r,s be real numbers such that (u = (x,y) and v = (a,b) and w = (r,s)).
-Let c = x$\cdot$a and d = x$\cdot$r and e = -(y$\cdot$b) and f = -(y$\cdot$s) and g = x$\cdot$b and  h = x$\cdot$s and  j = y$\cdot$a and k = y$\cdot$r.
-v$\cadd$w = (a+r,b+s) (by CAdd).
-u$\cmul$v = (x,y) $\cmul$ (a,b) = ((x$\cdot$a) - (y$\cdot$b), (x$\cdot$b) + (y$\cdot$a)) (by CMult).  
-u$\cmul$w = (x,y) $\cmul$ (r,s) = ((x$\cdot$r) - (y$\cdot$s) , (x$\cdot$s) + (y$\cdot$r)) (by CMult). 
-Then u$\cmul$(v$\cadd$w) 	= (x,y) $\cmul$ (a+r,b+s) = ( (x$\cdot$(a+r)) - (y$\cdot$(b+s)) , (x$\cdot$(b+s)) + (y$\cdot$(a+r)) ).
-( (x$\cdot$(a+r)) - (y$\cdot$(b+s)) , (x$\cdot$(b+s)) + (y$\cdot$(a+r)) )
-= ( ((x$\cdot$a) + (x$\cdot$r)) - (y$\cdot$(b+s)) , (x$\cdot$(b+s)) + (y$\cdot$(a+r)) )
-= ( ((x$\cdot$a) + (x$\cdot$r)) - ((y$\cdot$b) + (y$\cdot$s)) , (x$\cdot$(b+s)) + (y$\cdot$(a+r)) ).
+	Let $x,y,a,b,r,s$ be real numbers such that ($u = (x,y)$ and $v = (a,b)$ and $w = (r,s)$).\newline
+Let $c = x \cdot a$ and $d = x \cdot r$ and $e = -(y \cdot b)$ and $f = -(y \cdot s)$ and $g = x \cdot b$ and $ h = x \cdot s$ and  $j = y \cdot a$ and $k = y \cdot r$.\newline
+$v \cadd w = (a+r,b+s)$ (by CAdd).\newline
+$u \cmul v = (x,y)  \cmul  (a,b) = ((x \cdot a) - (y \cdot b), (x \cdot b) + (y \cdot a))$ (by CMult).  \newline
+$u \cmul w = (x,y)  \cmul  (r,s) = ((x \cdot r) - (y \cdot s) , (x \cdot s) + (y \cdot r))$ (by CMult). \newline
+Then $u \cmul (v \cadd w) 	= (x,y)  \cmul  (a+r,b+s) = ( (x \cdot (a+r)) - (y \cdot (b+s)) , (x \cdot (b+s)) + (y \cdot (a+r)) )$.\newline
 
-( ((x$\cdot$a) + (x$\cdot$r)) - ((y$\cdot$b) + (y$\cdot$s)) , (x$\cdot$(b+s)) + (y$\cdot$(a+r)) )
-= ( ((x$\cdot$a) + (x$\cdot$r)) - ((y$\cdot$b) + (y$\cdot$s)) , ((x$\cdot$b) + (x$\cdot$s)) + (y$\cdot$(a+r)) ) (by Dis1).
+$( (x \cdot (a+r)) - (y \cdot (b+s)) , (x \cdot (b+s)) + (y \cdot (a+r)) )
+= ( ((x \cdot a) + (x \cdot r)) - (y \cdot (b+s)) , (x \cdot (b+s)) + (y \cdot (a+r)) )
+= ( ((x \cdot a) + (x \cdot r)) - ((y \cdot b) + (y \cdot s)) , (x \cdot (b+s)) + (y \cdot (a+r)) )$.\newline
 
-( ((x$\cdot$a) + (x$\cdot$r)) - ((y$\cdot$b) + (y$\cdot$s)) , ((x$\cdot$b) + (x$\cdot$s)) + (y$\cdot$(a+r)) )
-= ( ((x$\cdot$a) + (x$\cdot$r)) - ((y$\cdot$b) + (y$\cdot$s)) , ((x$\cdot$b) + (x$\cdot$s)) + ((y$\cdot$a) + (y$\cdot$r)) ) (by Dis1).
+$( ((x \cdot a) + (x \cdot r)) - ((y \cdot b) + (y \cdot s)) , (x \cdot (b+s)) + (y \cdot (a+r)) )
+= ( ((x \cdot a) + (x \cdot r)) - ((y \cdot b) + (y \cdot s)) , ((x \cdot b) + (x \cdot s)) + (y \cdot (a+r)) )$ (by Dis1).\newline
 
-( ((x$\cdot$a) + (x$\cdot$r)) - ((y$\cdot$b) + (y$\cdot$s)) , ((x$\cdot$b) + (x$\cdot$s)) + ((y$\cdot$a) + (y$\cdot$r)) )
-= (((x$\cdot$a) + (x$\cdot$r)) + -((y$\cdot$b) + (y$\cdot$s)) , ((x$\cdot$b) + (x$\cdot$s)) + ((y$\cdot$a) + (y$\cdot$r)) )
-= (((x$\cdot$a) + (x$\cdot$r)) + (-(y$\cdot$b) + -(y$\cdot$s)) , ((x$\cdot$b) + (x$\cdot$s)) + ((y$\cdot$a) + (y$\cdot$r)) )
-= ((c + d) + (e + f) , (g + h) + (j + k))
-= ((c + e) + (d + f) , (g + j) + (h + k))
-= (c+e,g+j) $\cadd$ (d+f,h+k)
-= ((x$\cdot$a) + -(y$\cdot$b), (x$\cdot$b) + (y$\cdot$a)) $\cadd$ ((x$\cdot$r) + -(y$\cdot$s) , (x$\cdot$s) + (y$\cdot$r))
-= ((x$\cdot$a) - (y$\cdot$b), (x$\cdot$b) + (y$\cdot$a)) $\cadd$ ((x$\cdot$r) - (y$\cdot$s) , (x$\cdot$s) + (y$\cdot$r))
-= ((x,y) $\cmul$ (a,b)) $\cadd$ ((x,y) $\cmul$ (r,s)) 
-= (u$\cmul$v) $\cadd$ (u$\cmul$w).
-Then u$\cmul$(v$\cadd$w) = (u$\cmul$v) $\cadd$ (u$\cmul$w).
+$( ((x \cdot a) + (x \cdot r)) - ((y \cdot b) + (y \cdot s)) , ((x \cdot b) + (x \cdot s)) + (y \cdot (a+r)) )
+= ( ((x \cdot a) + (x \cdot r)) - ((y \cdot b) + (y \cdot s)) , ((x \cdot b) + (x \cdot s)) + ((y \cdot a) + (y \cdot r)) )$ (by Dis1).\newline
+
+\begin{align*}
+&( ((x \cdot a) + (x \cdot r)) - ((y \cdot b) + (y \cdot s)) , ((x \cdot b) + (x \cdot s)) + ((y \cdot a) + (y \cdot r)) )\\
+= &(((x \cdot a) + (x \cdot r)) + -((y \cdot b) + (y \cdot s)) , ((x \cdot b) + (x \cdot s)) + ((y \cdot a) + (y \cdot r)) )\\
+= &(((x \cdot a) + (x \cdot r)) + (-(y \cdot b) + -(y \cdot s)) , ((x \cdot b) + (x \cdot s)) + ((y \cdot a) + (y \cdot r)) )\\
+= &((c + d) + (e + f) , (g + h) + (j + k))\\
+= &((c + e) + (d + f) , (g + j) + (h + k))\\
+= &(c+e,g+j)  \cadd  (d+f,h+k)\\
+= &((x \cdot a) + -(y \cdot b), (x \cdot b) + (y \cdot a))  \cadd  ((x \cdot r) + -(y \cdot s) , (x \cdot s) + (y \cdot r))\\
+= &((x \cdot a) - (y \cdot b), (x \cdot b) + (y \cdot a))  \cadd  ((x \cdot r) - (y \cdot s) , (x \cdot s) + (y \cdot r))\\
+= &((x,y)  \cmul  (a,b))  \cadd  ((x,y)  \cmul  (r,s)) \\
+= &(u \cmul v)  \cadd  (u \cmul w).\\
+\end{align*}
+Then $u \cmul (v \cadd w) = (u \cmul v)  \cadd  (u \cmul w)$.
+\end{proof}
+
+
+\begin{lemma}[ZeroMult] $u \cmul (0,0) = (0,0)$.
+\end{lemma}\begin{proof}
+ Let $x,y$ be real numbers such that $u = (x,y)$. \newline
+  Then $u \cmul (0,0) = ((x \cdot 0) - (y \cdot 0), (x \cdot 0) + (y \cdot 0))$ (by CMult). \newline
+Let $a=x \cdot 0$ and $b=y \cdot 0$.\newline
+$((x \cdot 0) - (y \cdot 0), (x \cdot 0) + (y \cdot 0)) = (a-b,a+b) = (0 - 0, 0 + 0) = (0,0)$. \newline
+Then $u \cmul (0,0) = (0,0)$. 
 \end{proof}
 
 
 \begin{theorem}
- ZeroMult. u$\cmul$(0,0) = (0,0).
+ $(a,0)  \cadd  (b,0) = (a+b,0)$ and $(a,0) \cmul (b,0) = (a \cdot b,0)$.
 \end{theorem}\begin{proof}
- Let x,y be real numbers such that u = (x,y). Then u$\cmul$(0,0) = ((x$\cdot$0) - (y$\cdot$0), (x$\cdot$0) + (y$\cdot$0)) (by CMult). 
-Let a=x$\cdot$0 and b=y$\cdot$0.
-((x$\cdot$0) - (y$\cdot$0), (x$\cdot$0) + (y$\cdot$0)) = (a-b,a+b) = (0 - 0, 0 + 0) = (0,0). 
-Then u$\cmul$(0,0) = (0,0). 
-\end{proof}
+  $(a,0)  \cadd  (b,0) = (a+b,0+0) = (a+b,0)$ (by CAdd).\newline
+$(a,0)  \cmul  (b,0) = ((a \cdot b) - (0 \cdot 0), (a \cdot 0) + (0 \cdot b))$ (by CMult).\newline
+Let $c = a \cdot 0$ and $d = b \cdot 0$ and $e = 0 \cdot 0$.\newline
+Then $c = 0$ and $d = 0$ and $e = 0$.\newline
+Then $((a \cdot b) - e, c + d) = ((a \cdot b) -0, 0 + 0) = ((a \cdot b )+ -0,0) = (a \cdot b,0)$ . \end{proof}
 
 
-\begin{theorem}
-. (a,0) $\cadd$ (b,0) = (a+b,0) and (a,0)$\cmul$(b,0) = (a$\cdot$b,0).
-\end{theorem}\begin{proof}
- 	(a,0) $\cadd$ (b,0) = (a+b,0+0) = (a+b,0) (by CAdd).
-(a,0) $\cmul$ (b,0) = ((a$\cdot$b) - (0$\cdot$0), (a$\cdot$0) + (0$\cdot$b)) (by CMult).
-Let c = a$\cdot$0 and d = b$\cdot$0 and e = 0$\cdot$0.
-Then c = 0 and d = 0 and e = 0.
-Then ((a$\cdot$b) - e, c + d) = ((a$\cdot$b) -0, 0 + 0) = ((a$\cdot$b )+ -0,0) = (a$\cdot$b,0) . \end{proof}
-
-
-\begin{signature}. ! is a complex number such that ! = (0,1).
+\begin{signature} $\di $ is a complex number such that $\di  = (0,1)$.
 
 \end{signature}
 
-\begin{theorem}
-. !$\cmul$! = (-1,0).
+\begin{theorem} $\di  \cmul \di  = (-1,0)$.
 \end{theorem}\begin{proof}
- 	!$\cmul$! = (0,1) $\cmul$ (0,1) 
-= ((0$\cdot$0) - (1$\cdot$1),( 0$\cdot$1) + (1$\cdot$0)) (by CMult)
-=((0$\cdot$0) - (1$\cdot$1),( 0$\cdot$1) + (1$\cdot$0)) 
+  $\di  \cmul \di  = (0,1)  \cmul  (0,1) 
+= ((0 \cdot 0) - (1 \cdot 1),( 0 \cdot 1) + (1 \cdot 0))
+=((0 \cdot 0) - (1 \cdot 1),( 0 \cdot 1) + (1 \cdot 0)) 
 = (0 - 1, 0+0) 
-= (0+(-1),0).
-Then (0+(-1),0) = ((-1),0). 
+= (0+(-1),0)$.\newline
+Then $(0+(-1),0) = ((-1),0)$. 
 \end{proof}
 
 
-Let x+y! stand for (x,0) $\cadd$ ((y,0)$\cmul$!).
+Let $x+y\di $ stand for $(x,0)  \cadd  ((y,0) \cmul \di )$.
 
 
-\begin{theorem}
-. a+b! = (a,b).
+\begin{theorem} $a+b\di  = (a,b)$.
 \end{theorem}\begin{proof}
- 	(b,0)$\cmul$(0,1) = ((b$\cdot$0)-(0$\cdot$1) , (b$\cdot$1)+(0$\cdot$0)) (by CMult).
-a+b! = (a,0) $\cadd$ ((b,0)$\cmul$(0,1)). 
+$(b,0) \cmul (0,1) = ((b \cdot 0)-(0 \cdot 1) , (b \cdot 1)+(0 \cdot 0))$ (by CMult).\newline
+$a+b\di  = (a,0)  \cadd  ((b,0) \cmul (0,1))$. \newline
 
-(a,0) $\cadd$ ((b,0)$\cmul$(0,1))
-= (a,0) $\cadd$ ((b$\cdot$0)-(0$\cdot$1) , (b$\cdot$1)+(0$\cdot$0)) (by CMult).
+$(a,0)  \cadd  ((b,0) \cmul (0,1))
+= (a,0)  \cadd  ((b \cdot 0)-(0 \cdot 1) , (b \cdot 1)+(0 \cdot 0))$ (by CMult).\newline
 
-(a,0) $\cadd$ ((b$\cdot$0)-(0$\cdot$1) , (b$\cdot$1)+(0$\cdot$0))
-= (a,0) $\cadd$ (0-0,b+0) 
-= (a,0) $\cadd$ (0,b).
+$(a,0)  \cadd  ((b \cdot 0)-(0 \cdot 1) , (b \cdot 1)+(0 \cdot 0))
+= (a,0)  \cadd  (0-0,b+0) 
+= (a,0)  \cadd  (0,b)$.\newline
 
-(a,0) $\cadd$ (0,b)
+$(a,0) \cadd (0,b)
 = (a+0,0+b) 
-= (a,b).
+= (a,b)$.
 \end{proof}
 
+\end{forthel}
+Im Folgenden beweisen wir Theorem 1.31. Dies entspricht bei uns Conj1 - Conj4. Dabei zeigen wir auch die Aussage Conj5, um später Schreibarbeit zu sparen. Rudin zeigt diese Aussage nicht, da er die relevanten Beweise wegen Trivialität weglässt. \newline
+Wir definieren dann den Absolutbetrag. Da SAD kein overloaden von Operatoren erlaubt, können wir dies nur für Komplexe Zahlen tun, was zu etwas umständlicher Notation an führt (z.B. müssen wir im Beweis von Abs5 ständig $|(Re(u),0)|$ statt $|Re(u)|$ schreiben).
+sWir nehmen das Axiom EindAbs hinzu, welches die Eindeutigkeit des Betrags garantiert. Deren Gültigkeit folgt aus dem Theorem über Eindeutigkeit von Wurzeln.
+\begin{forthel}
 
 
-\begin{signature}. Conj(u) is a complex number.
+\begin{signature} $Conj(u)$ is a complex number.
 
 \end{signature}
-\begin{signature}. Re(u) is a real number.
+\begin{signature} $Re(u)$ is a real number.
 
 \end{signature}
-\begin{signature}. Im(u) is a real number.
+\begin{signature} $Im(u)$ is a real number.
 
 \end{signature}
-\begin{axiom}. Conj((x,y)) = (x,-y).
+\begin{axiom} $Conj((x,y)) = (x,-y)$.
 
 \end{axiom}
-\begin{axiom}. Re((x,y)) = x.
+\begin{axiom} $Re((x,y)) = x$.
 
 \end{axiom}
-\begin{axiom}. Im((x,y)) = y.
+\begin{axiom} $Im((x,y)) = y$.
 
 \end{axiom}
 
-\begin{theorem}
- Conj1. Conj(u$\cadd$v) = Conj(u) $\cadd$ Conj(v).
+\begin{theorem}[Conj1] $Conj(u \cadd v) = Conj(u)  \cadd  Conj(v)$.
 \end{theorem}\begin{proof}
- 	Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
-Then u$\cadd$v = (x+a,y+b) (by CAdd).
-Then Conj(u $\cadd$ v) = Conj((x+a,y+b)) = (x+a,-(y+b)) = (x+a, -y + -b) = (x,-y) $\cadd$ (a,-b) = Conj(u) $\cadd$ Conj(v).
-Then Conj(u$\cadd$v) = Conj(u) $\cadd$ Conj(v).
+ 	Let $x,y,a,b$ be real numbers such that ($u = (x,y)$ and $v = (a,b)$).\newline
+Then $u \cadd v = (x+a,y+b)$ (by CAdd).\newline
+Then $Conj(u  \cadd  v) = Conj((x+a,y+b)) = (x+a,-(y+b)) = (x+a, -y + -b) = (x,-y)  \cadd  (a,-b) = Conj(u)  \cadd  Conj(v)$.\newline
+Then $Conj(u \cadd v) = Conj(u)  \cadd  Conj(v)$.
 \end{proof}
 		
-\begin{theorem}
- Conj2. Conj(u$\cmul$v) = Conj(u) $\cmul$ Conj(v).
+\begin{theorem}[Conj2] $Conj(u \cmul v) = Conj(u)  \cmul  Conj(v)$.
 \end{theorem}\begin{proof}
- 	Let x,y,a,b be real numbers such that (u = (x,y) and v = (a,b)).
-Then u $\cmul$ v = ((x$\cdot$a)-(y$\cdot$b),(x$\cdot$b)+(y$\cdot$a)) (by CMult).
-Then Conj(u $\cmul$ v) 	= Conj(((x$\cdot$a)-(y$\cdot$b),(x$\cdot$b)+(y$\cdot$a))) 
-= ((x$\cdot$a) - (y$\cdot$b)       ,-((x$\cdot$b)+(y$\cdot$a))) 
-= ((x$\cdot$a) - (y$\cdot$b)       , -(x$\cdot$b)+ -(y$\cdot$a))
-= ((x$\cdot$a) - (-(-(y$\cdot$b))) , -(x$\cdot$b)+ -(y$\cdot$a))
-= ((x$\cdot$a) - ( -((-y)$\cdot$b) ) , (x$\cdot$(-b))+ ((-y)$\cdot$a))
-= ((x$\cdot$a) - ((-y)$\cdot$(-b)) , (x$\cdot$(-b))+ ((-y)$\cdot$a))
-= (x,-y) $\cmul$ (a,-b)
-= Conj(u) $\cmul$ Conj(v). 
-Then Conj(u$\cmul$v) = Conj(u) $\cmul$ Conj(v).
+ 	Let $x,y,a,b$ be real numbers such that ($u = (x,y)$ and $v = (a,b)$).\newline
+Then $u  \cmul  v = ((x \cdot a)-(y \cdot b),(x \cdot b)+(y \cdot a))$ (by CMult).\newline
+Then
+\begin{align*}
+&Conj(u  \cmul  v) 	= Conj(((x \cdot a)-(y \cdot b),(x \cdot b)+(y \cdot a))) \\
+= &((x \cdot a) - (y \cdot b)       ,-((x \cdot b)+(y \cdot a))) \\
+= &((x \cdot a) - (y \cdot b)       , -(x \cdot b)+ -(y \cdot a))\\
+= &((x \cdot a) - (-(-(y \cdot b))) , -(x \cdot b)+ -(y \cdot a))\\
+= &((x \cdot a) - ( -((-y) \cdot b) ) , (x \cdot (-b))+ ((-y) \cdot a))\\
+= &((x \cdot a) - ((-y) \cdot (-b)) , (x \cdot (-b))+ ((-y) \cdot a))\\
+= &(x,-y)  \cmul  (a,-b)\\
+= &Conj(u)  \cmul  Conj(v). 
+\end{align*}
+Then $Conj(u \cmul v) = Conj(u)  \cmul  Conj(v)$.
 \end{proof}
 
 
-\begin{theorem}
- Conj3. u $\cadd$ Conj(u) = (Re(u)+Re(u),0) and u $\cadd$ ((-1,0)$\cmul$Conj(u)) = (0,Im(u)+Im(u)).
+\begin{theorem}[Conj3] $u  \cadd  Conj(u) = (Re(u)+Re(u),0)$ and $u  \cadd  ((-1,0) \cmul Conj(u)) = (0,Im(u)+Im(u))$.
 \end{theorem}\begin{proof}
- Let x,y be real numbers such that u=(x,y).
-Then u $\cadd$ Conj(u) = (x,y) $\cadd$ Conj((x,y)) = (x,y) $\cadd$ (x,-y) = (x+x,y-y) = (x+x,0) = (Re(u)+Re(u),0).
-(-1,0)$\cmul$(x,-y) = ( ((-1)$\cdot$x) - (0$\cdot$(-y)) , ((-1)$\cdot$(-y)) + (0$\cdot$x)) (by CMult).
-u $\cadd$ ((-1,0)$\cmul$Conj(u))	= (x,y) $\cadd$ ((-1,0)$\cmul$Conj((x,y))) = (x,y) $\cadd$ ((-1,0)$\cmul$(x,-y)) 
-= (x,y) $\cadd$ ( ((-1)$\cdot$x) - (0$\cdot$(-y)) , ((-1)$\cdot$(-y)) + (0$\cdot$x))
-= (x,y) $\cadd$ (-x - 0, -(-y) + 0)
-= (x,y) $\cadd$ (-x , y) = (x-x,y+y) = (0,Im(u)+Im(u)).
-Then u $\cadd$ Conj(u) = (Re(u)+Re(u),0) and u $\cadd$ ((-1,0)$\cmul$Conj(u)) = (0,Im(u)+Im(u)).
-\end{proof}
-	   
-
-\begin{theorem}
- Conj4. If not u = (0,0) then there exists a real number z such that (z$>$0 and u $\cmul$ Conj(u) = (z,0)).
-\end{theorem}\begin{proof}
-	Let not u = (0,0).
-Take real numbers x,y such that u = (x,y).
-
-Then (x$\cdot$x)$>$ 0 or (y$\cdot$y)$>$0. Take z = (x$\cdot$x) + (y$\cdot$y). 
-Then z $>$ 0 (by 21O).
-u$\cmul$Conj(u) = (x,y)$\cmul$Conj((x,y)) = (x,y)$\cmul$(x,-y) = ((x$\cdot$x) - (y$\cdot$(-y)) , (x$\cdot$(-y)) + (y$\cdot$x)) = ((x$\cdot$x) + -(-(y$\cdot$y)) , -(x$\cdot$y) + (x$\cdot$y)) = ((x$\cdot$x) + (y$\cdot$y), 0) = (z,0).
-z is a real number.
-Then z is a real number and (z$>$0 and u$\cmul$Conj(u) = (z,0)).
+ Let $x,y$ be real numbers such that $u=(x,y)$.\newline
+Then $u  \cadd  Conj(u) = (x,y)  \cadd  Conj((x,y)) = (x,y)  \cadd  (x,-y) = (x+x,y-y) = (x+x,0) = (Re(u)+Re(u),0)$.\newline
+$(-1,0) \cmul (x,-y) = ( ((-1) \cdot x) - (0 \cdot (-y)) , ((-1) \cdot (-y)) + (0 \cdot x))$ (by CMult).\newline
+$u  \cadd  ((-1,0) \cmul Conj(u))$\newline$	
+= (x,y)  \cadd  ((-1,0) \cmul Conj((x,y))) $\newline$
+= (x,y)  \cadd  ((-1,0) \cmul (x,-y)) $\newline$
+= (x,y)  \cadd  ( ((-1) \cdot x) - (0 \cdot (-y)) , ((-1) \cdot (-y)) + (0 \cdot x))$\newline$
+= (x,y)  \cadd  (-x - 0, -(-y) + 0)$\newline$
+= (x,y)  \cadd  (-x , y) = (x-x,y+y) = (0,Im(u)+Im(u))$ \newline
+Then $u  \cadd  Conj(u) = (Re(u)+Re(u),0)$ and $u  \cadd  ((-1,0) \cmul Conj(u)) = (0,Im(u)+Im(u))$.
 \end{proof}
 
-
-\begin{theorem}
- Conj5. Conj(Conj(u)) = u.
+\begin{theorem}[Conj4] If not $u = (0,0)$ then there exists a real number $z$ such that ($z > 0$ and $u  \cmul  Conj(u) = (z,0)$).
 \end{theorem}\begin{proof}
- 	Let x,y be real numbers such that u = (x,y).
-Then Conj(Conj(u)) = Conj(Conj((x,y))) = Conj((x,-y)) = (x,--y) = (x,y) = u. \end{proof}
-
-
-
-\begin{signature}. $|$u$|$ is a real number such that ($|$u$|$$\cdot$$|$u$|$,0) = u$\cmul$Conj(u) and $|$u$|$ $\geq$ 0. 
-
-\end{signature}
-\begin{axiom}  EindAbs. If (x$\cdot$x,0) = u$\cmul$Conj(u) and x $\geq$ 0 then x = $|$u$|$.
-
-\end{axiom}
-
-
-
-\begin{theorem}
- Abs1. If not u = (0,0) then $|$u$|$ $>$ 0.
-\end{theorem}\begin{proof}
-  Let z be a real number such that (z $>$ 0 and u$\cmul$Conj(u) = (z,0)). Then ($|$u$|$$\cdot$$|$u$|$,0) = (z,0).
-Assume $|$u$|$ = 0. Then z = 0$\cdot$0 = 0. Contradiction. 
-Then $|$u$|$ $>$ 0.
+	Let not $u = (0,0)$.\newline
+Take real numbers $x,y$ such that $u = (x,y)$.\newline
+Then $(x \cdot x) >  0$ or $(y \cdot y) > 0$. Take $z = (x \cdot x) + (y \cdot y)$. \newline
+Then $z  >  0$ (by 21O).\newline
+$u \cmul Conj(u) = (x,y) \cmul Conj((x,y)) $\newline
+$= (x,y) \cmul (x,-y)$ \newline
+$= ((x \cdot x) - (y \cdot (-y)) , (x \cdot (-y)) + (y \cdot x)) $\newline
+$= ((x \cdot x) + -(-(y \cdot y)) , -(x \cdot y) + (x \cdot y)) $\newline
+$= ((x \cdot x) + (y \cdot y), 0) = (z,0)$.\newline
+$z$ is a real number.\newline
+Then $z$ is a real number and ($z > 0$ and $u \cmul Conj(u) = (z,0)$).\newline
 \end{proof}
 
-
-\begin{theorem}
- Abs2. $|$(0,0)$|$ = 0.
+\begin{theorem}[Conj5] $Conj(Conj(u)) = u$.
 \end{theorem}\begin{proof}
- 	(0,0) $\cmul$ Conj((0,0)) = Conj((0,0)) $\cmul$ (0,0) = (0,0). 
-Let us show that $|$(0,0)$|$$\cdot$$|$(0,0)$|$ = 0.
-Assume $|$(0,0)$|$ $>$ 0. Then not $|$(0,0)$|$ = 0 .Then $|$(0,0)$|$$\cdot$$|$(0,0)$|$ $>$ 0. Then not $|$(0,0)$|$$\cdot$$|$(0,0)$|$ = 0. Contradiction.end. 
-Hence $|$(0,0)$|$ = 0.
+ 	Let $x,y$ be real numbers such that $u = (x,y)$.\newline
+Then $Conj(Conj(u)) = Conj(Conj((x,y))) = Conj((x,-y)) = (x,--y) = (x,y) = u$. \end{proof}
+
+\begin{signature}. $|u|$ is a real number such that $(|u| \cdot |u|,0) = u \cmul Conj(u)$ and $|u|  \geq  0$. \end{signature}
+\begin{axiom}[EindAbs] If $(x \cdot x,0) = u \cmul Conj(u)$ and $x  \geq  0$ then $x = |u|$.\end{axiom}
+
+\begin{theorem}[Abs1] If not $u = (0,0)$ then $|u|  >  0$.
+\end{theorem}\begin{proof}
+  Let $z$ be a real number such that ($z  >  0$ and $u \cmul Conj(u) = (z,0)$). Then $(|u| \cdot |u|,0) = (z,0)$.\newline
+Assume $|u| = 0$. Then $z = 0 \cdot 0 = 0$. Contradiction. \newline
+Then $|u|  >  0$.
 \end{proof}
-
-
-\begin{theorem}
- Abs3. $|$u$|$ = $|$Conj(u)$|$.
+\begin{theorem}[Abs2] $|(0,0)| = 0$.
 \end{theorem}\begin{proof}
- 	$|$u$|$ is a real number such that (($|$u$|$$\cdot$$|$u$|$,0) = u$\cmul$Conj(u) and $|$u$|$ $\geq$ 0). 
-($|$u$|$$\cdot$$|$u$|$,0) = Conj(Conj(u))$\cmul$Conj(u) = Conj(u)$\cmul$Conj(Conj(u)).
-Let v = Conj(u). Then $|$u$|$ is real number such that (($|$u$|$$\cdot$$|$u$|$,0) = v$\cmul$Conj(v) and $|$u$|$ $\geq$ 0). 
-Hence $|$u$|$ = $|$v$|$.
+ 	$(0,0)  \cmul  Conj((0,0)) = Conj((0,0))  \cmul  (0,0) = (0,0)$. \newline
+Let us show that $|(0,0)| \cdot |(0,0)| = 0$.\newline
+Assume $|(0,0)|  >  0$. Then not $|(0,0)| = 0$ .Then $|(0,0)| \cdot |(0,0)|  >  0$. Then not $|(0,0)| \cdot |(0,0)| = 0$. Contradiction.end. \newline
+Hence $|(0,0)| = 0$.
 \end{proof}
-
-
-\begin{theorem}
- Abs4. $|$u$\cmul$v$|$ = $|$u$|$ $\cdot$ $|$v$|$.
+\begin{theorem}[Abs3] $|u| = |Conj(u)|$.
 \end{theorem}\begin{proof}
- 	Case u = (0,0) or v = (0,0). Then v$\cmul$u = (0,0) or u$\cmul$v = (0,0) (by ZeroMult). Hence $|$u$\cmul$v$|$ = 0.
-$|$u$|$ = 0 or $|$v$|$ = 0 (by Abs2). Hence $|$u$|$ $\cdot$ $|$v$|$ = 0.
-Then  $|$u$\cmul$v$|$ = $|$u$|$$\cdot$$|$v$|$. end.
-Case (not u=(0,0)) and (not v = (0,0)). Then $|$u$|$ $>$ 0 and $|$v$|$ $>$ 0 (by Abs1). Let z = $|$u$|$ $\cdot$ $|$v$|$. Then z $>$ 0.
-z$\cdot$z = ($|$u$|$$\cdot$$|$v$|$) $\cdot$ ($|$u$|$$\cdot$$|$v$|$) = (($|$u$|$$\cdot$$|$v$|$)$\cdot$$|$u$|$)$\cdot$$|$v$|$ = ($|$u$|$$\cdot$($|$v$|$$\cdot$$|$u$|$))$\cdot$$|$v$|$
-= ($|$u$|$$\cdot$($|$u$|$$\cdot$$|$v$|$))$\cdot$$|$v$|$ = (($|$u$|$$\cdot$$|$u$|$)$\cdot$$|$v$|$)$\cdot$$|$v$|$ = ($|$u$|$$\cdot$$|$u$|$)$\cdot$($|$v$|$$\cdot$$|$v$|$).
-Hence (z$\cdot$z,0)	= (($|$u$|$$\cdot$$|$u$|$)$\cdot$($|$v$|$$\cdot$$|$v$|$), 0) = ($|$u$|$$\cdot$$|$u$|$,0) $\cmul$ ($|$v$|$$\cdot$$|$v$|$,0)
-= (u  $\cmul$  Conj(u)) $\cmul$ (v   $\cmul$ Conj(v)) 
-= ((u $\cmul$  Conj(u)) $\cmul$  v)  $\cmul$ Conj(v) 
-= ( u $\cmul$ (Conj(u)  $\cmul$  v)) $\cmul$ Conj(v) 
-= ( u $\cmul$ (v  $\cmul$  Conj(u))) $\cmul$ Conj(v) 
-= ((u $\cmul$  v) $\cmul$  Conj(u))  $\cmul$ Conj(v) 
-= ( u $\cmul$  v) $\cmul$  (Conj(u)   $\cmul$ Conj(v)) = (u$\cmul$v)$\cmul$Conj(u$\cmul$v).
-Then z = $|$u$\cmul$v$|$. Then $|$u$|$ $\cdot$ $|$v$|$ = $|$u$\cmul$v$|$. end.
+ 	$|u|$ is a real number such that $((|u| \cdot |u|,0) = u \cmul Conj(u) and |u|  \geq  0)$. \newline
+$(|u| \cdot |u|,0) = Conj(Conj(u)) \cmul Conj(u) = Conj(u) \cmul Conj(Conj(u))$.\newline
+Let $v = Conj(u)$. Then $|u|$ is real number such that ($(|u| \cdot |u|,0) = v \cmul Conj(v)$ and $|u|  \geq  0$). \newline
+Hence $|u| = |v|$.
 \end{proof}
-
-
-\begin{theorem}
- Abs5. $|$(Re(u),0)$|$ $\leq$ $|$u$|$.
+\begin{theorem}[Abs4] $|u \cmul v| = |u|  \cdot  |v|$.
 \end{theorem}\begin{proof}
- 	Let x,y be real numbers such that u = (x,y). 
-Case y = 0. Then $|$u$|$ = $|$(x,y)$|$ = $|$(Re(u),0)$|$. end.
-Case not y = 0. Then not u = (0,0). Thus $|$u$|$ $>$ 0.
-($|$u$|$$\cdot$$|$u$|$,0) = u$\cmul$Conj(u) = (x,y) $\cmul$ (x,-y) = ((x$\cdot$x) - (y$\cdot$(-y)) , (x$\cdot$(-y)) + (y$\cdot$x)) = ((x$\cdot$x) + -(-(y$\cdot$y)) , -(x$\cdot$y) + (x$\cdot$y)) 
-= ((x$\cdot$x) + (y$\cdot$y), 0). Then $|$u$|$$\cdot$$|$u$|$ = (x$\cdot$x)+(y$\cdot$y).
-($|$(Re(u),0)$|$$\cdot$$|$(Re(u),0)$|$,0) = (Re(u),0)$\cmul$Conj((Re(u),0)) = (Re(u),0)$\cmul$(Re(u),-0) = (Re(u),0)$\cmul$(Re(u),0) = (x,0)$\cmul$(x,0) = (x$\cdot$x,0).
-Then $|$(Re(u),0)$|$$\cdot$$|$(Re(u),0)$|$ = x$\cdot$x.
-Hence ($|$u$|$$\cdot$$|$u$|$) -  ($|$(Re(u),0)$|$$\cdot$$|$(Re(u),0)$|$) = ((x$\cdot$x) + (y$\cdot$y)) - (x$\cdot$x) = ((y$\cdot$y) + (x$\cdot$x)) + -(x$\cdot$x) = (y$\cdot$y) + ((x$\cdot$x) + -(x$\cdot$x)) = (y$\cdot$y) + 0 = y$\cdot$y and y$\cdot$y $>$ 0.
-Thus ($|$u$|$$\cdot$$|$u$|$) -  ($|$(Re(u),0)$|$$\cdot$$|$(Re(u),0)$|$) $>$ 0.
-Hence $|$u$|$$\cdot$$|$u$|$ $>$ $|$(Re(u),0)$|$$\cdot$$|$(Re(u),0)$|$ and $|$u$|$ $>$ 0 and $|$(Re(u),0)$|$ $\geq$ 0.
-Thus  $|$u$|$ $>$ $|$(Re(u),0)$|$ (by SqrtMon).
+ Case $u = (0,0)$ or $v = (0,0)$. Then $v \cmul u = (0,0)$ or $u \cmul v = (0,0)$ (by ZeroMult). \newline
+Hence $|u \cmul v| = 0$. $|u| = 0$ or $|v| = 0$ (by Abs2).\newline
+Hence $|u|  \cdot  |v| = 0$. Then  $|u \cmul v| = |u| \cdot |v|$. end.\newline
+Case (not $u=(0,0)$) and (not $v = (0,0)$). Then $|u|  >  0$ and $|v|  >  0$ (by Abs1). \newline
+Let $z = |u|  \cdot  |v|$. Then $z  >  0$.\newline
+$z \cdot z = (|u| \cdot |v|)  \cdot  (|u| \cdot |v|) $\newline$
+= ((|u| \cdot |v|) \cdot |u|) \cdot |v| 
+= (|u| \cdot (|v| \cdot |u|)) \cdot |v| $\newline$
+= (|u| \cdot (|u| \cdot |v|)) \cdot |v| 
+= ((|u| \cdot |u|) \cdot |v|) \cdot |v| $\newline$
+= (|u| \cdot |u|) \cdot (|v| \cdot |v|)$.\newline
+Hence 
+$(z \cdot z,0)	= ((|u| \cdot |u|) \cdot (|v| \cdot |v|), 0) = (|u| \cdot |u|,0)  \cmul  (|v| \cdot |v|,0) = (u   \cmul   Conj(u))  \cmul  (v    \cmul  Conj(v)) $\newline$
+= ((u  \cmul   Conj(u))  \cmul   v)   \cmul  Conj(v) = ( u  \cmul  (Conj(u)   \cmul   v))  \cmul  Conj(v) $\newline$
+= ( u  \cmul  (v   \cmul   Conj(u)))  \cmul  Conj(v) = ((u  \cmul   v)  \cmul   Conj(u))   \cmul  Conj(v) $\newline$
+= ( u  \cmul   v)  \cmul   (Conj(u)    \cmul  Conj(v)) = (u \cmul v) \cmul Conj(u \cmul v)$.\newline
+Then $z = |u \cmul v|$. Then $|u|  \cdot  |v| = |u \cmul v|$. end.
+\end{proof}
+\begin{theorem}[Abs5] $|(Re(u),0)|  \leq  |u|$.
+\end{theorem}\begin{proof}
+ 	Let $x,y$ be real numbers such that $u = (x,y)$. \newline
+Case $y = 0$. Then $|u| = |(x,y)| = |(Re(u),0)|$. end.\newline
+Case not $y = 0$. Then not $u = (0,0)$. Thus $|u|  >  0$.\newline
+$(|u| \cdot |u|,0) $\newline$
+= u \cmul Conj(u) = (x,y)  \cmul  (x,-y)  = ((x \cdot x) - (y \cdot (-y)) , (x \cdot (-y)) + (y \cdot x)) $\newline$
+= ((x \cdot x) + -(-(y \cdot y)) , -(x \cdot y) + (x \cdot y))  = ((x \cdot x) + (y \cdot y), 0)$.\newline
+Then $|u| \cdot |u| = (x \cdot x)+(y \cdot y)$.\newline
+$(|(Re(u),0)| \cdot |(Re(u),0)|,0) $\newline$
+= (Re(u),0) \cmul Conj((Re(u),0)) $\newline$
+= (Re(u),0) \cmul (Re(u),-0) $\newline$
+= (Re(u),0) \cmul (Re(u),0) = (x,0) \cmul (x,0)$\newline$
+ = (x \cdot x,0)$.\newline
+Then $|(Re(u),0)| \cdot |(Re(u),0)| = x \cdot x$.\newline
+Hence $(|u| \cdot |u|) -  (|(Re(u),0)| \cdot |(Re(u),0)|) $\newline$
+= ((x \cdot x) + (y \cdot y)) - (x \cdot x) = ((y \cdot y) + (x \cdot x)) + -(x \cdot x) $\newline$
+= (y \cdot y) + ((x \cdot x) + -(x \cdot x)) = (y \cdot y) + 0 = y \cdot y$ \newline
+and $y \cdot y  >  0$.\newline
+Thus $(|u| \cdot |u|) -  (|(Re(u),0)| \cdot |(Re(u),0)|)  >  0$.\newline
+Hence $|u| \cdot |u|  >  |(Re(u),0)| \cdot |(Re(u),0)|$ and $|u|  >  0$ and $|(Re(u),0)|  \geq  0$.\newline
+Thus  $|u|  >  |(Re(u),0)|$ (by SqrtMon).\newline
 end.
 \end{proof}
-
-
-\begin{lemma} AbsMon. Re(u) $\leq$ $|$(Re(u),0)$|$.
+\begin{lemma}[AbsMon] $Re(u)  \leq  |(Re(u),0)|$.
 
 \end{lemma}
 \begin{proof}
 
-Let x,y be real numbers such that u = (x,y).
-Let v = (x, 0).
-Then Re(u) = x = Re(v).
-Case x$>$0.
-
-Then (x$\cdot$x,0) = v$\cmul$Conj(v).
-Then x = $|$v$|$ (by EindAbs).
-Then Re(u)=Re(v)=$|$v$|$=$|$(Re(v),0)$|$ = $|$(Re(u),0)$|$.
-Then Re(u) $\leq$ $|$(Re(u),0)$|$.
-end.
-Case x $\leq$ 0.
-Then $|$(Re(u),0)$|$ $\geq$0.
-x $\leq$ 0 $\leq$ $|$(Re(u),0)$|$.
+Let $x,y$ be real numbers such that $u = (x,y)$.\newline
+Let $v = (x, 0)$.\newline
+Then $Re(u) = x = Re(v)$.\newline\newline
+Case $x > 0$.\newline
+Then $(x \cdot x,0) = v \cmul Conj(v)$.\newline
+Then $x = |v|$ (by EindAbs).\newline
+Then $Re(u)=Re(v)=|v|=|(Re(v),0)| = |(Re(u),0)|$.\newline
+Then $Re(u)  \leq  |(Re(u),0)|$.\newline
+end.\newline\newline
+Case $x  \leq  0$.\newline
+Then $|(Re(u),0)|  \geq 0$.\newline
+$x  \leq  0  \leq  |(Re(u),0)|$.\newline
 end.
 \end{proof}
-
-
-\begin{theorem}
- Abs6. $|$u $\cadd$ v$|$ $\leq$ $|$u$|$ + $|$v$|$.
+\begin{theorem}[Abs6] $|u  \cadd  v|  \leq  |u| + |v|$.
 \end{theorem}\begin{proof}
- ($|$u $\cadd$ v$|$$\cdot$$|$u $\cadd$ v$|$,0)	= (u $\cadd$ v) $\cmul$ Conj(u $\cadd$ v)
-=  ((u $\cadd$ v) $\cmul$ Conj(u)) $\cadd$ ((u $\cadd$ v) $\cmul$ Conj(v)) 
-=  (Conj(u) $\cmul$ (u $\cadd$ v)) $\cadd$ (Conj(v) $\cmul$ (u $\cadd$ v)) 
-=  ((Conj(u) $\cmul$ u) $\cadd$ (Conj(u) $\cmul$ v)) $\cadd$ ((Conj(v) $\cmul$ u) $\cadd$ (Conj(v) $\cmul$ v)) (by CmpFld10)
-=  ((u $\cmul$ Conj(u)) $\cadd$ (v $\cmul$ Conj(u))) $\cadd$ ((u $\cmul$ Conj(v)) $\cadd$ (v $\cmul$ Conj(v)))
-=  (u $\cmul$ Conj(u)) $\cadd$ ((v $\cmul$ Conj(u)) $\cadd$ ((u $\cmul$ Conj(v)) $\cadd$ (v $\cmul$ Conj(v))))
-=  (u $\cmul$ Conj(u)) $\cadd$ (((v $\cmul$ Conj(u)) $\cadd$ (u $\cmul$ Conj(v))) $\cadd$ (v $\cmul$ Conj(v)))
-=  (u $\cmul$ Conj(u)) $\cadd$ ((v $\cmul$ Conj(v)) $\cadd$ ((v $\cmul$ Conj(u)) $\cadd$ (u $\cmul$ Conj(v)))) 
-=  (u $\cmul$ Conj(u)) $\cadd$ ((v $\cmul$ Conj(v)) $\cadd$ ((v $\cmul$ Conj(u)) $\cadd$ (Conj(Conj(u)) $\cmul$ Conj(v))))
-=  (u $\cmul$ Conj(u)) $\cadd$ ((v $\cmul$ Conj(v)) $\cadd$ ((v $\cmul$ Conj(u)) $\cadd$ Conj(Conj(u) $\cmul$ v) ))
-=  (u $\cmul$ Conj(u)) $\cadd$ ((v $\cmul$ Conj(v)) $\cadd$ ((v $\cmul$ Conj(u)) $\cadd$ Conj(v $\cmul$ Conj(u)) ))
-=  (u $\cmul$ Conj(u)) $\cadd$ ((v $\cmul$ Conj(v)) $\cadd$ (Re(v $\cmul$ Conj(u))+Re(v $\cmul$ Conj(u)),0) )
-=  ($|$u$|$$\cdot$$|$u$|$,0) $\cadd$ (($|$v$|$$\cdot$$|$v$|$,0) $\cadd$ (Re(v $\cmul$ Conj(u))+Re(v $\cmul$ Conj(u)),0) )
-=  (($|$u$|$$\cdot$$|$u$|$,0) $\cadd$ ($|$v$|$$\cdot$$|$v$|$,0)) $\cadd$ (Re(v $\cmul$ Conj(u))+Re(v $\cmul$ Conj(u)),0)
-= (($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$),0+0) $\cadd$ (Re(v $\cmul$ Conj(u))+Re(v $\cmul$ Conj(u)),0)
-=((($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + (Re(v $\cmul$ Conj(u))+Re(v $\cmul$ Conj(u))), 0 + 0)
-=((($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + (Re(v $\cmul$ Conj(u))+Re(v $\cmul$ Conj(u))), 0 ).
-Thus $|$u $\cadd$ v$|$$\cdot$$|$u $\cadd$ v$|$ = ((($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + Re(v $\cmul$ Conj(u))) + Re(v $\cmul$ Conj(u)).
-
-
-Then Re(v $\cmul$ Conj(u)) $\leq$ $|$(Re(v $\cmul$ Conj(u)),0)$|$ (by AbsMon). $|$(Re(v $\cmul$ Conj(u)),0)$|$ $\leq$ $|$v$\cmul$Conj(u)$|$ (by Abs5).
-Hence Re(v $\cmul$ Conj(u)) $\leq$ $|$v$\cmul$Conj(u)$|$ (by LeqTrans).
-Thus (($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + Re(v $\cmul$ Conj(u)) $\leq$ (($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + $|$v$\cmul$Conj(u)$|$ (by LeqAdd).
-Thus ((($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + Re(v $\cmul$ Conj(u))) + Re(v $\cmul$ Conj(u)) $\leq$ ((($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + $|$v$\cmul$Conj(u)$|$)+$|$v$\cmul$Conj(u)$|$ (by LeqAdd2).
-((($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + $|$v$\cmul$Conj(u)$|$)+$|$v$\cmul$Conj(u)$|$
-= (($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + ($|$v$\cmul$Conj(u)$|$+$|$v$\cmul$Conj(u)$|$) 
-= (($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + (($|$v$|$$\cdot$$|$Conj(u)$|$) + ($|$v$|$$\cdot$$|$Conj(u)$|$))
-= (($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$v$|$)) + (($|$v$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$u$|$))
-= (($|$u$|$$\cdot$$|$u$|$) + ($|$v$|$$\cdot$$|$u$|$)) + (($|$v$|$$\cdot$$|$v$|$) + ($|$v$|$$\cdot$$|$u$|$))
-= (($|$u$|$ + $|$v$|$) $\cdot$ $|$u$|$) + ($|$v$|$$\cdot$($|$v$|$+$|$u$|$))
-= ($|$u$|$ $\cdot$ ($|$u$|$ + $|$v$|$)) + ($|$v$|$ $\cdot$ ($|$u$|$ + $|$v$|$))
-= ($|$u$|$ + $|$v$|$)$\cdot$($|$u$|$ + $|$v$|$).
-
-Hence $|$u $\cadd$ v$|$$\cdot$$|$u $\cadd$ v$|$ $\leq$ ($|$u$|$ + $|$v$|$)$\cdot$($|$u$|$ + $|$v$|$).
-0 $\leq$ $|$u$|$ and 0 $\leq$ $|$v$|$. Thus 0 + 0 $\leq$ $|$u$|$ + $|$v$|$ (by LeqAdd2).
-Case $|$u$|$ + $|$v$|$ $>$ 0. 
-Case $|$u $\cadd$ v$|$$\cdot$$|$u $\cadd$ v$|$ $<$ ($|$u$|$ + $|$v$|$)$\cdot$($|$u$|$ + $|$v$|$). 
-Then ($|$u$|$ + $|$v$|$)$\cdot$($|$u$|$ + $|$v$|$) $>$ $|$u $\cadd$ v$|$$\cdot$$|$u $\cadd$ v$|$ and $|$u $\cadd$ v$|$ $\geq$ 0 and $|$u$|$ + $|$v$|$ $>$ 0 .
-Thus $|$u $\cadd$ v$|$ $<$ $|$u$|$ + $|$v$|$ (by SqrtMon). end.
-Case $|$u $\cadd$ v$|$$\cdot$$|$u $\cadd$ v$|$ = ($|$u$|$ + $|$v$|$)$\cdot$($|$u$|$ + $|$v$|$). Then $|$u $\cadd$ v$|$ = $|$u$|$ + $|$v$|$ (by SqrtEind).end.
-end.
-Case $|$u$|$ + $|$v$|$ = 0. Thus ($|$u$|$ + $|$v$|$)$\cdot$($|$u$|$ + $|$v$|$) = 0. Hence $|$u $\cadd$ v$|$$\cdot$$|$u $\cadd$ v$|$ $\leq$ 0. 
-Let us show that $|$u $\cadd$ v$|$ $\leq$ 0. 
-proof. 	Assume $|$u $\cadd$ v$|$ $>$ 0. Then $|$u $\cadd$ v$|$$\cdot$$|$u $\cadd$ v$|$ $>$ 0 (by InEqMult). Contradiction.
-Thus not ($|$u $\cadd$ v$|$ $>$ 0). Hence $|$u $\cadd$ v$|$ $<$ 0 or $|$u $\cadd$ v$|$ = 0 (by InEqCompl).
-end.
-Thus $|$u $\cadd$ v$|$ $\leq$ $|$u$|$ + $|$v$|$.
-end.
+ \begin{align*}
+ &(|u  \cadd  v| \cdot |u  \cadd  v|,0)	= (u  \cadd  v)  \cmul  Conj(u  \cadd  v)\\
+=  &((u  \cadd  v)  \cmul  Conj(u))  \cadd  ((u  \cadd  v)  \cmul  Conj(v)) \\
+=  &(Conj(u)  \cmul  (u  \cadd  v))  \cadd  (Conj(v)  \cmul  (u  \cadd  v)) \\
+=  &((Conj(u)  \cmul  u)  \cadd  (Conj(u)  \cmul  v))  \cadd  ((Conj(v)  \cmul  u)  \cadd  (Conj(v)  \cmul  v)) \\
+=  &((u  \cmul  Conj(u))  \cadd  (v  \cmul  Conj(u)))  \cadd  ((u  \cmul  Conj(v))  \cadd  (v  \cmul  Conj(v)))\\
+=  &(u  \cmul  Conj(u))  \cadd  ((v  \cmul  Conj(u))  \cadd  ((u  \cmul  Conj(v))  \cadd  (v  \cmul  Conj(v))))\\
+=  &(u  \cmul  Conj(u))  \cadd  (((v  \cmul  Conj(u))  \cadd  (u  \cmul  Conj(v)))  \cadd  (v  \cmul  Conj(v)))\\
+=  &(u  \cmul  Conj(u))  \cadd  ((v  \cmul  Conj(v))  \cadd  ((v  \cmul  Conj(u))  \cadd  (u  \cmul  Conj(v)))) \\
+=  &(u  \cmul  Conj(u))  \cadd  ((v  \cmul  Conj(v))  \cadd  ((v  \cmul  Conj(u))  \cadd  (Conj(Conj(u))  \cmul  Conj(v))))\\
+=  &(u  \cmul  Conj(u))  \cadd  ((v  \cmul  Conj(v))  \cadd  ((v  \cmul  Conj(u))  \cadd  Conj(Conj(u)  \cmul  v) ))\\
+=  &(u  \cmul  Conj(u))  \cadd  ((v  \cmul  Conj(v))  \cadd  ((v  \cmul  Conj(u))  \cadd  Conj(v  \cmul  Conj(u)) ))\\
+=  &(u  \cmul  Conj(u))  \cadd  ((v  \cmul  Conj(v))  \cadd  (Re(v  \cmul  Conj(u))+Re(v  \cmul  Conj(u)),0) )\\
+=  &(|u| \cdot |u|,0)  \cadd  ((|v| \cdot |v|,0)  \cadd  (Re(v  \cmul  Conj(u))+Re(v  \cmul  Conj(u)),0) )\\
+=  &((|u| \cdot |u|,0)  \cadd  (|v| \cdot |v|,0))  \cadd  (Re(v  \cmul  Conj(u))+Re(v  \cmul  Conj(u)),0)\\
+= &((|u| \cdot |u|) + (|v| \cdot |v|),0+0)  \cadd  (Re(v  \cmul  Conj(u))+Re(v  \cmul  Conj(u)),0)\\
+=&(((|u| \cdot |u|) + (|v| \cdot |v|)) + (Re(v  \cmul  Conj(u))+Re(v  \cmul  Conj(u))), 0 + 0)\\
+=&(((|u| \cdot |u|) + (|v| \cdot |v|)) + (Re(v  \cmul  Conj(u))+Re(v  \cmul  Conj(u))), 0 )\\
+\end{align*}
+Thus $|u  \cadd  v| \cdot |u  \cadd  v| = (((|u| \cdot |u|) + (|v| \cdot |v|)) + Re(v  \cmul  Conj(u))) + Re(v  \cmul  Conj(u))$.\newline
+Then $Re(v  \cmul  Conj(u))  \leq  |(Re(v  \cmul  Conj(u)),0)|$ (by AbsMon).\newline
+$|(Re(v  \cmul  Conj(u)),0)|  \leq  |v \cmul Conj(u)|$ (by Abs5).\newline
+Hence $Re(v  \cmul  Conj(u))  \leq  |v \cmul Conj(u)|$ (by LeqTrans).\newline
+Thus $((|u| \cdot |u|) + (|v| \cdot |v|)) + Re(v  \cmul  Conj(u))  \leq  ((|u| \cdot |u|) + (|v| \cdot |v|)) + |v \cmul Conj(u)|$ (by LeqAdd).\newline
+Thus $(((|u| \cdot |u|) + (|v| \cdot |v|)) + Re(v  \cmul  Conj(u))) + Re(v  \cmul  Conj(u))  \leq  (((|u| \cdot |u|) + (|v| \cdot |v|)) + |v \cmul Conj(u)|)+|v \cmul Conj(u)|$ (by LeqAdd2).
+\begin{align*}
+&(((|u| \cdot |u|) + (|v| \cdot |v|)) + |v \cmul Conj(u)|)+|v \cmul Conj(u)|\\
+= &((|u| \cdot |u|) + (|v| \cdot |v|)) + (|v \cmul Conj(u)|+|v \cmul Conj(u)|)\\ 
+= &((|u| \cdot |u|) + (|v| \cdot |v|)) + ((|v| \cdot |Conj(u)|) + (|v| \cdot |Conj(u)|))\\
+= &((|u| \cdot |u|) + (|v| \cdot |v|)) + ((|v| \cdot |u|) + (|v| \cdot |u|))\\
+= &((|u| \cdot |u|) + (|v| \cdot |u|)) + ((|v| \cdot |v|) + (|v| \cdot |u|))\\
+= &((|u| + |v|)  \cdot  |u|) + (|v| \cdot (|v|+|u|))\\
+= &(|u|  \cdot  (|u| + |v|)) + (|v|  \cdot  (|u| + |v|))\\
+= &(|u| + |v|) \cdot (|u| + |v|).
+\end{align*}
+Hence $|u  \cadd  v| \cdot |u  \cadd  v|  \leq  (|u| + |v|) \cdot (|u| + |v|)$.\newline
+$0  \leq  |u|$ and $0  \leq  |v|$. Thus $0 + 0  \leq  |u| + |v|$ (by LeqAdd2).\newline\newline
+	Case $|u| + |v|  >  0$. \newline\newline
+Case $|u  \cadd  v| \cdot |u  \cadd  v|  <  (|u| + |v|) \cdot (|u| + |v|)$. \newline
+Then $(|u| + |v|) \cdot (|u| + |v|)  >  |u  \cadd  v| \cdot |u  \cadd  v| and |u  \cadd  v|  \geq  0 and |u| + |v|  >  0$ .\newline
+Thus $|u  \cadd  v|  <  |u| + |v|$ (by SqrtMon). end.\newline
+Case $|u  \cadd  v| \cdot |u  \cadd  v| = (|u| + |v|) \cdot (|u| + |v|)$.\newline
+Then $|u  \cadd  v| = |u| + |v|$ (by SqrtEind).end.\newline
+end.\newline\newline
+	Case $|u| + |v| = 0$. \newline\newline
+Thus $(|u| + |v|) \cdot (|u| + |v|) = 0$. Hence $|u  \cadd  v| \cdot |u  \cadd  v|  \leq  0$. \newline 
+Let us show that $|u  \cadd  v|  \leq  0$. \newline
+proof. 	Assume $|u  \cadd  v|  >  0$. 
+Then $|u  \cadd  v| \cdot |u  \cadd  v|  >  0$ (by InEqMult). Contradiction.\newline
+Thus not ($|u  \cadd  v|  >  0$). Hence $|u  \cadd  v|  <  0$ or $|u  \cadd  v| = 0$ (by InEqCompl). \newline
+end.\newline
+Thus $|u  \cadd  v|  \leq  |u| + |v|$.\newline
+end.\newline
 \end{proof}
 
 \end{forthel}
